@@ -1,6 +1,7 @@
 package models;
 
 public class Pagamento {
+	private String formaDePagamento;
 	private double valorTotalPagamento;
 	private Tempo finalTotalViagem;
 	private int numeroDoCartao;
@@ -11,14 +12,23 @@ public class Pagamento {
 		super();
 	}
 	
-	public Pagamento(double vTotal, Tempo fTempo, int numCartao, String nomeCartao, int cvc) {
+	public Pagamento(String fPagamento, double vTotal, Tempo fTempo, int numCartao, String nomeCartao, int cvc) {
+		formaDePagamento = fPagamento;
 		valorTotalPagamento = vTotal;
 		finalTotalViagem = fTempo;
 		numeroDoCartao = numCartao;
 		nomeNoCartao = nomeCartao;
 		codigoDeSeguranca = cvc;
 	}
+	
+	public String getFormaDePagamento(){
+		return formaDePagamento;
+	}
 
+	public void setFormaDePagamento (String formaDePagamento) {
+		this.formaDePagamento = formaDePagamento;
+	}
+	
 	public double getValorTotalPagamento() {
 		return valorTotalPagamento;
 	}
