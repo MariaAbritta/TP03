@@ -7,10 +7,18 @@ public class Usuario {
 	private int cpf;
 	private int senha;
 	private int telefone;
-	private String lugar = "";
 	
 	public Usuario() {
 		super();	
+	}
+	
+	public Usuario(String n, String e,int r, int c, int s, int t) {
+		nome = n;
+		email = e;
+		rg = r;
+		cpf = c;
+		senha = s;
+		telefone = t;
 	}
 	
 	public String getNome() {
@@ -59,24 +67,5 @@ public class Usuario {
 
 	public void setTelefone(int telefone) {
 		this.telefone = telefone;
-	}
-
-	public String getLugar() {
-		return lugar;
-	}
-
-	public void setLugar(String lugar) {
-		this.lugar = lugar;
-	}
-
-	public Usuario(String n, String e,int r, int c, int s, int t, String l) {
-		nome = n;
-		email = e;
-		rg = r;
-		cpf = c;
-		senha = s;
-		telefone = t;
-		lugar = l;
-		
 	}
 }
