@@ -11,7 +11,7 @@ public class Main {
 		Bicicleta bicicleta = new Bicicleta();
 		Tempo tempo = new Tempo();
 		
-		//Metodos chamados
+		//Metodos 
 		System.out.println("\nBicicletarios: \n");
 		bicicletario.listarBicicletario();
 		bicicletario.buscarBicicletario();

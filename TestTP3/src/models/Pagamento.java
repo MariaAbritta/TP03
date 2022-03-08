@@ -1,24 +1,27 @@
 package models;
 
+import java.util.Scanner;
+
 public class Pagamento {
 	private String formaDePagamento;
 	private double valorTotalPagamento;
-	private Tempo finalTotalViagem;
-	private int numeroDoCartao;
+	private float finalTotalViagem;
+	private double numeroDoCartao;
 	private String nomeNoCartao;
 	private int codigoDeSeguranca;
+	static Scanner ler = new Scanner(System.in);
 	
 	public Pagamento() {
 		super();
 	}
 	
-	public Pagamento(String fPagamento, double vTotal, Tempo fTempo, int numCartao, String nomeCartao, int cvc) {
-		formaDePagamento = fPagamento;
-		valorTotalPagamento = vTotal;
-		finalTotalViagem = fTempo;
-		numeroDoCartao = numCartao;
-		nomeNoCartao = nomeCartao;
-		codigoDeSeguranca = cvc;
+	public Pagamento(String fPagamento, double vTotal, float fTempo, double numCartao, String nomeCartao, int cvc) {
+		this.formaDePagamento = fPagamento;
+		this.valorTotalPagamento = vTotal;
+		this.finalTotalViagem = fTempo;
+		this.numeroDoCartao = numCartao;
+		this.nomeNoCartao = nomeCartao;
+		this.codigoDeSeguranca = cvc;
 	}
 	
 	public String getFormaDePagamento(){
@@ -34,22 +37,29 @@ public class Pagamento {
 	}
 
 	public void setValorTotalPagamento(double valorTotalPagamento) {
+		Tempo tempo = new Tempo();
+		valorTotalPagamento = tempo.getMinutosViagem();
+		
+		valorTotalPagamento = valorTotalPagamento * 0.5; 
 		this.valorTotalPagamento = valorTotalPagamento;
 	}
 
-	public Tempo getFinalTotalViagem() {
+	public float getFinalTotalViagem() {
+		
 		return finalTotalViagem;
 	}
 
-	public void setFinalTotalViagem(Tempo finalTotalViagem) {
+	public void setFinalTotalViagem(float finalTotalViagem) {
+		Tempo tempo = new Tempo();
+		finalTotalViagem = tempo.getMinutosViagem();
 		this.finalTotalViagem = finalTotalViagem;
 	}
 
-	public int getNumeroDoCartao() {
+	public double getNumeroDoCartao() {
 		return numeroDoCartao;
 	}
 
-	public void setNumeroDoCartao(int numeroDoCartao) {
+	public void setNumeroDoCartao(double numeroDoCartao) {
 		this.numeroDoCartao = numeroDoCartao;
 	}
 
@@ -68,4 +78,67 @@ public class Pagamento {
 	public void setCodigoDeSeguranca(int codigoDeSeguranca) {
 		this.codigoDeSeguranca = codigoDeSeguranca;
 	}
+	
+	//metodos
+	public void cadastrarPagamento() {
+		System.out.println("\nCadastrar Pagamento: \n");
+		
+		System.out.println("\nForma de Pagamento (debito, credito):\n");
+		setFormaDePagamento(ler.next());
+		
+		System.out.println("\nValor a ser pago: " + getValorTotalPagamento());
+		System.out.println("\nTempo total da viagem: " + getFinalTotalViagem());
+		
+		System.out.println("\nCadastrar numero do cartao para pagamento: \n");
+		setNumeroDoCartao(ler.nextDouble());
+		
+		System.out.println("\nCadastrar nome no cartao: \n");
+		setNomeNoCartao(ler.next());
+		
+		System.out.println("\nCadastrar codigo de seguranca do cartao: \n");
+		setCodigoDeSeguranca(ler.nextInt());
+	}
+	
+	public void editarPagamento() {
+		System.out.println("\nEditar Pagamento: \n");
+		
+		//nao editaveis
+		System.out.println("\nValor a ser pago: " + getValorTotalPagamento());
+		System.out.println("\nTempo total da viagem: " + getFinalTotalViagem());
+		
+		//editaveis
+		System.out.println("\nForma de Pagamento (debito, credito):\n");
+		setFormaDePagamento(ler.next());
+		
+		System.out.println("\nCadastrar numero do cartao para pagamento: \n");
+		setNumeroDoCartao(ler.nextDouble());
+		
+		System.out.println("\nCadastrar nome no cartao: \n");
+		setNomeNoCartao(ler.next());
+		
+		System.out.println("\nCadastrar codigo de seguranca do cartao: \n");
+		setCodigoDeSeguranca(ler.nextInt());
+	}
+	
+	public void deletarPagamento() {
+		System.out.println("\nDeletando Pagamento....\n");
+		setValorTotalPagamento(0);
+		setFormaDePagamento("");
+		setNumeroDoCartao(0);
+		setNomeNoCartao("");
+		setCodigoDeSeguranca(0);
+		setFinalTotalViagem(0);
+	}
+	
+	public void listarPagamento() {
+		System.out.println("\nListar Pagamento: \n");
+		System.out.println("\nValor a ser pago: " + getValorTotalPagamento());
+		System.out.println("\nTempo de utilizacao: " + getFinalTotalViagem());
+		System.out.println("\nForma de pagamento: " + getFormaDePagamento());
+		System.out.println("\nNumero do cartao: " + getNumeroDoCartao());
+		System.out.println("\nNome no cartao: " + getNomeNoCartao());
+		System.out.println("\nCodigo de seguranca: " + getCodigoDeSeguranca());
+		
+	}
+	
 }
