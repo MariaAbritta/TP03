@@ -10,6 +10,7 @@ public class Main {
 		Bicicletario bicicletario = new Bicicletario();
 		Bicicleta bicicleta = new Bicicleta();
 		Tempo tempo = new Tempo();
+		Pagamento pagamento = new Pagamento();
 		
 		//Metodos 
 		System.out.println("\nBicicletarios: \n");
@@ -25,6 +26,12 @@ public class Main {
 		tempo.editarTempoDeViagem();
 		tempo.deletarTempoDeViagem();
 		tempo.listarTempoDeViagem();
+		
+		System.out.println("\nPagamento: \n");
+		pagamento.cadastrarPagamento();
+		pagamento.editarPagamento();
+		pagamento.deletarPagamento();
+		pagamento.listarPagamento();
 	}
 	
 }

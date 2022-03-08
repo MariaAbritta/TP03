@@ -1,5 +1,7 @@
 package models;
 
+import java.util.Scanner;
+
 public class Usuario {
 	private String nome = "";
 	private String email = "";
@@ -7,6 +9,7 @@ public class Usuario {
 	private int cpf;
 	private int senha;
 	private int telefone;
+	static Scanner ler = new Scanner(System.in);
 	
 	public Usuario() {
 		super();	
@@ -68,4 +71,63 @@ public class Usuario {
 	public void setTelefone(int telefone) {
 		this.telefone = telefone;
 	}
+	
+	//metodos
+	public void cadastrarUsuario() {
+		System.out.println("Cadastrar usuarios: \n");
+		
+		System.out.println("Nome do usuarios: \n");
+		setNome(ler.next());
+		System.out.println("\nEmail do usuarios: \n");
+		setEmail(ler.next());
+		System.out.println("\nRG do usuarios: \n");
+		setRg(ler.nextInt());
+		System.out.println("\nCPF do usuarios, apenas numeros!: \n");
+		setCpf(ler.nextInt());
+		System.out.println("\nSenha do usuarios, apenas numero!: \n");
+		setSenha(ler.nextInt());
+		System.out.println("\nTelefone do usuarios, apenas numero!: \n");
+		setTelefone(ler.nextInt());	
+	}
+	
+	public void editarUsuario() {
+		System.out.println("Editar usuario\n");
+		
+		System.out.println("Nome do usuarios: \n");
+		setNome(ler.next());
+		System.out.println("\nEmail do usuarios: \n");
+		setEmail(ler.next());
+		System.out.println("\nRG do usuarios: \n");
+		setRg(ler.nextInt());
+		System.out.println("\nCPF do usuarios, apenas numeros!: \n");
+		setCpf(ler.nextInt());
+		System.out.println("\nSenha do usuarios, apenas numero!: \n");
+		setSenha(ler.nextInt());
+		System.out.println("\nTelefone do usuarios, apenas numero!: \n");
+		setTelefone(ler.nextInt());	
+	}
+	
+	public void deletarUsuario() {
+		System.out.println("Deletando usuario...\n");
+		
+		setNome("");
+		setEmail("");
+		setRg(0);
+		setCpf(0);
+		setSenha(0);
+		setTelefone(0);	
+	}
+	
+	public void listarUsuario() {
+		System.out.println("Informações do usuario: \n");
+		
+		System.out.println("Nome: \n" + getNome());
+		System.out.println("Email: \n" + getEmail());
+		System.out.println("Rg: \n" + getRg());
+		System.out.println("Cpf: \n" + getCpf());
+		System.out.println("Senha: \n" + getSenha());
+		System.out.println("Telefone: \n" + getTelefone());
+	}
+	
+	
 }
