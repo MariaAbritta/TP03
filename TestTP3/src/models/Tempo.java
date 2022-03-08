@@ -1,42 +1,34 @@
 package models;
+import java.util.Scanner;
 
 public class Tempo {
-	private int inicioViagem;
-	private int finalViagem;
-	private int finalTotalViagem;
+	private float minutosViagem;
+	static Scanner ler = new Scanner(System.in);
 	
 	public Tempo() {
 		super();
 	}
 	
 	//sobrecarga
-	public Tempo(int iV, int fV, int fTV) {
-		inicioViagem = iV;
-		finalViagem = fV;
-		finalTotalViagem = fTV;
+	public Tempo(float mV) {
+		this.minutosViagem = mV;
 	}
 	
-	public int getInicioViagem() {
-		return inicioViagem;
+	//Gets and sets
+	public float getMinutosViagem() {
+		return minutosViagem;
 	}
 
-	public void setInicioViagem(int inicioViagem) {
-		this.inicioViagem = inicioViagem;
+	public void setMinutosViagem(float minutosViagem) {
+		this.minutosViagem = minutosViagem;
 	}
 
-	public int getFinalViagem() {
-		return finalViagem;
+	//metodos
+	public void cadastroTempoDeViagem() {
+		System.out.println("\nTempo em minutos que ira utilizar a bicicleta: ");
+		setMinutosViagem(ler.nextFloat());
 	}
 
-	public void setFinalViagem(int finalViagem) {
-		this.finalViagem = finalViagem;
-	}
-
-	public int getFinalTotalViagem() {
-		return finalTotalViagem;
-	}
-
-	public void setFinalTotalViagem(int finalTotalViagem) {
-		this.finalTotalViagem = finalTotalViagem;
-	}
+	
+	
 }
