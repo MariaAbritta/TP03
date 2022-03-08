@@ -2,7 +2,7 @@ package models;
 import java.util.Scanner;
 
 public class Tempo {
-	private float minutosViagem;
+	private int minutosViagem;
 	static Scanner ler = new Scanner(System.in);
 	
 	public Tempo() {
@@ -10,7 +10,7 @@ public class Tempo {
 	}
 	
 	//sobrecarga
-	public Tempo(float mV) {
+	public Tempo(int mV) {
 		this.minutosViagem = mV;
 	}
 	
@@ -19,16 +19,28 @@ public class Tempo {
 		return minutosViagem;
 	}
 
-	public void setMinutosViagem(float minutosViagem) {
+	public void setMinutosViagem(int minutosViagem) {
 		this.minutosViagem = minutosViagem;
 	}
 
 	//metodos
 	public void cadastroTempoDeViagem() {
 		System.out.println("\nTempo em minutos que ira utilizar a bicicleta: ");
-		setMinutosViagem(ler.nextFloat());
+		setMinutosViagem(ler.nextInt());
 	}
-
+	public void editarTempoDeViagem() {
+		System.out.println("\nEditar Tempo em minutos: ");
+		setMinutosViagem(ler.nextInt());
+	}
 	
+	public void deletarTempoDeViagem() {
+		System.out.println("\nDeletar Tempo em minutos: ");
+		setMinutosViagem(0);
+		
+	}
+	
+	public void listarTempoDeViagem() {
+		System.out.println("\nListar Tempo em minutos: \n" + getMinutosViagem());
+	}
 	
 }

@@ -15,11 +15,16 @@ public class Main {
 		System.out.println("\nBicicletarios: \n");
 		bicicletario.listarBicicletario();
 		bicicletario.buscarBicicletario();
+		
 		System.out.println("\nBicicletas: \n");
 		bicicleta.listarBicicleta();
 		bicicleta.buscarBicicleta();
+		
 		System.out.println("\nTempo: \n");
 		tempo.cadastroTempoDeViagem();
+		tempo.editarTempoDeViagem();
+		tempo.deletarTempoDeViagem();
+		tempo.listarTempoDeViagem();
 	}
 	
 }
