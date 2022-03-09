@@ -2,143 +2,94 @@ package models;
 
 import java.util.Scanner;
 
-public class Pagamento {
-	private String formaDePagamento;
-	private double valorTotalPagamento;
-	private float finalTotalViagem;
-	private double numeroDoCartao;
-	private String nomeNoCartao;
-	private int codigoDeSeguranca;
-	static Scanner ler = new Scanner(System.in);
+public class Bicicletario {
+	//Atributos
+	private String localizacao;
+	private String funcionamento;
+	private int disponibilidadeBicicletas;
 	
-	public Pagamento() {
+	public Bicicletario() {
 		super();
 	}
 	
-	public Pagamento(String fPagamento, double vTotal, float fTempo, double numCartao, String nomeCartao, int cvc) {
-		this.formaDePagamento = fPagamento;
-		this.valorTotalPagamento = vTotal;
-		this.finalTotalViagem = fTempo;
-		this.numeroDoCartao = numCartao;
-		this.nomeNoCartao = nomeCartao;
-		this.codigoDeSeguranca = cvc;
+	public Bicicletario(String loc, String func, int dispoBikes) {
+		localizacao = loc;
+		funcionamento = func;
+		disponibilidadeBicicletas = dispoBikes;
+	}
+
+	//Gets and sets
+	public String getLocalizacao() {
+		localizacao = "Brasilia - Asa Sul - Parque da Cidade Dona Sarah Kubitschek\n"
+				+ "Brasilia - Aguas Claras - Parque Ecológico";
+		return localizacao;
+	}
+
+	public void setLocalizacao(String localizacao) {
+		this.localizacao = localizacao;
+	}
+
+	public  String getFuncionamento() {
+		funcionamento = "Ativo";
+		return funcionamento;
+	}
+
+	public void setFuncionamento(String funcionamento) {
+		this.funcionamento = funcionamento;
+	}
+
+	public int getDisponibilidadeBicicletas() {
+		disponibilidadeBicicletas = 50;
+		return disponibilidadeBicicletas;
+	}
+
+	public void setDisponibilidadeBicicletas(int disponibilidadeBicicletas) {
+		this.disponibilidadeBicicletas = disponibilidadeBicicletas;
 	}
 	
-	public String getFormaDePagamento(){
-		return formaDePagamento;
-	}
-
-	public void setFormaDePagamento (String formaDePagamento) {
-		this.formaDePagamento = formaDePagamento;
-	}
-	
-	public double getValorTotalPagamento() {
-		return valorTotalPagamento;
-	}
-
-	public void setValorTotalPagamento(double valorTotalPagamento) {
-		Tempo tempo = new Tempo();
-		valorTotalPagamento = tempo.getMinutosViagem();
-		
-		valorTotalPagamento = valorTotalPagamento * 0.5; 
-		this.valorTotalPagamento = valorTotalPagamento;
-	}
-
-	public float getFinalTotalViagem() {
-		
-		return finalTotalViagem;
-	}
-
-	public void setFinalTotalViagem(float finalTotalViagem) {
-		Tempo tempo = new Tempo();
-		finalTotalViagem = tempo.getMinutosViagem();
-		this.finalTotalViagem = finalTotalViagem;
-	}
-
-	public double getNumeroDoCartao() {
-		return numeroDoCartao;
-	}
-
-	public void setNumeroDoCartao(double numeroDoCartao) {
-		this.numeroDoCartao = numeroDoCartao;
-	}
-
-	public String getNomeNoCartao() {
-		return nomeNoCartao;
-	}
-
-	public void setNomeNoCartao(String nomeNoCartao) {
-		this.nomeNoCartao = nomeNoCartao;
-	}
-
-	public int getCodigoDeSeguranca() {
-		return codigoDeSeguranca;
-	}
-
-	public void setCodigoDeSeguranca(int codigoDeSeguranca) {
-		this.codigoDeSeguranca = codigoDeSeguranca;
+	//Metodos
+	public void listarBicicletario() {
+		System.out.println("Localização: \n" + getLocalizacao());
+		System.out.println("Funcionamento: \n" + getFuncionamento());
+		System.out.println("Numero de Bicicletas disponiveis: "+ getDisponibilidadeBicicletas());
 	}
 	
-	//metodos
-	public void cadastrarPagamento() {
-		System.out.println("\nCadastrar Pagamento: \n");
+	public void buscarBicicletario() {
 		
-		System.out.println("\nForma de Pagamento (debito, credito):\n");
-		setFormaDePagamento(ler.next());
+		int opcaoBike = 0;
+		Scanner resposta = new Scanner(System.in);
 		
-		System.out.println("\nValor a ser pago: " + getValorTotalPagamento());
-		System.out.println("\nTempo total da viagem: " + getFinalTotalViagem());
+		System.out.println("Buscar Bicicletario: ");
+		System.out.println("Digite 1 para ver o Parque da Cidade Dona Sarah Kubitschek");
+		System.out.println("Digite 2 para ver o Parque Ecológico");
+		opcaoBike = resposta.nextInt();
 		
-		System.out.println("\nCadastrar numero do cartao para pagamento: \n");
-		setNumeroDoCartao(ler.nextDouble());
-		
-		System.out.println("\nCadastrar nome no cartao: \n");
-		setNomeNoCartao(ler.next());
-		
-		System.out.println("\nCadastrar codigo de seguranca do cartao: \n");
-		setCodigoDeSeguranca(ler.nextInt());
+		do {
+			switch(opcaoBike){
+				case 1:
+						System.out.println("------------------------------");
+						System.out.println("Parque da Cidade Dona Sarah Kubitschek:");
+						System.out.println("Endereço: Srps - Brasília, DF, 70297-400\n"
+								+ "Coordenadas: 15° 48' 1.236\" S 47° 54' 28.081\" O\n"
+								+ "Horários: Atendimento 24 horas.\n");
+						System.out.println("------------------------------");
+					break;
+				case 2:
+					System.out.println("------------------------------");
+					System.out.println("Parque Ecológico");
+					System.out.println("Endereço: Avenida Castanheiras – Centro.\n"
+							+ "Situado atrás da Residência Oficial de Águas Claras,\n"
+							+ "entre as quadras 301, 104, 105 e 106 da cidade.\n"
+							+ "Coordenadas:	15° 49' 58.36\" S 48° 1' 49.21\" O\n"
+							+ "Horários: Diariamente, das 06h às 22h\n");
+					//Fazer as ativas e inativas
+					System.out.println("------------------------------");
+					break;
+				default:
+					System.out.println("Opcao invalida. Por favor, escolha uma\n"
+							+ "opcao 1 ou 2, somente.\n");
+			}
+		}while (opcaoBike >= 3);
 	}
-	
-	public void editarPagamento() {
-		System.out.println("\nEditar Pagamento: \n");
-		
-		//nao editaveis
-		System.out.println("\nValor a ser pago: " + getValorTotalPagamento());
-		System.out.println("\nTempo total da viagem: " + getFinalTotalViagem());
-		
-		//editaveis
-		System.out.println("\nForma de Pagamento (debito, credito):\n");
-		setFormaDePagamento(ler.next());
-		
-		System.out.println("\nCadastrar numero do cartao para pagamento: \n");
-		setNumeroDoCartao(ler.nextDouble());
-		
-		System.out.println("\nCadastrar nome no cartao: \n");
-		setNomeNoCartao(ler.next());
-		
-		System.out.println("\nCadastrar codigo de seguranca do cartao: \n");
-		setCodigoDeSeguranca(ler.nextInt());
-	}
-	
-	public void deletarPagamento() {
-		System.out.println("\nDeletando Pagamento....\n");
-		setValorTotalPagamento(0);
-		setFormaDePagamento("");
-		setNumeroDoCartao(0);
-		setNomeNoCartao("");
-		setCodigoDeSeguranca(0);
-		setFinalTotalViagem(0);
-	}
-	
-	public void listarPagamento() {
-		System.out.println("\nListar Pagamento: \n");
-		System.out.println("\nValor a ser pago: " + getValorTotalPagamento());
-		System.out.println("\nTempo de utilizacao: " + getFinalTotalViagem());
-		System.out.println("\nForma de pagamento: " + getFormaDePagamento());
-		System.out.println("\nNumero do cartao: " + getNumeroDoCartao());
-		System.out.println("\nNome no cartao: " + getNomeNoCartao());
-		System.out.println("\nCodigo de seguranca: " + getCodigoDeSeguranca());
-		
-	}
-	
+
 }
