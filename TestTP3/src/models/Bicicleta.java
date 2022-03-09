@@ -1,5 +1,7 @@
 package models;
 
+import java.util.Scanner;
+
 public class Bicicleta {
 	//atributos
 	private String localizacao;
@@ -46,14 +48,69 @@ public class Bicicleta {
 	}
 	
 	//Metodos
-	public void listarBicicleta() {
-		System.out.println("Localiza��o: " + getLocalizacao());
-		System.out.println("ID da Bicicleta: " + getIdBicicleta());
-		System.out.println("Tipo de Bicicleta: "+ getTipo());
+	public void buscarBicicleta() {
+		
+		int opcaoBike = 0;
+		Scanner resposta = new Scanner(System.in);
+		
+		System.out.println("Busque uma bicicleta: ");
+		System.out.println("Digite 1 para ver as Bicicletas Urbanas.");
+		System.out.println("Digite 2 para ver as Bicicletas Elétricas.");
+		System.out.println("Digite 3 para ver as Bicicletas Mountain Bike.");
+		
+		opcaoBike = resposta.nextInt();
+		
+		do {
+			switch(opcaoBike){
+				case 1:
+					System.out.println("------------------------------");
+					System.out.println("Bicicletas Urbanas:");
+					System.out.println("Se você pretende andar de bike pelas ruas da cidade, \n"
+							+ "seja para uso como transporte ao trabalho, \n"
+							+ "faculdade ou simplesmente para aqueles passeios nos parques, \n"
+							+ "jardins e ciclovias, a escolha é uma bicicleta urbana.\n");
+					System.out.println("Ativas: 25");
+					//Fazer as ativas e inativas
+					System.out.println("------------------------------");
+					break;
+				case 2:
+					System.out.println("------------------------------");
+					System.out.println("Bicicletas Elétricas:");
+					System.out.println("Uma bicicleta elétrica é uma bicicleta comum equipada com \n"
+							+ "um motor elétrico numa das rodas e uma bateria lithium de última geração, \n"
+							+ "ajudando nas deslocações pela cidade ou zonas  rurais, podendo eliminar \n"
+							+ "qualquer tipo de esforço. \n");
+					System.out.println("Ativas: 15");
+					//Fazer as ativas e inativas
+					System.out.println("------------------------------");
+					break;
+				case 3:
+					System.out.println("------------------------------");
+					System.out.println("Bicicletas Mountain Bike");
+					System.out.println("Mountain bike é o esporte que coloca o ciclista na montanha \n"
+							+ "e em qualquer lugar fora dela. Ou seja, é a modalidade mais versátil, \n"
+							+ "pois, a MTB tem peças e um design que permite que você pedale \n"
+							+ "por qualquer terreno, sendo uma bicileta mais leve. \n");
+					System.out.println("Ativas: 10");
+					//Fazer as ativas e inativas
+					System.out.println("------------------------------");
+					break;
+				default:
+					System.out.println("Opcao invalida. Por favor, escolha uma\n"
+							+ "opcao de 1 a 3, somente.\n");
+					break;
+			}
+		}while (opcaoBike >= 4);
+		
+		
 	}
 	
-	public void buscarBicicleta() {
-		System.out.println("Busque sua bicicleta aqui");
+	public void listarBicicleta() {
+		System.out.println("Localização: " + getLocalizacao());
+		System.out.println("ID da Bicicleta: " + getIdBicicleta());
+		System.out.println("Tipo de Bicicleta: \n"+ getTipo());
 	}
+	
+	
 
 }
