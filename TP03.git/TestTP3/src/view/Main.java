@@ -16,9 +16,11 @@ public class Main {
 		int opcaoMenuInicial = 0;
 		Scanner resposta = new Scanner(System.in);
 		
+		System.out.println("Bicicletas: \n");
+		bicicleta.buscarBicicleta();
+		bicicleta.listarBicicleta();
 		
-		
-		do {
+		/*do {
 			opcaoMenuInicial = Menu(opcaoMenuInicial, resposta);
 			switch(opcaoMenuInicial){
 				case 1:
@@ -90,7 +92,7 @@ public class Main {
 		System.out.print("|------------------------------|\n");
 		System.out.print("Digite uma opcao:\n");
 		opcaoMenuInicial = resposta.nextInt();
-		return opcaoMenuInicial;
+		return opcaoMenuInicial;*/
 	}
 	
 }

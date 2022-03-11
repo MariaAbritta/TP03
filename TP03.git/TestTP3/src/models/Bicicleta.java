@@ -1,21 +1,24 @@
 package models;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Bicicleta {
 	//atributos
 	private String localizacao;
-	private int IdBicicleta;
+	private long IdBicicleta;
 	private String tipo;
+	int[][] IdBikes = new int[6][0];
+	Random random = new Random();
 	
 	public Bicicleta() {
 		super();
 	}
 	
 	public Bicicleta(String loc, int ID, String type) {
-		localizacao = loc;
-		IdBicicleta = ID;
-		tipo = type;
+		this.localizacao = loc;
+		this.IdBicicleta = ID;
+		this.tipo = type;
 	}
 	
 	public  String  getLocalizacao() {
@@ -29,8 +32,7 @@ public class Bicicleta {
 		this.localizacao = localizacao;
 	}
 
-	public int getIdBicicleta() {
-		IdBicicleta = 897458935;
+	public long getIdBicicleta() {
 		return IdBicicleta;
 	}
 
@@ -111,6 +113,24 @@ public class Bicicleta {
 		System.out.println("Tipo de Bicicleta: \n"+ getTipo());
 	}
 	
-	
+	public void estoque(String[] args) {
+		
+		int identificador = 0;
+		//Definindo id para uma bike do array de 50.
+		
+		for(int i = 0; i < IdBikes.length; i++) {
+			 for( int j = 0; j < IdBikes[i].length; j++) {
+				 IdBikes[i][j] = random.nextInt(9);
+	            }
+        }
+        
+		System.out.println("Matriz: ");
+        for (int[] linha : IdBikes  ) {
+            for (int coluna : linha ) {
+                System.out.print(coluna + " ");
+            }
+            System.out.println();
+        }
+	}
 
 }
