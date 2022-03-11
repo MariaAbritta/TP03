@@ -13,15 +13,15 @@ public class Bicicletario {
 	}
 	
 	public Bicicletario(String loc, String func, int dispoBikes) {
-		localizacao = loc;
-		funcionamento = func;
-		disponibilidadeBicicletas = dispoBikes;
+		this.localizacao = loc;
+		this.funcionamento = func;
+		this.disponibilidadeBicicletas = dispoBikes;
 	}
 
 	//Gets and sets
 	public String getLocalizacao() {
 		localizacao = "Brasilia - Asa Sul - Parque da Cidade Dona Sarah Kubitschek\n"
-				+ "Brasilia - Aguas Claras - Parque Ecológico";
+				+ "Brasilia - Aguas Claras - Parque Ecologico";
 		return localizacao;
 	}
 
@@ -61,7 +61,7 @@ public class Bicicletario {
 		
 		System.out.println("Buscar Bicicletario: ");
 		System.out.println("Digite 1 para ver o Parque da Cidade Dona Sarah Kubitschek");
-		System.out.println("Digite 2 para ver o Parque Ecológico");
+		System.out.println("Digite 2 para ver o Parque Ecologico");
 		opcaoBike = resposta.nextInt();
 		
 		do {
@@ -69,19 +69,19 @@ public class Bicicletario {
 				case 1:
 						System.out.println("------------------------------");
 						System.out.println("Parque da Cidade Dona Sarah Kubitschek:");
-						System.out.println("Endereço: Srps - Brasília, DF, 70297-400\n"
+						System.out.println("Endereço: Srps - Brasilia, DF, 70297-400\n"
 								+ "Coordenadas: 15° 48' 1.236\" S 47° 54' 28.081\" O\n"
-								+ "Horários: Atendimento 24 horas.\n");
+								+ "Horarios: Atendimento 24 horas.\n");
 						System.out.println("------------------------------");
 					break;
 				case 2:
 					System.out.println("------------------------------");
-					System.out.println("Parque Ecológico");
+					System.out.println("Parque Ecologico");
 					System.out.println("Endereço: Avenida Castanheiras – Centro.\n"
-							+ "Situado atrás da Residência Oficial de Águas Claras,\n"
+							+ "Situado atras da Residencia Oficial de Aguas Claras,\n"
 							+ "entre as quadras 301, 104, 105 e 106 da cidade.\n"
 							+ "Coordenadas:	15° 49' 58.36\" S 48° 1' 49.21\" O\n"
-							+ "Horários: Diariamente, das 06h às 22h\n");
+							+ "Horarios: Diariamente, das 06h as 22h\n");
 					//Fazer as ativas e inativas
 					System.out.println("------------------------------");
 					break;
