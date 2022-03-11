@@ -116,15 +116,15 @@ public class Bicicleta {
 	public void estoque(String[] args) {
 		
 		int identificador = 0;
-		//Definindo id para uma bike do array de 50.
 		
+		//Definindo id para uma bike do array de 50.
 		for(int i = 0; i < IdBikes.length; i++) {
 			 for( int j = 0; j < IdBikes[i].length; j++) {
 				 IdBikes[i][j] = random.nextInt(9);
 	            }
         }
         
-		System.out.println("Matriz: ");
+		System.out.println("Id de bike: ");
         for (int[] linha : IdBikes  ) {
             for (int coluna : linha ) {
                 System.out.print(coluna + " ");

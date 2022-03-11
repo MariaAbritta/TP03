@@ -37,7 +37,7 @@ public class Viagem {
 
 	public void setBicicleta(int bicicleta) {
 		Bicicleta b= new Bicicleta();
-		bicicleta = b.getIdBicicleta();
+		//bicicleta = b.getIdBicicleta();
 		this.bicicleta = bicicleta;
 	}
 
