@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class Main {
 	public static void main(String[] args) {
-		System.out.println("!!!!!!!!!!!");
 		
 		//Instancia do objeto
 		Bicicletario bicicletario = new Bicicletario();
@@ -18,7 +17,8 @@ public class Main {
 		
 		System.out.println("Bicicletas: \n");
 		bicicleta.buscarBicicleta();
-		bicicleta.listarBicicleta();
+		//bicicleta.listarBicicleta();
+		
 		
 		/*do {
 			opcaoMenuInicial = Menu(opcaoMenuInicial, resposta);

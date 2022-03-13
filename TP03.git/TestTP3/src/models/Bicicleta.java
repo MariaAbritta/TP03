@@ -8,7 +8,7 @@ public class Bicicleta {
 	private String localizacao;
 	private long IdBicicleta;
 	private String tipo;
-	int[][] IdBikes = new int[6][0];
+	int[][] IdBikes = new int[1][6];
 	Random random = new Random();
 	
 	public Bicicleta() {
@@ -33,6 +33,7 @@ public class Bicicleta {
 	}
 
 	public long getIdBicicleta() {
+		IdBicicleta = estoque();
 		return IdBicicleta;
 	}
 
@@ -57,7 +58,6 @@ public class Bicicleta {
 		
 		System.out.println("Busque uma bicicleta: ");
 		System.out.println("Digite 1 para ver as Bicicletas Urbanas.");
-		System.out.println("Digite 2 para ver as Bicicletas Elétricas.");
 		System.out.println("Digite 3 para ver as Bicicletas Mountain Bike.");
 		
 		opcaoBike = resposta.nextInt();
@@ -72,6 +72,22 @@ public class Bicicleta {
 							+ "faculdade ou simplesmente para aqueles passeios nos parques, \n"
 							+ "jardins e ciclovias, a escolha é uma bicicleta urbana.\n");
 					System.out.println("Ativas: 25");
+					System.out.println("Deseja alugar alguma? sim // nao");
+					Scanner resposta2 = new Scanner(System.in);
+					String opAluguelUrbana = "";
+					opAluguelUrbana = resposta2.next();
+					switch(opAluguelUrbana) {
+						case "sim":
+							System.out.println("Qual localizacao voce se encontra? ");
+							//System.out.println(Bicicletario.getLocalizacao()); Puxar as localizações que temos bicicletarios e entregar o id da bike que ele quer
+							//Criar um array das bikes Urbanas
+							//Repetir com os outros 2 tipos de bike
+						break;
+						case "nao":
+							System.out.println("OK!\n");
+						break;
+					}
+					resposta2.close();
 					//Fazer as ativas e inativas
 					System.out.println("------------------------------");
 					break;
@@ -104,18 +120,18 @@ public class Bicicleta {
 			}
 		}while (opcaoBike >= 4);
 		
-		
+		resposta.close();
 	}
 	
 	public void listarBicicleta() {
 		System.out.println("Localização: " + getLocalizacao());
-		System.out.println("ID da Bicicleta: " + getIdBicicleta());
+		System.out.println(getIdBicicleta());
 		System.out.println("Tipo de Bicicleta: \n"+ getTipo());
 	}
 	
-	public void estoque(String[] args) {
+	public int estoque() {
 		
-		int identificador = 0;
+		int id = 0; //nao sei como declarar essa variave para levar todos os numeros, ele ta retornando so o ultimo por ser int.
 		
 		//Definindo id para uma bike do array de 50.
 		for(int i = 0; i < IdBikes.length; i++) {
@@ -124,13 +140,15 @@ public class Bicicleta {
 	            }
         }
         
-		System.out.println("Id de bike: ");
+		System.out.println("ID da Bicicleta: ");
         for (int[] linha : IdBikes  ) {
             for (int coluna : linha ) {
                 System.out.print(coluna + " ");
+                id = coluna;
             }
             System.out.println();
         }
+        return id;
 	}
 
 }
