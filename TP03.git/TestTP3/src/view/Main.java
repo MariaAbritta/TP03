@@ -15,9 +15,9 @@ public class Main {
 		int opcaoMenuInicial = 0;
 		Scanner resposta = new Scanner(System.in);
 		
-		System.out.println("Bicicletas: \n");
-		bicicleta.buscarBicicleta();
-		//bicicleta.listarBicicleta();
+		System.out.println("Bicicletarios: \n");
+		bicicletario.listarBicicletario();
+		bicicletario.buscarBicicletario();
 		
 		
 		/*do {

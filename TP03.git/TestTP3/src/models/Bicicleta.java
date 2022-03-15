@@ -68,10 +68,10 @@ public class Bicicleta {
 				case 1:
 					System.out.println("------------------------------");
 					System.out.println("Bicicletas Urbanas:");
-					System.out.println("Se você pretende andar de bike pelas ruas da cidade, \n"
+					System.out.println("Se voce pretende andar de bike pelas ruas da cidade, \n"
 							+ "seja para uso como transporte ao trabalho, \n"
 							+ "faculdade ou simplesmente para aqueles passeios nos parques, \n"
-							+ "jardins e ciclovias, a escolha é uma bicicleta urbana.\n");
+							+ "jardins e ciclovias, a escolha e uma bicicleta urbana.\n");
 					System.out.println("Ativas: 25");
 					System.out.println("Deseja alugar alguma? sim // nao");
 					Scanner resposta2 = new Scanner(System.in);
@@ -94,11 +94,11 @@ public class Bicicleta {
 					break;
 				case 2:
 					System.out.println("------------------------------");
-					System.out.println("Bicicletas Elétricas:");
-					System.out.println("Uma bicicleta elétrica é uma bicicleta comum equipada com \n"
-							+ "um motor elétrico numa das rodas e uma bateria lithium de última geração, \n"
-							+ "ajudando nas deslocações pela cidade ou zonas  rurais, podendo eliminar \n"
-							+ "qualquer tipo de esforço. \n");
+					System.out.println("Bicicletas Eletricas:");
+					System.out.println("Uma bicicleta eletrica e uma bicicleta comum equipada com \n"
+							+ "um motor eletrico numa das rodas e uma bateria lithium de ultima geracao, \n"
+							+ "ajudando nas deslocacoes pela cidade ou zonas  rurais, podendo eliminar \n"
+							+ "qualquer tipo de esforco. \n");
 					System.out.println("Ativas: 15");
 					//Fazer as ativas e inativas
 					System.out.println("------------------------------");
@@ -106,9 +106,9 @@ public class Bicicleta {
 				case 3:
 					System.out.println("------------------------------");
 					System.out.println("Bicicletas Mountain Bike");
-					System.out.println("Mountain bike é o esporte que coloca o ciclista na montanha \n"
-							+ "e em qualquer lugar fora dela. Ou seja, é a modalidade mais versátil, \n"
-							+ "pois, a MTB tem peças e um design que permite que você pedale \n"
+					System.out.println("Mountain bike e o esporte que coloca o ciclista na montanha \n"
+							+ "e em qualquer lugar fora dela. Ou seja, e a modalidade mais versatil, \n"
+							+ "pois, a MTB tem pecas e um design que permite que voce pedale \n"
 							+ "por qualquer terreno, sendo uma bicileta mais leve. \n");
 					System.out.println("Ativas: 10");
 					//Fazer as ativas e inativas
