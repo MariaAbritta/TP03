@@ -98,40 +98,14 @@ public class Bicicletario {
 		int hora = 0;
 		System.out.println("Qual horario voce deseja ir ao bicicletario?: ");
 		hora = resposta.nextInt();
-		switch(hora) {
-			case 6:
-			case 7:
-			case 8:
-			case 9:
-			case 10:
-			case 11:
-			case 12:
-			case 13:
-			case 14:
-			case 15:
-			case 16:
-			case 17:
-			case 18:
-			case 19:
-			case 20:
-				System.out.println("Nesse horario estamos ativos! Fechamos as 21h. \n");
-				break;
-			case 21:
-			case 22:
-			case 23:
-			case 0:
-			case 1:
-			case 2:
-			case 3:
-			case 4:
-			case 5:
-				System.out.println("Nesse horario estamos inativos! Abrimos as 6h. \n");
-				break;
-			default: 
-				System.out.println("Hora inválida.");
-				break;
+		if(hora>=6 || hora<21){
+			System.out.println("Funcionando");
+		}else if(hora<6 || hora>21){
+			System.out.println("Não estamos funcionando");
+		}else{
+			System.out.println("Horario invalido");
 		}
-		this.funcionamento = hora;
+		setFuncionamento(hora);
 	}
 
 }
