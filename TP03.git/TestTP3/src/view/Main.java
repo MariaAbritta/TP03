@@ -15,10 +15,11 @@ public class Main {
 		int opcaoMenuInicial = 0;
 		Scanner resposta = new Scanner(System.in);
 		
-		System.out.println("Bicicletarios: \n");
-		bicicletario.listarBicicletario();
-		bicicletario.buscarBicicletario();
-		
+		System.out.println("Usuario: \n");
+		user.cadastrarUsuario();
+		//user.editarUsuario();
+		//user.deletarUsuario();
+		//user.listarUsuario();
 		
 		/*do {
 			opcaoMenuInicial = Menu(opcaoMenuInicial, resposta);
