@@ -92,7 +92,7 @@ public class Usuario {
 				if(!respostaNome.substring(0).matches("[A-Z]*")){
 					validarNome = false;
 				}
-			}while(validarNome = false);
+			}while(validarNome == false);
 		} //ERRO: While não tá funcionando
 		/////////////////////////////////////////////////////////////
 		System.out.println("E-mail do usuario: ");
@@ -111,7 +111,7 @@ public class Usuario {
 				if(!respostaEmail.substring(0).matches("[@]*")){
 					validarEmail = false;
 				}
-			}while(validarEmail = false);
+			}while(validarEmail == false);
 		} //ERRO: While não tá funcionando
 		/////////////////////////////////////////////////////////////
 		System.out.println("RG do usuario, apenas numeros!: ");
@@ -129,7 +129,7 @@ public class Usuario {
 				if(respostaRG.length() != 7){
 					validarRG = false;
 				}
-			}while(validarRG = false);
+			}while(validarRG == false);
 		}
 		if(!respostaRG.substring(0).matches("[0-9]*")){
 			validarRG = false;
@@ -140,7 +140,7 @@ public class Usuario {
 				if(!respostaRG.substring(0).matches("[0-9]*")){
 					validarRG = false;
 				}
-			}while(validarRG = false);
+			}while(validarRG == false);
 		}//ERRO: While não tá funcionando
 		/////////////////////////////////////////////////////////////
 		System.out.println("CPF do usuario, apenas numeros!:");
@@ -169,7 +169,7 @@ public class Usuario {
 				if(!respostaCPF.substring(0).matches("[0-9]*")){
 					validarCPF = false;
 				}
-			}while(validarCPF = false);
+			}while(validarCPF == false);
 		}//ERRO: While não tá funcionando
 		/////////////////////////////////////////////////////////////
 		System.out.println("Senha do usuario. A senha deve conter inicialmente \n"
@@ -213,7 +213,7 @@ public class Usuario {
 				if(!respostaSenha.substring(3).matches("[0-9]*")){
 					validarSenha = false;
 				}
-			}while(validarSenha = false);
+			}while(validarSenha == false);
 		}//ERRO: While não tá funcionando
 		/////////////////////////////////////////////////////////////
 		System.out.println("Telefone do usuarios, apenas numero!: ");
@@ -244,7 +244,7 @@ public class Usuario {
 				if(!respostaTel.substring(0).matches("[0-9]*")){
 					validarTel = false;
 				}
-			}while(validarTel = false);
+			}while(validarTel == false);
 		}//ERRO: While não tá funcionando
 		/////////////////////////////////////////////////////////////
 		System.out.println("------------------------------");
