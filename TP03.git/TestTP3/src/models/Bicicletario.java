@@ -6,6 +6,7 @@ public class Bicicletario {
 	//Atributos
 	private String localizacao;
 	private int funcionamento;
+	private int horarioCliente;
 	private int disponibilidadeBicicletas;
 	
 	public Bicicletario() {
@@ -70,7 +71,7 @@ public class Bicicletario {
 								+ "Coordenadas: 15° 48' 1.236\" S 47° 54' 28.081\" O\n"
 								+ "Horarios: Atendimento 24 horas.\n");
 						System.out.println("Numero de Bicicletas disponiveis: "+ getDisponibilidadeBicicletas()); //Temos que dividir entre 25 pro parque arah e 25 pro parque aguas
-						System.out.println("Funcionamento:"); HoraFuncionamento(); //Usar o get
+						System.out.println("Funcionamento: Das 6h as 21h"); 
 						System.out.println("------------------------------");
 					break;
 				case 2:
@@ -82,7 +83,7 @@ public class Bicicletario {
 							+ "Coordenadas:	15° 49' 58.36\" S 48° 1' 49.21\" O\n"
 							+ "Horarios: Diariamente, das 06h as 22h\n");
 					System.out.println("Numero de Bicicletas disponiveis: "+ getDisponibilidadeBicicletas());
-					System.out.println("Funcionamento:"); HoraFuncionamento(); //Usar o get
+					System.out.println("Funcionamento: Das 6h as 21h"); 
 					//Fazer as ativas e inativas
 					System.out.println("------------------------------");
 					break;
@@ -105,7 +106,7 @@ public class Bicicletario {
 		}else{
 			System.out.println("Horario invalido");
 		}
-		setFuncionamento(hora);
+		horarioCliente = hora;
 	}
 
 }
