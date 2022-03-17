@@ -154,3 +154,9 @@ public class Bicicleta {
         return id;
 	}
 }
+
+/*
+ * Usar os gets e sets
+ * Fazer os arryas de cada tipo de bike e quantas vão ter 
+ * Fazer a ponte com o bicicletario
+ * */

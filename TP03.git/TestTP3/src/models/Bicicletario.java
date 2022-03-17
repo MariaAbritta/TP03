@@ -114,7 +114,7 @@ public class Bicicletario {
 			case 18:
 			case 19:
 			case 20:
-				System.out.println("Nesse horario estamos ativos! Fechamos as 21h.\n");
+				System.out.println("Nesse horario estamos ativos! Fechamos as 21h. \n");
 				break;
 			case 21:
 			case 22:
@@ -125,7 +125,7 @@ public class Bicicletario {
 			case 3:
 			case 4:
 			case 5:
-				System.out.println("Nesse horario estamos inativos! Abrimos as 6h.\n");
+				System.out.println("Nesse horario estamos inativos! Abrimos as 6h. \n");
 				break;
 			default: 
 				System.out.println("Hora inválida.");
