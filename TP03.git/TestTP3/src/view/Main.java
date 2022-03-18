@@ -8,7 +8,6 @@ public class Main {
 		//Instancia do objeto
 		Bicicletario bicicletario = new Bicicletario();
 		Bicicleta bicicleta = new Bicicleta();
-		Tempo tempo = new Tempo();
 		Pagamento pagamento = new Pagamento();
 		Usuario user = new Usuario();
 		Viagem viagem = new Viagem();
@@ -42,13 +41,6 @@ public class Main {
 					bicicleta.listarBicicleta();
 					break;
 				case 4:
-					System.out.println("Tempo: \n");
-					tempo.cadastroTempoDeViagem();
-					tempo.editarTempoDeViagem();
-					tempo.deletarTempoDeViagem();
-					tempo.listarTempoDeViagem();
-					break;
-				case 5:
 					System.out.println("Viagem: \n");
 					viagem.cadastarViagem();
 					viagem.buscarViagem();
@@ -56,24 +48,24 @@ public class Main {
 					viagem.editarViagem();
 					viagem.listarViagem();
 					break;
-				case 6:
+				case 5:
 					System.out.println("Pedido\n");
 					break;
-				case 7:
+				case 6:
 					System.out.println("Pagamento: \n");
 					pagamento.cadastrarPagamento();
 					pagamento.editarPagamento();
 					pagamento.deletarPagamento();
 					pagamento.listarPagamento();
 					break;
-				case 8:
+				case 7:
 					System.out.println("Obrigado por usar o nosso App!\n"
 							+ "- Maria Abritta\n"
 							+ "- Thyago Moura\n");
 					break;
 				default:
 					System.out.println("Opcao invalida. Por favor, escolha uma\n"
-							+ "opcaoo de 1 a 8, somente.\n");
+							+ "opcaoo de 1 a 7, somente.\n");
 				
 			}
 		}while (opcaoMenuInicial != 8);
@@ -85,11 +77,10 @@ public class Main {
 		System.out.print("| Opcao 1 - Usuario            |\n");
 		System.out.print("| Opcao 2 - Bicicletarios      |\n");
 		System.out.print("| Opcao 3 - Bicicletas         |\n");
-		System.out.print("| Opcao 4 - Tempo              |\n");
-		System.out.print("| Opcao 5 - Viagem             |\n");
-		System.out.print("| Opcao 6 - Pedido             |\n");
-		System.out.print("| Opcao 7 - Pagamento          |\n");
-		System.out.print("| Opcao 8 - Sair               |\n");
+		System.out.print("| Opcao 4 - Viagem             |\n");
+		System.out.print("| Opcao 5 - Pedido             |\n");
+		System.out.print("| Opcao 6 - Pagamento          |\n");
+		System.out.print("| Opcao 7 - Sair               |\n");
 		System.out.print("|------------------------------|\n");
 		System.out.print("Digite uma opcao:\n");
 		opcaoMenuInicial = resposta.nextInt();
