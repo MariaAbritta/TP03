@@ -37,8 +37,8 @@ public class Pagamento {
 	}
 
 	public void setValorTotalPagamento(double valorTotalPagamento) {
-		Tempo tempo = new Tempo();
-		valorTotalPagamento = tempo.getMinutosViagem();
+		//Tempo tempo = new Tempo();
+		//valorTotalPagamento = tempo.getMinutosViagem();
 		
 		valorTotalPagamento = valorTotalPagamento * 0.5; 
 		this.valorTotalPagamento = valorTotalPagamento;
@@ -50,8 +50,8 @@ public class Pagamento {
 	}
 
 	public void setFinalTotalViagem(float finalTotalViagem) {
-		Tempo tempo = new Tempo();
-		finalTotalViagem = tempo.getMinutosViagem();
+		//Tempo tempo = new Tempo();
+		//finalTotalViagem = tempo.getMinutosViagem();
 		this.finalTotalViagem = finalTotalViagem;
 	}
 
