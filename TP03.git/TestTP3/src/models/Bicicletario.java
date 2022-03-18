@@ -78,7 +78,7 @@ public class Bicicletario {
 						System.out.println("Numero de Bicicletas disponiveis: "+ getDisponibilidadeBicicletas());
 						System.out.println("Funcionamento: Das 6h as 21h");
 						StatusFuncionamento();
-						System.out.println("Status: " + getfuncionamento());
+						System.out.println("Status: " + getFuncionamento());
 						System.out.println("------------------------------");
 					break;
 				case 2:
@@ -95,7 +95,7 @@ public class Bicicletario {
 					System.out.println("Numero de Bicicletas disponiveis: "+ getDisponibilidadeBicicletas());
 					System.out.println("Funcionamento: Das 6h as 21h");
 					StatusFuncionamento();
-					System.out.println("Status: " + getfuncionamento());
+					System.out.println("Status: " + getFuncionamento());
 					System.out.println("------------------------------");
 					break;
 				default:
@@ -118,6 +118,7 @@ public class Bicicletario {
 		}else{
 			setFuncionamento("Invalido horario nao encontrado");
 		}
+		return funcionamento;
 	}
 
 }

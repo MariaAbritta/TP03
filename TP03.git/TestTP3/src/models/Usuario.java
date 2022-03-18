@@ -92,13 +92,8 @@ public class Usuario {
 				if(!respostaNome.substring(0).matches("[A-Z]*")){
 					validarNome = false;
 				}
-<<<<<<< HEAD
-			}while(validarNome = false);
-		} //ERRO: While não tá funcionando
-=======
 			}while(validarNome == false);
-		} //ERRO: While nÃ£o tÃ¡ funcionando
->>>>>>> branch 'main' of https://github.com/MariaAbritta/TP03.git
+		}
 		/////////////////////////////////////////////////////////////
 		System.out.println("E-mail do usuario: ");
 		setEmail(ler.next());
@@ -116,145 +111,8 @@ public class Usuario {
 				if(!respostaEmail.substring(0).matches("[@]*")){
 					validarEmail = false;
 				}
-<<<<<<< HEAD
-			}while(validarEmail = false);
-		} //ERRO: While não tá funcionando
-		/////////////////////////////////////////////////////////////
-		System.out.println("RG do usuario, apenas numeros!: ");
-		setRg(ler.next());
-		// Validacao do RG de quantidade certa de numeros e apenas numeros:
-		boolean validarRG = true;
-		String respostaRG;
-		respostaRG = getRg();
-		if(respostaRG.length() != 7){
-			validarRG = false;
-			do {
-				System.out.println("Erro! Um RG possui 7 numeros. Insira um RG valido:");
-				setRg(ler.next());
-				respostaRG = getRg();
-				if(respostaRG.length() != 7){
-					validarRG = false;
-				}
-			}while(validarRG = false);
-		}
-		if(!respostaRG.substring(0).matches("[0-9]*")){
-			validarRG = false;
-			do {
-				System.out.println("Erro! Um RG possui apenas numeros. Insira um RG valido:");
-				setRg(ler.next());
-				respostaRG = getRg();
-				if(!respostaRG.substring(0).matches("[0-9]*")){
-					validarRG = false;
-				}
-			}while(validarRG = false);
-		}//ERRO: While não tá funcionando
-		/////////////////////////////////////////////////////////////
-		System.out.println("CPF do usuario, apenas numeros!:");
-		setCpf(ler.next());
-		// Validacao do CPF de quantidade certa de numeros e apenas numeros:
-		boolean validarCPF = true;
-		String respostaCPF;
-		respostaCPF = getCpf();
-		if(respostaCPF.length() != 11){
-			validarCPF = false;
-			do {
-				System.out.println("Erro! Um CPF possui 11 numeros. Insira um CPF valido: ");
-				setCpf(ler.next());
-				respostaCPF = getCpf();
-				if(respostaCPF.length() != 11){
-					validarCPF = false;
-				}
-			}while(validarCPF = false);
-		}
-		if(!respostaCPF.substring(0).matches("[0-9]*")){
-			validarCPF = false;
-			do {
-				System.out.println("Erro! Um CPF possui apenas numeros. Insira um CPF valido: ");
-				setCpf(ler.next());
-				respostaCPF = getCpf();
-				if(!respostaCPF.substring(0).matches("[0-9]*")){
-					validarCPF = false;
-				}
-			}while(validarCPF = false);
-		}//ERRO: While não tá funcionando
-		/////////////////////////////////////////////////////////////
-		System.out.println("Senha do usuario. A senha deve conter inicialmente \n"
-				+ "3 letras maiusculas e no final 4 numeros:");
-		setSenha(ler.next());
-		// Validacao da SENHA de quantidade certa de letras e numeros:
-		boolean validarSenha = true;
-		String respostaSenha;
-		respostaSenha = getSenha();
-		if(respostaSenha.length() != 7){
-			validarSenha = false;
-			do {
-				System.out.println("Erro! Uma senha deve ter tamanho de 7 caracteres. \n"
-						+ "Insira uma senha valida:");
-				setSenha(ler.next());
-				respostaSenha = getSenha();
-				if(respostaSenha.length() != 11){
-					validarSenha = false;
-				}
-			}while(validarSenha = false);
-		}
-		if(!respostaSenha.substring(0, 3).matches("[A-Z]*")){
-			validarSenha = false;
-			do {
-				System.out.println("Erro! Uma senha precisa inicialmente ter 3 letras maiusculas. \n"
-						+ "Insira uma senha valida: ");
-				setSenha(ler.next());
-				respostaSenha = getSenha();
-				if(!respostaSenha.substring(0, 3).matches("[A-Z]*")){
-					validarSenha = false;
-				}
-			}while(validarSenha = false);
-		}
-		if(!respostaSenha.substring(3).matches("[0-9]*")){
-			validarSenha = false;
-			do {
-				System.out.println("Erro! Uma senha precisa ter 4 numeros em seu final. \n"
-						+ "Insira uma senha valida:");
-				setSenha(ler.next());
-				respostaSenha = getSenha();
-				if(!respostaSenha.substring(3).matches("[0-9]*")){
-					validarSenha = false;
-				}
-			}while(validarSenha = false);
-		}//ERRO: While não tá funcionando
-		/////////////////////////////////////////////////////////////
-		System.out.println("Telefone do usuarios, apenas numero!: ");
-		setTelefone(ler.next());	
-		// Validacao do TELEFONE de quantidade certa de numeros e apenas numeros:
-		boolean validarTel = true;
-		String respostaTel;
-		respostaTel = getTelefone();
-		if(respostaTel.length() != 9){
-			validarTel = false;
-			do {
-				System.out.println("Erro! Um telefone possui 9 numeros. \n"
-						+ "Insira um telefone valido: ");
-				setTelefone(ler.next());
-				respostaTel = getTelefone();
-				if(respostaTel.length() != 9){ //ERRO: Ta indo com 8 
-					validarTel = false;
-				}
-			}while(validarTel = false);
-		}
-		if(!respostaTel.substring(0).matches("[0-9]*")){
-			validarTel = false;
-			do {
-				System.out.println("Erro! Um telefone possui apenas numeros.\n "
-						+ "Insira um telefone valido:");
-				setTelefone(ler.next());
-				respostaTel = getTelefone();
-				if(!respostaTel.substring(0).matches("[0-9]*")){
-					validarTel = false;
-				}
-			}while(validarTel = false);
-		}//ERRO: While não tá funcionando
-=======
 			}while(validarEmail == false);
-		} //ERRO: While nÃ£o tÃ¡ funcionando
+		}
 		/////////////////////////////////////////////////////////////
 		System.out.println("RG do usuario, apenas numeros!: ");
 		setRg(ler.next());
@@ -283,7 +141,7 @@ public class Usuario {
 					validarRG = false;
 				}
 			}while(validarRG == false);
-		}//ERRO: While nÃ£o tÃ¡ funcionando
+		}
 		/////////////////////////////////////////////////////////////
 		System.out.println("CPF do usuario, apenas numeros!:");
 		setCpf(ler.next());
@@ -312,7 +170,7 @@ public class Usuario {
 					validarCPF = false;
 				}
 			}while(validarCPF == false);
-		}//ERRO: While nÃ£o tÃ¡ funcionando
+		}
 		/////////////////////////////////////////////////////////////
 		System.out.println("Senha do usuario. A senha deve conter inicialmente \n"
 				+ "3 letras maiusculas e no final 4 numeros:");
@@ -356,7 +214,7 @@ public class Usuario {
 					validarSenha = false;
 				}
 			}while(validarSenha == false);
-		}//ERRO: While nÃ£o tÃ¡ funcionando
+		}
 		/////////////////////////////////////////////////////////////
 		System.out.println("Telefone do usuarios, apenas numero!: ");
 		setTelefone(ler.next());	
@@ -387,8 +245,7 @@ public class Usuario {
 					validarTel = false;
 				}
 			}while(validarTel == false);
-		}//ERRO: While nÃ£o tÃ¡ funcionando
->>>>>>> branch 'main' of https://github.com/MariaAbritta/TP03.git
+		}
 		/////////////////////////////////////////////////////////////
 		System.out.println("------------------------------");
 	}
@@ -422,7 +279,7 @@ public class Usuario {
 	}
 	
 	public void listarUsuario() {
-		System.out.println("InformaÃ§Ãµes do usuario: \n");
+		System.out.println("Informações do usuario: \n");
 		
 		System.out.println("Nome: \n" + getNome());
 		System.out.println("Email: \n" + getEmail());

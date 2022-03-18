@@ -157,10 +157,7 @@ public class Bicicleta {
 
 /*
  * Usar os gets e sets
-<<<<<<< HEAD
  * Fazer os arryas de cada tipo de bike e quantas vão ter 
-=======
  * Fazer os arryas de cada tipo de bike e quantas vÃ£o ter 
->>>>>>> branch 'main' of https://github.com/MariaAbritta/TP03.git
  * Fazer a ponte com o bicicletario
  * */
