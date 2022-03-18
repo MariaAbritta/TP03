@@ -77,7 +77,8 @@ public class Bicicletario {
 						setDisponibilidadeBicicletas(numBikes);
 						System.out.println("Numero de Bicicletas disponiveis: "+ getDisponibilidadeBicicletas());
 						System.out.println("Funcionamento: Das 6h as 21h");
-						getfuncionamento(StatusFuncionamento());
+						StatusFuncionamento();
+						System.out.println("Status: " + getfuncionamento());
 						System.out.println("------------------------------");
 					break;
 				case 2:
@@ -92,8 +93,9 @@ public class Bicicletario {
 					numBikes = random.nextInt(20);
 					setDisponibilidadeBicicletas(numBikes);
 					System.out.println("Numero de Bicicletas disponiveis: "+ getDisponibilidadeBicicletas());
-					System.out.println("Funcionamento: Das 6h as 21h"); 
-					getfuncionamento(StatusFuncionamento());
+					System.out.println("Funcionamento: Das 6h as 21h");
+					StatusFuncionamento();
+					System.out.println("Status: " + getfuncionamento());
 					System.out.println("------------------------------");
 					break;
 				default:
