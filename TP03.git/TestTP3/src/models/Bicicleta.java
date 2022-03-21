@@ -80,7 +80,7 @@ public class Bicicleta {
 					switch(opAluguelUrbana) {
 						case "sim":
 							System.out.println("Qual localizacao voce se encontra? ");
-							//System.out.println(Bicicletario.getLocalizacao()); Puxar as localizações que temos bicicletarios e entregar o id da bike que ele quer
+							//System.out.println(Bicicletario.getLocalizacao()); Puxar as localizaÃ§Ãµes que temos bicicletarios e entregar o id da bike que ele quer
 							//Criar um array das bikes Urbanas
 							//Repetir com os outros 2 tipos de bike
 						break;
@@ -157,7 +157,14 @@ public class Bicicleta {
 
 /*
  * Usar os gets e sets
+<<<<<<< HEAD
  * Fazer os arryas de cada tipo de bike e quantas v�o ter 
+=======
+>>>>>>> branch 'main' of https://github.com/MariaAbritta/TP03.git
  * Fazer os arryas de cada tipo de bike e quantas vão ter 
+<<<<<<< HEAD
+=======
+ * Fazer os arryas de cada tipo de bike e quantas vÃ£o ter 
+>>>>>>> branch 'main' of https://github.com/MariaAbritta/TP03.git
  * Fazer a ponte com o bicicletario
  * */

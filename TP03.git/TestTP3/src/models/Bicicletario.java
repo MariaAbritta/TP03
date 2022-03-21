@@ -49,7 +49,7 @@ public class Bicicletario {
 	
 	//Metodos
 	public void listarBicicletario() {
-		System.out.println("Localização: \n" + getLocalizacao());
+		System.out.println("LocalizaÃ§Ã£o: \n" + getLocalizacao());
 	}
 	
 	public void buscarBicicletario() {
@@ -69,8 +69,8 @@ public class Bicicletario {
 				case 1:
 						System.out.println("------------------------------\n");
 						System.out.println("Parque da Cidade Dona Sarah Kubitschek:");
-						System.out.println("Endereço: Srps - Brasilia, DF, 70297-400\n"
-								+ "Coordenadas: 15° 48' 1.236\" S 47° 54' 28.081\" O\n"
+						System.out.println("EndereÃ§o: Srps - Brasilia, DF, 70297-400\n"
+								+ "Coordenadas: 15Â° 48' 1.236\" S 47Â° 54' 28.081\" O\n"
 								+ "Horarios: Atendimento 24 horas.\n"
 						);
 						numBikes = random.nextInt(20);
@@ -84,10 +84,10 @@ public class Bicicletario {
 				case 2:
 					System.out.println("------------------------------\n");
 					System.out.println("Parque Ecologico");
-					System.out.println("Endereço: Avenida Castanheiras – Centro.\n"
+					System.out.println("EndereÃ§o: Avenida Castanheiras â€“ Centro.\n"
 							+ "Situado atras da Residencia Oficial de Aguas Claras,\n"
 							+ "entre as quadras 301, 104, 105 e 106 da cidade.\n"
-							+ "Coordenadas:	15° 49' 58.36\" S 48° 1' 49.21\" O\n"
+							+ "Coordenadas:	15Â° 49' 58.36\" S 48Â° 1' 49.21\" O\n"
 							+ "Horarios: Diariamente, das 06h as 22h\n"
 					);
 					numBikes = random.nextInt(20);
