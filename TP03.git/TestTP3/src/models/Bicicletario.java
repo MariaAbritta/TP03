@@ -22,8 +22,8 @@ public class Bicicletario {
 
 	//Gets and sets
 	public String getLocalizacao() {
-		localizacao = "Brasilia - Asa Sul - Parque da Cidade Dona Sarah Kubitschek\n"
-				+ "Brasilia - Aguas Claras - Parque Ecologico\n";
+		localizacao = "1 - Brasilia - Asa Sul - Parque da Cidade Dona Sarah Kubitschek\n"
+				+ "2 - Brasilia - Aguas Claras - Parque Ecologico de Aguas Claras\n";
 		return localizacao;
 	}
 
@@ -61,7 +61,7 @@ public class Bicicletario {
 		
 		System.out.println("Buscar Bicicletario: ");
 		System.out.println("Digite 1 para ver o Parque da Cidade Dona Sarah Kubitschek");
-		System.out.println("Digite 2 para ver o Parque Ecologico");
+		System.out.println("Digite 2 para ver o Parque Ecologico de Aguas Claras");
 		opcaoBike = resposta.nextInt();
 		
 		do {
@@ -69,8 +69,7 @@ public class Bicicletario {
 				case 1:
 						System.out.println("------------------------------\n");
 						System.out.println("Parque da Cidade Dona Sarah Kubitschek:");
-						System.out.println("EndereÃ§o: Srps - Brasilia, DF, 70297-400\n"
-								+ "Coordenadas: 15Â° 48' 1.236\" S 47Â° 54' 28.081\" O\n"
+						System.out.println("Endereco: Srps - Brasilia, DF, 70297-400\n"
 								+ "Horarios: Atendimento 24 horas.\n"
 						);
 						numBikes = random.nextInt(20);
@@ -83,11 +82,10 @@ public class Bicicletario {
 					break;
 				case 2:
 					System.out.println("------------------------------\n");
-					System.out.println("Parque Ecologico");
-					System.out.println("EndereÃ§o: Avenida Castanheiras â€“ Centro.\n"
+					System.out.println("Parque Ecologico de Aguas Claras");
+					System.out.println("Endereco: Avenida Castanheiras.\n"
 							+ "Situado atras da Residencia Oficial de Aguas Claras,\n"
 							+ "entre as quadras 301, 104, 105 e 106 da cidade.\n"
-							+ "Coordenadas:	15Â° 49' 58.36\" S 48Â° 1' 49.21\" O\n"
 							+ "Horarios: Diariamente, das 06h as 22h\n"
 					);
 					numBikes = random.nextInt(20);

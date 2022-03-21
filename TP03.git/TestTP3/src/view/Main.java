@@ -14,11 +14,8 @@ public class Main {
 		int opcaoMenuInicial = 0;
 		Scanner resposta = new Scanner(System.in);
 		
-		System.out.println("Usuario: \n");
-		user.cadastrarUsuario();
-		//user.editarUsuario();
-		//user.deletarUsuario();
-		//user.listarUsuario();
+		
+		bicicleta.buscarBicicleta();
 		
 		/*do {
 			opcaoMenuInicial = Menu(opcaoMenuInicial, resposta);
