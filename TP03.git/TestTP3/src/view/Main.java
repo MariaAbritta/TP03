@@ -39,6 +39,11 @@ public class Main {
 					opcaoMenusInternos = resposta.nextInt();
 					execBicicletario(opcaoMenusInternos);
 					break;
+				case 3:
+					menuBicicletas();
+					opcaoMenusInternos = resposta.nextInt();
+					execBicicletas(opcaoMenusInternos);
+					break;
 				case 7:
 					System.out.println("Obrigado por usar o nosso App!\n"
 							+ "- Maria Abritta\n"
@@ -93,11 +98,21 @@ public class Main {
 	public static void menuBicicletario() {
 		System.out.print("|-------- App BikeAqui! -------|\n");
 		System.out.print("|------------------------------|\n");
-		System.out.print("|           Bicicletario       |\n");
+		System.out.print("|          Bicicletario        |\n");
 		System.out.print("| Opcao 1 - Listar Bicicletario|\n");
 		System.out.print("| Opcao 2 - Buscar Bicicletario|\n");
 		System.out.print("|------------------------------|\n");
 	}
+	
+	public static void menuBicicletas() {
+		System.out.print("|-------- App BikeAqui! -------|\n");
+		System.out.print("|------------------------------|\n");
+		System.out.print("|          Bicicletas          |\n");
+		System.out.print("| Opcao 1 - Buscar Bicicletas  |\n");
+		System.out.print("| Opcao 2 - Listar Bicicletas  |\n");
+		System.out.print("|------------------------------|\n");
+	}
+	
 	//funcoes de valencia
 	public static boolean verificarCadastro(int opcaoMenuCadastro,boolean cadastrado) {
 		Scanner resposta = new Scanner(System.in);
@@ -154,6 +169,21 @@ public class Main {
 				break;
 			case 2:
 				bicicletario.buscarBicicletario();
+				break;
+			default:
+				System.out.print("| Opcao nao encontrada   |\n");
+				break;
+		}
+	}
+	
+	public static void execBicicletas(int opcaoMenusInternos) {
+		Bicicleta bicicletas = new Bicicleta();
+		switch(opcaoMenusInternos) {
+			case 1:
+				bicicletas.buscarBicicleta();
+				break;
+			case 2:
+				bicicletas.listarBicicleta(); 
 				break;
 			default:
 				System.out.print("| Opcao nao encontrada   |\n");
