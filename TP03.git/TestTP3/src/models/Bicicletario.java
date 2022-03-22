@@ -49,7 +49,7 @@ public class Bicicletario {
 	
 	//Metodos
 	public void listarBicicletario() {
-		System.out.println("LocalizaÃ§Ã£o: \n" + getLocalizacao());
+		System.out.println("Localizacao: \n" + getLocalizacao());
 	}
 	
 	public void buscarBicicletario() {
@@ -77,7 +77,7 @@ public class Bicicletario {
 						System.out.println("Numero de Bicicletas disponiveis: "+ getDisponibilidadeBicicletas());
 						System.out.println("Funcionamento: Das 6h as 21h");
 						StatusFuncionamento();
-						System.out.println("Status: " + getFuncionamento());
+						System.out.println("Status no horario escolhido: " + getFuncionamento());
 						System.out.println("------------------------------");
 					break;
 				case 2:
@@ -109,7 +109,7 @@ public class Bicicletario {
 		System.out.println("Qual horario voce deseja ir ao bicicletario?: ");
 		hora = resposta.nextInt();
 		
-		if(hora>=6 || hora<21){
+		if(hora>=6 || hora<=21){
 			setFuncionamento("Ativo");
 		}else if(hora<6 || hora>21){
 			setFuncionamento("Inativo");

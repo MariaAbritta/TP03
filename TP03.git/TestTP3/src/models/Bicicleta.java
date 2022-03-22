@@ -206,16 +206,5 @@ public class Bicicleta {
 	}
 }
 
-/*
- * Usar os gets e sets
-<<<<<<< HEAD
- * Fazer os arryas de cada tipo de bike e quantas v„o ter 
-=======
->>>>>>> branch 'main' of https://github.com/MariaAbritta/TP03.git
- * Fazer os arryas de cada tipo de bike e quantas v√£o ter 
-<<<<<<< HEAD
-=======
- * Fazer os arryas de cada tipo de bike e quantas v√É¬£o ter 
->>>>>>> branch 'main' of https://github.com/MariaAbritta/TP03.git
- * Fazer a ponte com o bicicletario
- * */
+//Bicicleta È um array em que seus ID's representam elas
+

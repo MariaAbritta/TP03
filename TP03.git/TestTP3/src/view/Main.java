@@ -6,7 +6,6 @@ public class Main {
 	public static void main(String[] args) {
 		
 		//Instancia do objeto
-//		Bicicletario bicicletario = new Bicicletario();
 //		Bicicleta bicicleta = new Bicicleta();
 //		Tempo tempo = new Tempo();
 //		Pagamento pagamento = new Pagamento();
@@ -18,7 +17,7 @@ public class Main {
 		int opcaoMenu = 0;
 		int opcaoMenuCadastro = 0;
 		int opcaoMenusInternos = 0;
-		boolean cadastrado = false;
+		boolean cadastrado = true;
 
 		
 		//verificar se o cadastro do user ta ativo
@@ -33,13 +32,18 @@ public class Main {
 				case 1:
 					menuUsuario();
 					opcaoMenusInternos = resposta.nextInt();
-					execOpcaoUser(opcaoMenusInternos, cadastrado);
+					execUsuario(opcaoMenusInternos, cadastrado);
 					break;
-
+				case 2:
+					menuBicicletario();
+					opcaoMenusInternos = resposta.nextInt();
+					execBicicletario(opcaoMenusInternos);
+					break;
 				case 7:
 					System.out.println("Obrigado por usar o nosso App!\n"
 							+ "- Maria Abritta\n"
 							+ "- Thyago Moura\n");
+					System.exit(0);
 					break;
 				default:
 					System.out.println("Opcao invalida. Por favor, escolha uma\n"
@@ -86,6 +90,14 @@ public class Main {
 		System.out.print("|------------------------------|\n");
 	}
 	
+	public static void menuBicicletario() {
+		System.out.print("|-------- App BikeAqui! -------|\n");
+		System.out.print("|------------------------------|\n");
+		System.out.print("|           Bicicletario       |\n");
+		System.out.print("| Opcao 1 - Listar Bicicletario|\n");
+		System.out.print("| Opcao 2 - Buscar Bicicletario|\n");
+		System.out.print("|------------------------------|\n");
+	}
 	//funcoes de valencia
 	public static boolean verificarCadastro(int opcaoMenuCadastro,boolean cadastrado) {
 		Scanner resposta = new Scanner(System.in);
@@ -111,7 +123,9 @@ public class Main {
 		return cadastrado;
 	}
 	
-	public static void execOpcaoUser(int opcaoMenusInternos, boolean cadastrado){
+	
+	//executar as opcoes do usuario
+	public static void execUsuario(int opcaoMenusInternos, boolean cadastrado){
 		Usuario user = new Usuario();
 		
 		switch(opcaoMenusInternos) {
@@ -125,6 +139,21 @@ public class Main {
 				user.deletarUsuario();
 				cadastrado = false;
 				verificarCadastro(0, cadastrado);
+				break;
+			default:
+				System.out.print("| Opcao nao encontrada   |\n");
+				break;
+		}
+	}
+	
+	public static void execBicicletario(int opcaoMenusInternos) {
+		Bicicletario bicicletario = new Bicicletario();
+		switch(opcaoMenusInternos) {
+			case 1:
+				bicicletario.listarBicicletario();
+				break;
+			case 2:
+				bicicletario.buscarBicicletario();
 				break;
 			default:
 				System.out.print("| Opcao nao encontrada   |\n");
