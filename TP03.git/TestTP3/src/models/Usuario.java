@@ -93,7 +93,7 @@ public class Usuario {
 					validarNome = false;
 				}
 			}while(validarNome == false);
-		} //ERRO: While não tá funcionando
+		}
 		/////////////////////////////////////////////////////////////
 		System.out.println("E-mail do usuario: ");
 		setEmail(ler.next());
@@ -112,7 +112,7 @@ public class Usuario {
 					validarEmail = false;
 				}
 			}while(validarEmail == false);
-		} //ERRO: While não tá funcionando
+		}
 		/////////////////////////////////////////////////////////////
 		System.out.println("RG do usuario, apenas numeros!: ");
 		setRg(ler.next());
@@ -141,7 +141,7 @@ public class Usuario {
 					validarRG = false;
 				}
 			}while(validarRG == false);
-		}//ERRO: While não tá funcionando
+		}
 		/////////////////////////////////////////////////////////////
 		System.out.println("CPF do usuario, apenas numeros!:");
 		setCpf(ler.next());
@@ -170,7 +170,7 @@ public class Usuario {
 					validarCPF = false;
 				}
 			}while(validarCPF == false);
-		}//ERRO: While não tá funcionando
+		}
 		/////////////////////////////////////////////////////////////
 		System.out.println("Senha do usuario. A senha deve conter inicialmente \n"
 				+ "3 letras maiusculas e no final 4 numeros:");
@@ -214,7 +214,7 @@ public class Usuario {
 					validarSenha = false;
 				}
 			}while(validarSenha == false);
-		}//ERRO: While não tá funcionando
+		}
 		/////////////////////////////////////////////////////////////
 		System.out.println("Telefone do usuarios, apenas numero!: ");
 		setTelefone(ler.next());	
@@ -245,7 +245,7 @@ public class Usuario {
 					validarTel = false;
 				}
 			}while(validarTel == false);
-		}//ERRO: While não tá funcionando
+		}
 		/////////////////////////////////////////////////////////////
 		System.out.println("------------------------------");
 	}
@@ -279,7 +279,7 @@ public class Usuario {
 	}
 	
 	public void listarUsuario() {
-		System.out.println("Informações do usuario: \n");
+		System.out.println("Informa��es do usuario: \n");
 		
 		System.out.println("Nome: \n" + getNome());
 		System.out.println("Email: \n" + getEmail());

@@ -1,5 +1,6 @@
 package models;
 
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -9,7 +10,9 @@ public class Bicicleta {
 	private long IdBicicleta;
 	private String tipo;
 	int[][] IdBikes = new int[1][6];
+	String[] BikesSarahUrb = new String [10];
 	Random random = new Random();
+	static Scanner ler = new Scanner(System.in);
 	
 	public Bicicleta() {
 		super();
@@ -24,7 +27,6 @@ public class Bicicleta {
 	public  String  getLocalizacao() {
 		Bicicletario bicicletario = new Bicicletario();
 		localizacao = bicicletario.getLocalizacao();
-		
 		return localizacao;
 	}
 
@@ -42,7 +44,6 @@ public class Bicicleta {
 	}
 
 	public String getTipo() {
-		tipo = "Montanha";
 		return tipo;
 	}
 
@@ -56,10 +57,12 @@ public class Bicicleta {
 		int opcaoBike = 0;
 		Scanner resposta = new Scanner(System.in);
 		
+		System.out.println("------------------------------");
 		System.out.println("Busque uma bicicleta: ");
 		System.out.println("Digite 1 para ver as Bicicletas Urbanas.");
 		System.out.println("Digite 2 para ver as Bicicletas Eletricas.");
 		System.out.println("Digite 3 para ver as Bicicletas Mountain Bike.");
+		System.out.println("------------------------------");
 		
 		opcaoBike = resposta.nextInt();
 		
@@ -72,23 +75,40 @@ public class Bicicleta {
 							+ "seja para uso como transporte ao trabalho, \n"
 							+ "faculdade ou simplesmente para aqueles passeios nos parques, \n"
 							+ "jardins e ciclovias, a escolha e uma bicicleta urbana.\n");
-					System.out.println("Ativas: 25");
-					System.out.println("Deseja alugar alguma? sim // nao");
-					Scanner resposta2 = new Scanner(System.in);
-					String opAluguelUrbana = "";
-					opAluguelUrbana = resposta2.next();
-					switch(opAluguelUrbana) {
-						case "sim":
-							System.out.println("Qual localizacao voce se encontra? ");
-							//System.out.println(Bicicletario.getLocalizacao()); Puxar as localizações que temos bicicletarios e entregar o id da bike que ele quer
-							//Criar um array das bikes Urbanas
-							//Repetir com os outros 2 tipos de bike
-						break;
-						case "nao":
-							System.out.println("OK!\n");
-						break;
+					System.out.println("Em qual bicicletario voce se encontra?: ");
+					Bicicleta loc = new Bicicleta();
+					loc.localizacao = " ";
+					String localizacao = loc.getLocalizacao();
+					System.out.println(localizacao);
+					int respostaLoc;
+					respostaLoc = resposta.nextInt();
+					switch(respostaLoc) {
+						case 1:
+							System.out.println("Ativas: " + BikesSarahUrb.length);
+							System.out.println("Deseja alugar alguma? sim // nao");
+							Scanner resposta2 = new Scanner(System.in);
+							String opAluguelUrbana = "";
+							opAluguelUrbana = resposta2.next();
+							switch(opAluguelUrbana) {
+								case "sim":
+									System.out.println("Quantas bicilcetas urbanas deseja alugar?:");
+									int numeroAluguel = ler.nextInt();
+									verificando(numeroAluguel, BikesSarahUrb, "alugada!");
+									ler.close();
+								break;
+								case "nao":
+									System.out.println("OK!\n");
+								break;
+							}
+							resposta2.close();
+							break;
+						case 2:
+							System.out.println("entrei2");
+							break;
+						default:
+							System.out.println("Esse bicicletario nao existe.");
+							break;
 					}
-					resposta2.close();
 					//Fazer as ativas e inativas
 					System.out.println("------------------------------");
 					break;
@@ -153,10 +173,49 @@ public class Bicicleta {
         }
         return id;
 	}
+	
+	public static void verificando (int quantasQuer, String[] BikesSarahUrb, String verificando) {
+	    if(!verificaNulo(BikesSarahUrb)) {
+	        System.out.println("N�o existe mais bicicletas urbanas disponiveis.");
+	        return;
+	    }
+	    int j = 1;
+	    if(BikesSarahUrb.length >= quantasQuer){
+	        for (int i = 0; i < BikesSarahUrb.length; i++){
+	            if(BikesSarahUrb[i] == null){
+	                if(j > quantasQuer){
+	                    break;
+	                }
+	                BikesSarahUrb[i] = verificando;
+	                j++;
+	            }
+	        }
+	    }
+	    System.out.println(Arrays.toString(BikesSarahUrb));
+	}
+	
+	public static boolean verificaNulo(String[] BikesSarahUrb){
+	    boolean nulo = false;
+	    for (String s: BikesSarahUrb) {
+	        if (s == null) {
+	            nulo = true;
+	            break;
+	        }
+	    }
+	    return nulo;
+	}
 }
 
 /*
  * Usar os gets e sets
+<<<<<<< HEAD
+ * Fazer os arryas de cada tipo de bike e quantas v�o ter 
+=======
+>>>>>>> branch 'main' of https://github.com/MariaAbritta/TP03.git
  * Fazer os arryas de cada tipo de bike e quantas vão ter 
+<<<<<<< HEAD
+=======
+ * Fazer os arryas de cada tipo de bike e quantas vÃ£o ter 
+>>>>>>> branch 'main' of https://github.com/MariaAbritta/TP03.git
  * Fazer a ponte com o bicicletario
  * */
