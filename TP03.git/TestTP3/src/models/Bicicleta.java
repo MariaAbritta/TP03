@@ -137,6 +137,7 @@ public class Bicicleta {
 	public static void verificando (int quantasQuer, String[] BikesSarahUrb, String verificando) {
 	    if(!verificaNulo(BikesSarahUrb)) {
 	        System.out.println("Não existe mais bicicletas urbanas disponiveis.");
+	        System.out.println("NÃ£o existe mais bicicletas urbanas disponiveis.");
 	        return;
 	    }
 	    int j = 1;
@@ -166,5 +167,5 @@ public class Bicicleta {
 	}
 }
 
-//Bicicleta é um array em que seus ID's representam elas
+//Bicicleta Ã© um array em que seus ID's representam elas
 
