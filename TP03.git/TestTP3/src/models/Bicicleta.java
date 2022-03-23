@@ -55,11 +55,6 @@ public class Bicicleta {
 	public void buscarBicicleta() {
 		
 		Scanner resposta = new Scanner(System.in);
-		Bicicleta loc = new Bicicleta();
-		String localizacao = loc.getLocalizacao();
-		String opAluguelUrbana = "";
-		int respostaLoc = 0;
-		
 		System.out.println("------------------------------");
 		System.out.println("Busque uma bicicleta: ");
 		System.out.println("------------------------------");
@@ -69,19 +64,25 @@ public class Bicicleta {
 				+ "faculdade ou simplesmente para aqueles passeios nos parques, \n"
 				+ "jardins e ciclovias, a escolha e uma bicicleta urbana.\n");
 		System.out.println("Em qual bicicletario voce se encontra?: ");
+		Bicicleta loc = new Bicicleta();
+		loc.localizacao = " ";
+		String localizacao = loc.getLocalizacao();
+		System.out.println(localizacao);
+		int respostaLoc;
 		respostaLoc = resposta.nextInt();
-		
 		//bug
 		switch(respostaLoc) {
 			case 1:
 				System.out.println("Ativas : " + BikesSarahUrb.length);
 				System.out.println("Deseja alugar alguma? sim // nao");
-				
+				String opAluguelUrbana = "";
 				opAluguelUrbana = resposta.next();
 				switch(opAluguelUrbana) {
 					case "sim":
-						//Caso sim, ir no array de bicicletas e ocupar um espaço como alugada
-
+						System.out.println("Quantas bicilcetas urbanas deseja alugar?:");
+						int numeroAluguel = ler.nextInt();
+						verificando(numeroAluguel, BikesSarahUrb, "alugada!");
+						ler.close();
 						break;
 					case "nao":
 						//Caso nao, voltar ao main menu
@@ -133,36 +134,36 @@ public class Bicicleta {
         return id;
 	}
 	
-//	public static void verificando (int quantasQuer, String[] BikesSarahUrb, String verificando) {
-//	    if(!verificaNulo(BikesSarahUrb)) {
-//	        System.out.println("Não existe mais bicicletas urbanas disponiveis.");
-//	        return;
-//	    }
-//	    int j = 1;
-//	    if(BikesSarahUrb.length >= quantasQuer){
-//	        for (int i = 0; i < BikesSarahUrb.length; i++){
-//	            if(BikesSarahUrb[i] == null){
-//	                if(j > quantasQuer){
-//	                    break;
-//	                }
-//	                BikesSarahUrb[i] = verificando;
-//	                j++;
-//	            }
-//	        }
-//	    }
-//	    System.out.println(Arrays.toString(BikesSarahUrb));
-//	}
-//	
-//	public static boolean verificaNulo(String[] BikesSarahUrb){
-//	    boolean nulo = false;
-//	    for (String s: BikesSarahUrb) {
-//	        if (s == null) {
-//	            nulo = true;
-//	            break;
-//	        }
-//	    }
-//	    return nulo;
-//	}
+	public static void verificando (int quantasQuer, String[] BikesSarahUrb, String verificando) {
+	    if(!verificaNulo(BikesSarahUrb)) {
+	        System.out.println("Não existe mais bicicletas urbanas disponiveis.");
+	        return;
+	    }
+	    int j = 1;
+	    if(BikesSarahUrb.length >= quantasQuer){
+	        for (int i = 0; i < BikesSarahUrb.length; i++){
+	            if(BikesSarahUrb[i] == null){
+	                if(j > quantasQuer){
+	                    break;
+	                }
+	                BikesSarahUrb[i] = verificando;
+	                j++;
+	            }
+	        }
+	    }
+	    System.out.println(Arrays.toString(BikesSarahUrb));
+	}
+	
+	public static boolean verificaNulo(String[] BikesSarahUrb){
+    boolean nulo = false;
+	    for (String s: BikesSarahUrb) {
+	        if (s == null) {
+	            nulo = true;
+	            break;
+	        }
+	    }
+	    return nulo;
+	}
 }
 
 //Bicicleta é um array em que seus ID's representam elas

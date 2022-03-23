@@ -3,11 +3,14 @@ package models;
 public class Plano1440 implements IPlano{
 	
 	protected double valorFixo = 110.75;
-	protected int minutos = 0;
 	
 	
 	public Double valorTotalPagamento() {
-		return 10.0;
+		System.out.println("------------------------------");
+		System.out.println("Você escolheu o plano de 24 horas de uso!");
+		System.out.println("O valor total é: "+ valorFixo);
+		System.out.println("------------------------------");
+		return valorFixo;
 	}
 
 	
@@ -20,16 +23,5 @@ public class Plano1440 implements IPlano{
 	public void setValorFixo(double valorFixo) {
 		this.valorFixo = valorFixo;
 	}
-
-
-	public int getMinutos() {
-		return minutos;
-	}
-
-
-	public void setMinutos(int minutos) {
-		this.minutos = minutos;
-	}
-	
 	
 }
