@@ -25,9 +25,7 @@ public class Main {
 						
 		//depois de cadastrado ter acesso aos menus
 		do {
-			mainMenu();
-			opcaoMenu = resposta.nextInt();
-			
+			opcaoMenu = mainMenu(opcaoMenu, resposta);
 			switch(opcaoMenu){
 				case 1:
 					menuUsuario();
@@ -54,6 +52,7 @@ public class Main {
 					System.out.println("Opcao invalida. Por favor, escolha uma\n"
 							+ "opcaoo de 1 a 7, somente.\n");
 			}
+			resposta.close();
 		}while(cadastrado != false);
 		
 		//chamar o codigo do inicio
@@ -71,7 +70,7 @@ public class Main {
 	}
 	
 	
-	public static void mainMenu() {
+	public static int mainMenu(int opcaoMenu, Scanner resposta) {
 		System.out.print("|-------- App BikeAqui! -------|\n");
 		System.out.print("|------------------------------|\n");
 		System.out.print("| Opcao 1 - Usuario            |\n");
@@ -83,6 +82,8 @@ public class Main {
 		System.out.print("| Opcao 7 - Sair               |\n");
 		System.out.print("|------------------------------|\n");
 		System.out.print("Digite uma opcao:\n");
+		opcaoMenu = resposta.nextInt();
+		return opcaoMenu;
 	}
 	
 	public static void menuUsuario() {
@@ -107,7 +108,7 @@ public class Main {
 	public static void menuBicicletas() {
 		System.out.print("|-------- App BikeAqui! -------|\n");
 		System.out.print("|------------------------------|\n");
-		System.out.print("|          Bicicletas          |\n");
+		System.out.print("|         Bicicletas           |\n");
 		System.out.print("| Opcao 1 - Buscar Bicicletas  |\n");
 		System.out.print("| Opcao 2 - Listar Bicicletas  |\n");
 		System.out.print("|------------------------------|\n");

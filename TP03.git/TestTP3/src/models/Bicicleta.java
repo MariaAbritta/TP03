@@ -73,7 +73,7 @@ public class Bicicleta {
 		respostaLoc = resposta.nextInt();
 		switch(respostaLoc) {
 			case 1:
-				System.out.println("Ativas: " + BikesSarahUrb.length);
+				System.out.println("Ativas : " + BikesSarahUrb.length);
 				System.out.println("Deseja alugar alguma? sim // nao");
 				Scanner resposta2 = new Scanner(System.in);
 				String opAluguelUrbana = "";
