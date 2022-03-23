@@ -80,7 +80,7 @@ public class Bicicleta {
 				opAluguelUrbana = resposta.next();
 				switch(opAluguelUrbana) {
 					case "sim":
-						//Caso sim, ir no array de bicicletas e ocupar um espaço como alugada
+						//Caso sim, ir no array de bicicletas e ocupar um espaÃ§o como alugada
 
 						break;
 					case "nao":
@@ -133,37 +133,37 @@ public class Bicicleta {
         return id;
 	}
 	
-//	public static void verificando (int quantasQuer, String[] BikesSarahUrb, String verificando) {
-//	    if(!verificaNulo(BikesSarahUrb)) {
-//	        System.out.println("Não existe mais bicicletas urbanas disponiveis.");
-//	        return;
-//	    }
-//	    int j = 1;
-//	    if(BikesSarahUrb.length >= quantasQuer){
-//	        for (int i = 0; i < BikesSarahUrb.length; i++){
-//	            if(BikesSarahUrb[i] == null){
-//	                if(j > quantasQuer){
-//	                    break;
-//	                }
-//	                BikesSarahUrb[i] = verificando;
-//	                j++;
-//	            }
-//	        }
-//	    }
-//	    System.out.println(Arrays.toString(BikesSarahUrb));
-//	}
-//	
-//	public static boolean verificaNulo(String[] BikesSarahUrb){
-//	    boolean nulo = false;
-//	    for (String s: BikesSarahUrb) {
-//	        if (s == null) {
-//	            nulo = true;
-//	            break;
-//	        }
-//	    }
-//	    return nulo;
-//	}
+	public static void verificando (int quantasQuer, String[] BikesSarahUrb, String verificando) {
+	    if(!verificaNulo(BikesSarahUrb)) {
+	        System.out.println("NÃ£o existe mais bicicletas urbanas disponiveis.");
+	        return;
+	    }
+	    int j = 1;
+	    if(BikesSarahUrb.length >= quantasQuer){
+	        for (int i = 0; i < BikesSarahUrb.length; i++){
+	            if(BikesSarahUrb[i] == null){
+	                if(j > quantasQuer){
+	                    break;
+	                }
+	                BikesSarahUrb[i] = verificando;
+	                j++;
+	            }
+	        }
+	    }
+	    System.out.println(Arrays.toString(BikesSarahUrb));
+	}
+	
+	public static boolean verificaNulo(String[] BikesSarahUrb){
+    boolean nulo = false;
+	    for (String s: BikesSarahUrb) {
+	        if (s == null) {
+	            nulo = true;
+	            break;
+	        }
+	    }
+	    return nulo;
+	}
 }
 
-//Bicicleta é um array em que seus ID's representam elas
+//Bicicleta Ã© um array em que seus ID's representam elas
 
