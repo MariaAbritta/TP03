@@ -7,7 +7,6 @@ public class Main {
 		
 		//Instancia do objeto
 //		Tempo tempo = new Tempo();
-//		Pagamento pagamento = new Pagamento();
 
 		Scanner resposta = new Scanner(System.in);
 		
@@ -51,6 +50,11 @@ public class Main {
 					menuViagem();
 					opcaoMenusInternos = resposta.nextInt();
 					execViagem(opcaoMenusInternos);
+					break;
+				case 6:
+					menuPagamento();
+					opcaoMenusInternos = resposta.nextInt();
+					execPagamento(opcaoMenusInternos);
 					break;
 				case 7:
 					System.out.println("Obrigado por usar o nosso App!\n"
@@ -132,6 +136,17 @@ public class Main {
 		System.out.print("| Opcao 3 - Editar dados       |\n");
 		System.out.print("| Opcao 4 - Deletar viagem     |\n");
 		System.out.print("| Opcao 5 - Buscar viagem      |\n");
+		System.out.print("|------------------------------|\n");
+	}
+	
+	public static void menuPagamento(){
+		System.out.print("|-------- App BikeAqui! -------|\n");
+		System.out.print("|------------------------------|\n");
+		System.out.print("|           Pagamento          |\n");
+		System.out.print("| Opcao 1 - Cadastrar dados    |\n");
+		System.out.print("| Opcao 2 - Listar dados       |\n");
+		System.out.print("| Opcao 3 - Editar dados       |\n");
+		System.out.print("| Opcao 4 - Deletar pagamento  |\n");
 		System.out.print("|------------------------------|\n");
 	}
 	
@@ -230,6 +245,27 @@ public class Main {
 				break;
 			case 5:
 				viagem.buscarViagem();
+				break;
+			default:
+				System.out.print("| Opcao nao encontrada   |\n");
+				break;
+		}
+	}
+	
+	public static void execPagamento(int opcaoMenusInternos) {
+		Pagamento pagamento = new Pagamento();
+		switch(opcaoMenusInternos) {
+			case 1:
+				pagamento.cadastrarPagamento();
+				break;
+			case 2:
+				pagamento.listarPagamento();
+				break;
+			case 3:
+				pagamento.editarPagamento();
+				break;
+			case 4:
+				pagamento.deletarPagamento();
 				break;
 			default:
 				System.out.print("| Opcao nao encontrada   |\n");
