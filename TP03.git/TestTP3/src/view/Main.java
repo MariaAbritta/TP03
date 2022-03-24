@@ -6,11 +6,9 @@ public class Main {
 	public static void main(String[] args) {
 		
 		//Instancia do objeto
-//		Bicicleta bicicleta = new Bicicleta();
 //		Tempo tempo = new Tempo();
 //		Pagamento pagamento = new Pagamento();
-		Usuario user = new Usuario();
-//		Viagem viagem = new Viagem();
+
 		Scanner resposta = new Scanner(System.in);
 		
 		//variaveis locais
@@ -25,7 +23,12 @@ public class Main {
 						
 		//depois de cadastrado ter acesso aos menus
 		do {
-			opcaoMenu = mainMenu(opcaoMenu, resposta);
+			
+			
+			mainMenu();
+			opcaoMenu = resposta.nextInt();
+			clearBuffer(resposta);
+			resposta.nextLine();
 			switch(opcaoMenu){
 				case 1:
 					menuUsuario();
@@ -40,19 +43,26 @@ public class Main {
 				case 3:
 					menuBicicletas();
 					opcaoMenusInternos = resposta.nextInt();
+					clearBuffer(resposta);
+					resposta.nextLine();
 					execBicicletas(opcaoMenusInternos);
+					break;
+				case 4:
+					menuViagem();
+					opcaoMenusInternos = resposta.nextInt();
+					execViagem(opcaoMenusInternos);
 					break;
 				case 7:
 					System.out.println("Obrigado por usar o nosso App!\n"
 							+ "- Maria Abritta\n"
 							+ "- Thyago Moura\n");
 					System.exit(0);
+					cadastrado = false;
 					break;
 				default:
 					System.out.println("Opcao invalida. Por favor, escolha uma\n"
 							+ "opcaoo de 1 a 7, somente.\n");
 			}
-			resposta.close();
 		}while(cadastrado != false);
 		
 		//chamar o codigo do inicio
@@ -60,6 +70,7 @@ public class Main {
 		
 	
 	}
+	
 	
 	//menus
 	public static void menuCadastro() {
@@ -70,7 +81,7 @@ public class Main {
 	}
 	
 	
-	public static int mainMenu(int opcaoMenu, Scanner resposta) {
+	public static void mainMenu() {
 		System.out.print("|-------- App BikeAqui! -------|\n");
 		System.out.print("|------------------------------|\n");
 		System.out.print("| Opcao 1 - Usuario            |\n");
@@ -82,8 +93,6 @@ public class Main {
 		System.out.print("| Opcao 7 - Sair               |\n");
 		System.out.print("|------------------------------|\n");
 		System.out.print("Digite uma opcao:\n");
-		opcaoMenu = resposta.nextInt();
-		return opcaoMenu;
 	}
 	
 	public static void menuUsuario() {
@@ -111,6 +120,18 @@ public class Main {
 		System.out.print("|         Bicicletas           |\n");
 		System.out.print("| Opcao 1 - Buscar Bicicletas  |\n");
 		System.out.print("| Opcao 2 - Listar Bicicletas  |\n");
+		System.out.print("|------------------------------|\n");
+	}
+	
+	public static void menuViagem(){
+		System.out.print("|-------- App BikeAqui! -------|\n");
+		System.out.print("|------------------------------|\n");
+		System.out.print("|           Viagem             |\n");
+		System.out.print("| Opcao 1 - Cadastrar dados    |\n");
+		System.out.print("| Opcao 2 - Listar dados       |\n");
+		System.out.print("| Opcao 3 - Editar dados       |\n");
+		System.out.print("| Opcao 4 - Deletar viagem     |\n");
+		System.out.print("| Opcao 5 - Buscar viagem      |\n");
 		System.out.print("|------------------------------|\n");
 	}
 	
@@ -191,5 +212,35 @@ public class Main {
 				break;
 		}
 	}
+	
+	public static void execViagem(int opcaoMenusInternos) {
+		Viagem viagem = new Viagem();
+		switch(opcaoMenusInternos) {
+			case 1:
+				viagem.cadastarViagem();
+				break;
+			case 2:
+				viagem.listarViagem();
+				break;
+			case 3:
+				viagem.editarViagem();
+				break;
+			case 4:
+				viagem.deletarViagem();
+				break;
+			case 5:
+				viagem.buscarViagem();
+				break;
+			default:
+				System.out.print("| Opcao nao encontrada   |\n");
+				break;
+		}
+	}
+	
+	 private static void clearBuffer(Scanner scanner) {
+        if (scanner.hasNextLine()) {
+            scanner.nextLine();
+        }
+	 }
 
 }

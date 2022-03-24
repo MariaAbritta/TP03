@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
+
 public class Bicicleta {
 	//atributos
 	private String localizacao;
@@ -12,7 +13,7 @@ public class Bicicleta {
 	int[][] IdBikes = new int[1][6];
 	String[] BikesSarahUrb = new String [15];
 	Random random = new Random();
-	static Scanner ler = new Scanner(System.in);
+	Scanner resposta = new Scanner(System.in);
 	
 	public Bicicleta() {
 		super();
@@ -53,8 +54,7 @@ public class Bicicleta {
 	
 	//Metodos
 	public void buscarBicicleta() {
-		
-		Scanner resposta = new Scanner(System.in);
+
 		System.out.println("------------------------------");
 		System.out.println("Busque uma bicicleta: ");
 		System.out.println("------------------------------");
@@ -70,6 +70,8 @@ public class Bicicleta {
 		System.out.println(localizacao);
 		int respostaLoc;
 		respostaLoc = resposta.nextInt();
+		clearBuffer(resposta);
+		resposta.nextLine();
 		//bug
 		switch(respostaLoc) {
 			case 1:
@@ -77,12 +79,14 @@ public class Bicicleta {
 				System.out.println("Deseja alugar alguma? sim // nao");
 				String opAluguelUrbana = "";
 				opAluguelUrbana = resposta.next();
+				
 				switch(opAluguelUrbana) {
 					case "sim":
 						System.out.println("Quantas bicilcetas urbanas deseja alugar?:");
-						int numeroAluguel = ler.nextInt();
+						int numeroAluguel = resposta.nextInt();
+						clearBuffer(resposta);
+						resposta.nextLine();
 						verificando(numeroAluguel, BikesSarahUrb, "alugada!");
-						ler.close();
 						break;
 					case "nao":
 						//Caso nao, voltar ao main menu
@@ -137,7 +141,7 @@ public class Bicicleta {
 	public static void verificando (int quantasQuer, String[] BikesSarahUrb, String verificando) {
 	    if(!verificaNulo(BikesSarahUrb)) {
 	        System.out.println("Não existe mais bicicletas urbanas disponiveis.");
-	        System.out.println("NÃ£o existe mais bicicletas urbanas disponiveis.");
+	        System.out.println("Não existe mais bicicletas urbanas disponiveis.");
 	        return;
 	    }
 	    int j = 1;
@@ -165,6 +169,13 @@ public class Bicicleta {
 	    }
 	    return nulo;
 	}
+	
+	private static void clearBuffer(Scanner scanner) {
+        if (scanner.hasNextLine()) {
+            scanner.nextLine();
+        }
+    }
+	
 }
 
 //Bicicleta Ã© um array em que seus ID's representam elas
