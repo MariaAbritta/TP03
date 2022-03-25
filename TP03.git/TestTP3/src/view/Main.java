@@ -15,18 +15,21 @@ public class Main {
 		int opcaoMenuCadastro = 0;
 		int opcaoMenusInternos = 0;
 		boolean cadastrado = true;
-
+		
+		Usuario user = new Usuario();
+		user.cadastrarUsuario();
+		user.listarUsuario();
+		
+		//Pagamento pagamento = new Pagamento();
+		//pagamento.cadastrarPagamento();
 		
 		//verificar se o cadastro do user ta ativo
 		verificarCadastro(opcaoMenuCadastro, cadastrado);
 						
 		//depois de cadastrado ter acesso aos menus
-		do {
-			
-			
+		/*do {
 			mainMenu();
 			opcaoMenu = resposta.nextInt();
-			clearBuffer(resposta);
 			resposta.nextLine();
 			switch(opcaoMenu){
 				case 1:
@@ -70,7 +73,7 @@ public class Main {
 		}while(cadastrado != false);
 		
 		//chamar o codigo do inicio
-		main(args);
+		main(args);*/
 		
 	
 	}
@@ -143,7 +146,7 @@ public class Main {
 		System.out.print("|-------- App BikeAqui! -------|\n");
 		System.out.print("|------------------------------|\n");
 		System.out.print("|           Pagamento          |\n");
-		System.out.print("| Opcao 1 - Cadastrar dados    |\n");
+		System.out.print("| Opcao 1 - Cartao             |\n");
 		System.out.print("| Opcao 2 - Listar dados       |\n");
 		System.out.print("| Opcao 3 - Editar dados       |\n");
 		System.out.print("| Opcao 4 - Deletar pagamento  |\n");
