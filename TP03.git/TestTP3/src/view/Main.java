@@ -16,10 +16,6 @@ public class Main {
 		int opcaoMenusInternos = 0;
 		boolean cadastrado = true;
 		
-		Usuario user = new Usuario();
-		user.cadastrarUsuario();
-		user.listarUsuario();
-		
 		//Pagamento pagamento = new Pagamento();
 		//pagamento.cadastrarPagamento();
 		
@@ -27,7 +23,7 @@ public class Main {
 		verificarCadastro(opcaoMenuCadastro, cadastrado);
 						
 		//depois de cadastrado ter acesso aos menus
-		/*do {
+		do {
 			mainMenu();
 			opcaoMenu = resposta.nextInt();
 			resposta.nextLine();
@@ -73,7 +69,7 @@ public class Main {
 		}while(cadastrado != false);
 		
 		//chamar o codigo do inicio
-		main(args);*/
+		main(args);
 		
 	
 	}
