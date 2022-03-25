@@ -279,14 +279,15 @@ public class Usuario {
 	}
 	
 	public void listarUsuario() {
-		System.out.println("Informações do usuario: \n");
-		
-		System.out.println("Nome: \n" + getNome());
-		System.out.println("Email: \n" + getEmail());
-		System.out.println("Rg: \n" + getRg());
-		System.out.println("Cpf: \n" + getCpf());
-		System.out.println("Senha: \n" + getSenha());
-		System.out.println("Telefone: \n" + getTelefone());
+		System.out.println("------------------------------");
+		System.out.println("Informações do usuario: ");
+		System.out.println("Nome: " + getNome());
+		System.out.println("Email: " + getEmail());
+		System.out.println("Rg: " + getRg());
+		System.out.println("Cpf: " + getCpf());
+		System.out.println("Senha: " + getSenha());
+		System.out.println("Telefone: " + getTelefone());
+		System.out.println("------------------------------");
 	}
 	
 	
