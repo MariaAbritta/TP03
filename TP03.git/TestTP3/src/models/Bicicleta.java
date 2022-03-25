@@ -70,7 +70,6 @@ public class Bicicleta {
 		System.out.println(localizacao);
 		int respostaLoc;
 		respostaLoc = resposta.nextInt();
-		clearBuffer(resposta);
 		resposta.nextLine();
 		//bug
 		switch(respostaLoc) {
@@ -84,7 +83,6 @@ public class Bicicleta {
 					case "sim":
 						System.out.println("Quantas bicilcetas urbanas deseja alugar?:");
 						int numeroAluguel = resposta.nextInt();
-						clearBuffer(resposta);
 						resposta.nextLine();
 						verificando(numeroAluguel, BikesSarahUrb, "alugada!");
 						break;
@@ -105,7 +103,6 @@ public class Bicicleta {
 				System.out.println("Esse bicicletario nao existe.");
 				break;
 		}
-		resposta.close();
 		//Fazer as ativas e inativas
 		System.out.println("------------------------------");
 	}
@@ -169,12 +166,6 @@ public class Bicicleta {
 	    }
 	    return nulo;
 	}
-	
-	private static void clearBuffer(Scanner scanner) {
-        if (scanner.hasNextLine()) {
-            scanner.nextLine();
-        }
-    }
 	
 }
 
