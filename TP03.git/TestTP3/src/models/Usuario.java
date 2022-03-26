@@ -10,6 +10,8 @@ public class Usuario {
 	private String senha;
 	private String telefone;
 	static Scanner ler = new Scanner(System.in);
+	static String[][] usuario = new String[50][50]; 
+	static  int i = 0, j = 1;
 	
 	public Usuario() {
 		super();	
@@ -94,6 +96,8 @@ public class Usuario {
 				}
 			}while(validarNome == false);
 		}
+		usuario[i][0] = respostaNome;
+		System.out.println("Na posicao " + i + " foi armazenado " + usuario[i][0]);
 		/////////////////////////////////////////////////////////////
 		System.out.println("E-mail do usuario: ");
 		setEmail(ler.next());
@@ -112,6 +116,34 @@ public class Usuario {
 					validarEmail = false;
 				}
 			}while(validarEmail == false);
+		}
+		int b = 0;
+		String valorBuscado = respostaEmail;
+		String Total = " ";
+		Boolean palavraIgual;
+		int contador = 0;
+		
+		for (int a = 0; a < usuario.length; a++) {		
+			if (valorBuscado.equals(usuario[a][0])) {
+				b = a;
+			}
+		}
+		
+		if(JaExiste(usuario, respostaEmail, j)) {
+			System.out.println("Essa e-mail já existe.\n");
+		}else {
+			if (respostaEmail.equals(Total)) {
+				palavraIgual = true; //Nome repetido
+			}else {
+				int indice = BuscarIndiceUltima(b);
+				if(indice > 51) {
+					System.out.println("lotado.");
+				}else {
+					usuario[b][indice] = respostaEmail; // Se nao for repetido irei armazenar
+					System.out.println("Na posicao " + indice + " foi armazenado " + usuario[b][indice]);
+					contador++;
+				}
+			}
 		}
 		/////////////////////////////////////////////////////////////
 		System.out.println("RG do usuario, apenas numeros!: ");
@@ -142,6 +174,27 @@ public class Usuario {
 				}
 			}while(validarRG == false);
 		}
+		for (int a = 0; a < usuario.length; a++) {		
+			if (valorBuscado.equals(usuario[a][0])) {
+				b = a;
+			}
+		}
+		if(JaExiste(usuario, respostaRG, j)) {
+			System.out.println("Essa RG já existe.\n");
+		}else {
+			if (respostaRG.equals(Total)) {
+				palavraIgual = true; //Nome repetido
+			}else {
+				int indice = BuscarIndiceUltima(b);
+				if(indice > 51) {
+					System.out.println("lotado.");
+				}else {
+					usuario[b][indice] = respostaRG; // Se nao for repetido irei armazenar
+					System.out.println("Na posicao " + indice + " foi armazenado " + usuario[b][indice]);
+					contador++;
+				}
+			}
+		}
 		/////////////////////////////////////////////////////////////
 		System.out.println("CPF do usuario, apenas numeros!:");
 		setCpf(ler.next());
@@ -170,6 +223,27 @@ public class Usuario {
 					validarCPF = false;
 				}
 			}while(validarCPF == false);
+		}
+		for (int a = 0; a < usuario.length; a++) {		
+			if (valorBuscado.equals(usuario[a][0])) {
+				b = a;
+			}
+		}
+		if(JaExiste(usuario, respostaCPF, j)) {
+			System.out.println("Essa CPF já existe.\n");
+		}else {
+			if (respostaCPF.equals(Total)) {
+				palavraIgual = true; //Nome repetido
+			}else {
+				int indice = BuscarIndiceUltima(b);
+				if(indice > 51) {
+					System.out.println("lotado.");
+				}else {
+					usuario[b][indice] = respostaCPF; // Se nao for repetido irei armazenar
+					System.out.println("Na posicao " + indice + " foi armazenado " + usuario[b][indice]);
+					contador++;
+				}
+			}
 		}
 		/////////////////////////////////////////////////////////////
 		System.out.println("Senha do usuario. A senha deve conter inicialmente \n"
@@ -215,6 +289,27 @@ public class Usuario {
 				}
 			}while(validarSenha == false);
 		}
+		for (int a = 0; a < usuario.length; a++) {		
+			if (valorBuscado.equals(usuario[a][0])) {
+				b = a;
+			}
+		}
+		if(JaExiste(usuario, respostaSenha, j)) {
+			System.out.println("Essa senha esta muito fraca.\n");
+		}else {
+			if (respostaSenha.equals(Total)) {
+				palavraIgual = true; //Nome repetido
+			}else {
+				int indice = BuscarIndiceUltima(b);
+				if(indice > 51) {
+					System.out.println("lotado.");
+				}else {
+					usuario[b][indice] = respostaSenha; // Se nao for repetido irei armazenar
+					System.out.println("Na posicao " + indice + " foi armazenado " + usuario[b][indice]);
+					contador++;
+				}
+			}
+		}
 		/////////////////////////////////////////////////////////////
 		System.out.println("Telefone do usuarios, apenas numero!: ");
 		setTelefone(ler.next());	
@@ -245,6 +340,27 @@ public class Usuario {
 					validarTel = false;
 				}
 			}while(validarTel == false);
+		}
+		for (int a = 0; a < usuario.length; a++) {		
+			if (valorBuscado.equals(usuario[a][0])) {
+				b = a;
+			}
+		}
+		if(JaExiste(usuario, respostaTel, j)) {
+			System.out.println("Esse telefone ja existe.\n");
+		}else {
+			if (respostaTel.equals(Total)) {
+				palavraIgual = true; //Nome repetido
+			}else {
+				int indice = BuscarIndiceUltima(b);
+				if(indice > 51) {
+					System.out.println("lotado.");
+				}else {
+					usuario[b][indice] = respostaTel; // Se nao for repetido irei armazenar
+					System.out.println("Na posicao " + indice + " foi armazenado " + usuario[b][indice]);
+					contador++;
+				}
+			}
 		}
 		/////////////////////////////////////////////////////////////
 		System.out.println("------------------------------");
@@ -281,13 +397,71 @@ public class Usuario {
 	public void listarUsuario() {
 		System.out.println("------------------------------");
 		System.out.println("Informações do usuario: ");
-		System.out.println("Nome: " + getNome());
+		System.out.println("Digite o nome do usuario que procura: ");
+		Boolean nomeExiste = false;
+		String buscar;
+		int unir = 0;
+		buscar = ler.next();
+		
+		for(int d = 0; d < i; d++) {
+            if(usuario[d][0].equals(buscar)) {
+                System.out.print("Esse tema foi cadastrado.\n");
+                nomeExiste = true;
+                unir = d;
+                break;
+            } 
+        }
+		if(!nomeExiste){
+            System.out.print("Esse nome ainda não foi cadastrado.\n");
+        }
+		if(nomeExiste){
+            System.out.println("Tema: "+ usuario[unir][0]+"\n"); //ERRO NA LISTAGEM DO PRIMEIRO TEMA!!!!!!!!!
+            for(int a = 1; a < 50; a++){
+                if(usuario[unir][a] != null){
+                    System.out.println("palavra " + a + " - "+ usuario[unir][a]);
+                    System.out.println(" ");
+                }
+            }
+        }
+		
+		/*System.out.println("Nome: " + getNome());
 		System.out.println("Email: " + getEmail());
 		System.out.println("Rg: " + getRg());
 		System.out.println("Cpf: " + getCpf());
 		System.out.println("Senha: " + getSenha());
-		System.out.println("Telefone: " + getTelefone());
+		System.out.println("Telefone: " + getTelefone());*/
 		System.out.println("------------------------------");
+	}
+	
+	public static Boolean NomeJaExiste(String nomes[][], String pesquisa, int i) {
+		for (int c = 0; c < i; c++) { // Vetor que passa por todos os temas cadastrados ate o momento
+			if (nomes[c][0].equals(pesquisa)) { // Verifico se o tema ja foi registrado antes
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public static Boolean JaExiste(String temas[][], String pesquisa, int j) {
+		for(int i = 0; i < temas.length ; i++) {
+            for(int a = 0; a < temas[i].length ; a++) {
+                if(temas[i][a] != null && temas[i][a].equals(pesquisa)) {
+                   return true;
+                }
+            }
+        }
+		return false;
+	}
+	
+	public static int BuscarIndiceUltima(int i) {
+		int retorno = 99;
+		for(int a = 0; a < usuario[i].length; a++) {
+			if(usuario[i][a] == null) {
+				retorno = a;
+				break;
+			}
+		}
+		return retorno;
 	}
 	
 	
