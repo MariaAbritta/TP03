@@ -19,7 +19,11 @@ public class Main {
 		//Pagamento pagamento = new Pagamento();
 		//pagamento.cadastrarPagamento();
 		
-		//verificar se o cadastro do user ta ativo
+		Usuario user = new Usuario();
+		user.cadastrarUsuario();
+		user.listarUsuario();
+		
+		/*//verificar se o cadastro do user ta ativo
 		verificarCadastro(opcaoMenuCadastro, cadastrado);
 						
 		//depois de cadastrado ter acesso aos menus
@@ -69,7 +73,7 @@ public class Main {
 		}while(cadastrado != false);
 		
 		//chamar o codigo do inicio
-		main(args);
+		main(args);*/
 		
 	
 	}
