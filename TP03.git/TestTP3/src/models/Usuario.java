@@ -406,20 +406,47 @@ public class Usuario {
 	}
 	
 	public void editarUsuario() {
-		System.out.println("Editar usuario\n");
-		
-		System.out.println("Nome do usuarios: \n");
-		setNome(ler.next());
-		System.out.println("\nEmail do usuarios: \n");
-		setEmail(ler.next());
-		System.out.println("\nRG do usuarios: \n");
-		setRg(ler.next());
-		System.out.println("\nCPF do usuarios, apenas numeros!: \n");
-		setCpf(ler.next());
-		System.out.println("\nSenha do usuarios, apenas numero!: \n");
-		setSenha(ler.next());
-		System.out.println("\nTelefone do usuarios, apenas numero!: \n");
-		setTelefone(ler.next());	
+		System.out.println("Editar Usuario\n");
+		System.out.println("Qual Usuario deseja editar\n");
+		String editar;
+		boolean encontrado = false;
+		int f;
+		int opcaoEditar=0;
+		editar = ler.next();
+		for (f = 0; f < (i-1); f++){
+            if(usuario[f][0].equals(editar)) {
+            	encontrado = true;
+            	break;
+            }
+		}
+		if(encontrado) {
+			System.out.println("O que deseja editar? \n");
+			System.out.println("1.Nome \n");
+			System.out.println("2.Email \n");
+			System.out.println("3.Rg \n");
+			System.out.println("4.CPF \n");
+			System.out.println("5.Senha\n");
+			System.out.println("6.Telefone \n");
+			opcaoEditar = ler.nextInt();
+			switch(opcaoEditar) {
+				case 1:
+					break;
+				case 2:
+					break;
+				case 3:
+					break;
+				case 4:
+					break;
+				case 5:
+					break;
+				case 6:
+					break;
+									
+			}
+		}else {
+			System.out.println("Usuario nao encontrado!\n");
+			encontrado = false;
+		}
 	}
 	
 	public void deletarUsuario() {
