@@ -22,6 +22,7 @@ public class Main {
 		Usuario user = new Usuario();
 		user.cadastrarUsuario();
 		user.listarUsuario();
+		user.deletarUsuario();
 		
 		/*//verificar se o cadastro do user ta ativo
 		verificarCadastro(opcaoMenuCadastro, cadastrado);

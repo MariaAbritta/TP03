@@ -100,6 +100,7 @@ public class Usuario {
 			}while(validarNome == false);
 		}
 		usuario[i][0] = respostaNome;
+		i++;
 		System.out.println("Na posicao " + i + " foi armazenado " + usuario[i][0]);
 		
 		/////////////////////////////////////////////////////////////
@@ -149,9 +150,11 @@ public class Usuario {
 					usuario[b][indice] = respostaEmail; // Se nao for repetido irei armazenar
 					System.out.println("Na posicao " + indice + " foi armazenado " + usuario[b][indice]);
 					contador++;
+					j++;
 				}
 			}
 		}
+		
 		/////////////////////////////////////////////////////////////
 		System.out.println("RG do usuario, apenas numeros!: ");
 		setRg(ler.next());
@@ -202,6 +205,7 @@ public class Usuario {
 					usuario[b][indice] = respostaRG; // Se nao for repetido irei armazenar
 					System.out.println("Na posicao " + indice + " foi armazenado " + usuario[b][indice]);
 					contador++;
+					j++;
 				}
 			}
 		}
@@ -258,6 +262,7 @@ public class Usuario {
 					usuario[b][indice] = respostaCPF; // Se nao for repetido irei armazenar
 					System.out.println("Na posicao " + indice + " foi armazenado " + usuario[b][indice]);
 					contador++;
+					j++;
 				}
 			}
 		}
@@ -332,6 +337,7 @@ public class Usuario {
 					usuario[b][indice] = respostaSenha; // Se nao for repetido irei armazenar
 					System.out.println("Na posicao " + indice + " foi armazenado " + usuario[b][indice]);
 					contador++;
+					j++;
 				}
 			}
 		}
@@ -390,10 +396,12 @@ public class Usuario {
 					usuario[b][indice] = respostaTel; // Se nao for repetido irei armazenar
 					System.out.println("Na posicao " + indice + " foi armazenado " + usuario[b][indice]);
 					contador++;
+					j++;
 				}
 			}
 		}
 		/////////////////////////////////////////////////////////////
+		i++;
 		System.out.println("------------------------------");
 	}
 	
@@ -415,14 +423,27 @@ public class Usuario {
 	}
 	
 	public void deletarUsuario() {
-		System.out.println("Deletando usuario...\n");
-		
-		setNome("");
-		setEmail("");
-		setRg("");
-		setCpf("");
-		setSenha("");
-		setTelefone("");	
+		System.out.println("Deletar Usuario\n");
+		System.out.println("Qual Usuario deseja deletar\n");
+		String deletar;
+		boolean encontrado = false;
+		int f;
+		deletar = ler.next();
+		for (f = 0; f < (i-1); f++){
+            if(usuario[f][0].equals(deletar)) {
+            	encontrado = true;
+            	break;
+            }
+		}
+		if(encontrado) {
+			for(int g = 0; g < j; g++){
+				usuario[f][g] = null;
+				System.out.println("DELETANDO...\n");
+			}
+		}else {
+			System.out.println("Usuario nao encontrado!\n");
+			encontrado = false;
+		}
 	}
 	
 	public void listarUsuario() {
@@ -434,15 +455,13 @@ public class Usuario {
 		int unir = 0;
 		buscar = ler.next();
 		
-		System.out.print(i);
-		for (int f = 0; f < 5; f++){
+		for (int f = 0; f < (i-1); f++){
             if(usuario[f][0].equals(buscar)) {
             	System.out.print("Esse nome foi cadastrado.\n");
               	nomeExiste = true;
               	unir = f;
               	break;	
             }
-		
 		}
 		if(!nomeExiste){
             System.out.print("Esse nome ainda não foi cadastrado.\n");
