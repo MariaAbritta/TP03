@@ -1,5 +1,6 @@
 package models;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Usuario {
@@ -11,7 +12,7 @@ public class Usuario {
 	private String telefone;
 	static Scanner ler = new Scanner(System.in);
 	static String[][] usuario = new String[50][50]; 
-	static  int i = 0, j = 1;
+	static 	int i = 0, j = 1;
 	
 	public Usuario() {
 		super();	
@@ -93,11 +94,14 @@ public class Usuario {
 				respostaNome = getNome();
 				if(!respostaNome.substring(0).matches("[A-Z]*")){
 					validarNome = false;
+				}else {
+					validarNome = true;
 				}
 			}while(validarNome == false);
 		}
 		usuario[i][0] = respostaNome;
 		System.out.println("Na posicao " + i + " foi armazenado " + usuario[i][0]);
+		
 		/////////////////////////////////////////////////////////////
 		System.out.println("E-mail do usuario: ");
 		setEmail(ler.next());
@@ -105,15 +109,18 @@ public class Usuario {
 		boolean validarEmail = true;
 		String respostaEmail;
 		respostaEmail = getEmail();
-		if(!respostaEmail.substring(0).matches("[@]*")){
+		if(!respostaEmail.substring(0).matches("(.*)@(.*)")){
 			validarEmail = false;
 			do {
 				System.out.println("Erro! Um e-mail precisa ter @. \n"
 						+ "Insira um e-mail valido: ");
 				setEmail(ler.next());
 				respostaEmail = getEmail();
-				if(!respostaEmail.substring(0).matches("[@]*")){
+				if(!respostaEmail.substring(0).matches("(.*)@(.*)")){
 					validarEmail = false;
+				}
+				else {
+					validarEmail=true;
 				}
 			}while(validarEmail == false);
 		}
@@ -160,6 +167,9 @@ public class Usuario {
 				respostaRG = getRg();
 				if(respostaRG.length() != 7){
 					validarRG = false;
+				}
+				else {
+					validarRG = true;
 				}
 			}while(validarRG == false);
 		}
@@ -211,7 +221,10 @@ public class Usuario {
 				if(respostaCPF.length() != 11){
 					validarCPF = false;
 				}
-			}while(validarCPF = false);
+				else {
+					validarCPF = true;
+				}
+			}while(validarCPF == false);
 		}
 		if(!respostaCPF.substring(0).matches("[0-9]*")){
 			validarCPF = false;
@@ -221,6 +234,9 @@ public class Usuario {
 				respostaCPF = getCpf();
 				if(!respostaCPF.substring(0).matches("[0-9]*")){
 					validarCPF = false;
+				}
+				else {
+					validarCPF = true;
 				}
 			}while(validarCPF == false);
 		}
@@ -260,10 +276,13 @@ public class Usuario {
 						+ "Insira uma senha valida:");
 				setSenha(ler.next());
 				respostaSenha = getSenha();
-				if(respostaSenha.length() != 11){
+				if(respostaSenha.length() != 7){
 					validarSenha = false;
 				}
-			}while(validarSenha = false);
+				else {
+					validarSenha = true;
+				}
+			}while(validarSenha == false);
 		}
 		if(!respostaSenha.substring(0, 3).matches("[A-Z]*")){
 			validarSenha = false;
@@ -275,7 +294,10 @@ public class Usuario {
 				if(!respostaSenha.substring(0, 3).matches("[A-Z]*")){
 					validarSenha = false;
 				}
-			}while(validarSenha = false);
+				else {
+					validarSenha = true;
+				}
+			}while(validarSenha == false);
 		}
 		if(!respostaSenha.substring(3).matches("[0-9]*")){
 			validarSenha = false;
@@ -286,6 +308,9 @@ public class Usuario {
 				respostaSenha = getSenha();
 				if(!respostaSenha.substring(3).matches("[0-9]*")){
 					validarSenha = false;
+				}
+				else {
+					validarSenha = true;
 				}
 			}while(validarSenha == false);
 		}
@@ -327,7 +352,10 @@ public class Usuario {
 				if(respostaTel.length() != 9){ //ERRO: Ta indo com 8 
 					validarTel = false;
 				}
-			}while(validarTel = false);
+				else {
+					validarTel = true;
+				}
+			}while(validarTel == false);
 		}
 		if(!respostaTel.substring(0).matches("[0-9]*")){
 			validarTel = false;
@@ -338,6 +366,9 @@ public class Usuario {
 				respostaTel = getTelefone();
 				if(!respostaTel.substring(0).matches("[0-9]*")){
 					validarTel = false;
+				}
+				else {
+					validarTel = true;
 				}
 			}while(validarTel == false);
 		}
@@ -398,38 +429,33 @@ public class Usuario {
 		System.out.println("------------------------------");
 		System.out.println("Informações do usuario: ");
 		System.out.println("Digite o nome do usuario que procura: ");
-		Boolean nomeExiste = false;
+		Boolean nomeExiste = false;	
 		String buscar;
 		int unir = 0;
 		buscar = ler.next();
 		
-		for(int d = 0; d < i; d++) {
-            if(usuario[d][0].equals(buscar)) {
-                System.out.print("Esse tema foi cadastrado.\n");
-                nomeExiste = true;
-                unir = d;
-                break;
-            } 
-        }
+		System.out.print(i);
+		for (int f = 0; f < 5; f++){
+            if(usuario[f][0].equals(buscar)) {
+            	System.out.print("Esse nome foi cadastrado.\n");
+              	nomeExiste = true;
+              	unir = f;
+              	break;	
+            }
+		
+		}
 		if(!nomeExiste){
             System.out.print("Esse nome ainda não foi cadastrado.\n");
         }
-		if(nomeExiste){
+		else if(nomeExiste){
             System.out.println("Tema: "+ usuario[unir][0]+"\n"); //ERRO NA LISTAGEM DO PRIMEIRO TEMA!!!!!!!!!
             for(int a = 1; a < 50; a++){
                 if(usuario[unir][a] != null){
-                    System.out.println("palavra " + a + " - "+ usuario[unir][a]);
+                    System.out.println("- " + usuario[unir][a]);
                     System.out.println(" ");
                 }
             }
         }
-		
-		/*System.out.println("Nome: " + getNome());
-		System.out.println("Email: " + getEmail());
-		System.out.println("Rg: " + getRg());
-		System.out.println("Cpf: " + getCpf());
-		System.out.println("Senha: " + getSenha());
-		System.out.println("Telefone: " + getTelefone());*/
 		System.out.println("------------------------------");
 	}
 	
