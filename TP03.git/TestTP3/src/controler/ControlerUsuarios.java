@@ -12,6 +12,11 @@ public class ControlerUsuarios {
 		static Scanner ler = new Scanner(System.in);
 		
 		public void CadastroUser() {
+			cadastroUsuario();
+			
+		}
+		
+		public void cadastroUsuario() {
 			//cadastrar nome
 			cadastrarNome();
 			Usuario.usuario[qtdUser][i] = user.getNome();
@@ -50,7 +55,23 @@ public class ControlerUsuarios {
 		}
 		
 		public void validarNome() {
+			boolean verificar = true;
 			System.out.println("Validando Nome");
+			String nomeValid = user.getNome();
+			if(!nomeValid.substring(0).matches("[A-Z]*")) {
+				verificar=false;
+				do {
+					System.out.println("Erro! Um nome precisa ter letras maiusculas. \n"
+							+ "Insira um nome valido: ");
+					user.setNome(ler.next());
+					nomeValid = user.getNome();
+					if(!nomeValid.substring(0).matches("[A-Z]*")){
+						verificar = false;
+					}else {
+						verificar = true;
+					}
+				}while(verificar == false);
+			}
 		}
 		
 		public void cadastrarEmail() {
@@ -62,6 +83,23 @@ public class ControlerUsuarios {
 		}
 		public void validarEmail() {
 			System.out.println("Validando Email");
+			boolean verificar = true;
+			String emailValid = user.getEmail();
+			if(!emailValid.substring(0).matches("(.*)@(.*)")){
+				verificar = false;
+				do {
+					System.out.println("Erro! Um e-mail precisa ter @. \n"
+							+ "Insira um e-mail valido: ");
+					user.setEmail(ler.next());
+					emailValid = user.getEmail();
+					if(!emailValid.substring(0).matches("(.*)@(.*)")){
+						verificar = false;
+					}
+					else {
+						verificar=true;
+					}
+				}while(verificar == false);
+			}
 		}
 		
 		public void cadastrarRg() {
@@ -73,6 +111,33 @@ public class ControlerUsuarios {
 		}
 		public void validarRg() {
 			System.out.println("Validando RG");
+			boolean verificar = true;
+			String rgValid = user.getRg();
+			if(rgValid.length() != 7){
+				verificar = false;
+				do {
+					System.out.println("Erro! Um RG possui 7 numeros. Insira um RG valido:");
+					user.setRg(ler.next());
+					rgValid = user.getRg();
+					if(rgValid.length() != 7){
+						verificar = false;
+					}
+					else {
+						verificar = true;
+					}
+				}while(verificar == false);
+			}
+			if(!rgValid.substring(0).matches("[0-9]*")){
+				verificar = false;
+				do {
+					System.out.println("Erro! Um RG possui apenas numeros. Insira um RG valido:");
+					user.setRg(ler.next());
+					rgValid = user.getRg();
+					if(!rgValid.substring(0).matches("[0-9]*")){
+						verificar = false;
+					}
+				}while(verificar == false);
+			}
 		}
 		
 		public void cadastrarCpf() {
@@ -84,6 +149,36 @@ public class ControlerUsuarios {
 		}
 		public void validarCpf() {
 			System.out.println("Validando CPF");
+			boolean verificar= true;
+			String cpfValid = user.getCpf();
+			if(cpfValid.length() != 11){
+				verificar = false;
+				do {
+					System.out.println("Erro! Um CPF possui 11 numeros. Insira um CPF valido: ");
+					user.setCpf(ler.next());
+					cpfValid = user.getCpf();
+					if(cpfValid.length() != 11){
+						verificar = false;
+					}
+					else {
+						verificar = true;
+					}
+				}while(verificar == false);
+			}
+			if(!cpfValid.substring(0).matches("[0-9]*")){
+				verificar = false;
+				do {
+					System.out.println("Erro! Um CPF possui apenas numeros. Insira um CPF valido: ");
+					user.setCpf(ler.next());
+					cpfValid = user.getCpf();
+					if(!cpfValid.substring(0).matches("[0-9]*")){
+						verificar = false;
+					}
+					else {
+						verificar = true;
+					}
+				}while(verificar == false);
+			}
 		}
 		
 		public void cadastrarSenha() {
@@ -95,6 +190,53 @@ public class ControlerUsuarios {
 		}
 		public void validarSenha() {
 			System.out.println("Validando Senha");
+			boolean verificar = true;
+			String senhaValid = user.getSenha();
+			if(senhaValid.length() != 7){
+				verificar = false;
+				do {
+					System.out.println("Erro! Uma senha deve ter tamanho de 7 caracteres. \n"
+							+ "Insira uma senha valida:");
+					user.setSenha(ler.next());
+					senhaValid = user.getSenha();
+					if(senhaValid.length() != 7){
+						verificar = false;
+					}
+					else {
+						verificar = true;
+					}
+				}while(verificar == false);
+			}
+			if(!senhaValid.substring(0, 3).matches("[A-Z]*")){
+				verificar = false;
+				do {
+					System.out.println("Erro! Uma senha precisa inicialmente ter 3 letras maiusculas. \n"
+							+ "Insira uma senha valida: ");
+					user.setSenha(ler.next());
+					senhaValid = user.getSenha();
+					if(!senhaValid.substring(0, 3).matches("[A-Z]*")){
+						verificar = false;
+					}
+					else {
+						verificar = true;
+					}
+				}while(verificar == false);
+			}
+			if(!senhaValid.substring(3).matches("[0-9]*")){
+				verificar = false;
+				do {
+					System.out.println("Erro! Uma senha precisa ter 4 numeros em seu final. \n"
+							+ "Insira uma senha valida:");
+					user.setSenha(ler.next());
+					senhaValid = user.getSenha();
+					if(!senhaValid.substring(3).matches("[0-9]*")){
+						verificar = false;
+					}
+					else {
+						verificar = true;
+					}
+				}while(verificar == false);
+			}
 		}
 		
 		public void cadastrarTelefone() {
@@ -106,6 +248,38 @@ public class ControlerUsuarios {
 		}
 		public void validarTelefone() {
 			System.out.println("Validando Telefone");
+			boolean verificar = true;
+			String telValid = user.getTelefone();
+			if(telValid.length() != 9){
+				verificar = false;
+				do {
+					System.out.println("Erro! Um telefone possui 9 numeros. \n"
+							+ "Insira um telefone valido: ");
+					user.setTelefone(ler.next());
+					telValid = user.getTelefone();
+					if(telValid.length() != 9){ //ERRO: Ta indo com 8 
+						verificar = false;
+					}
+					else {
+						verificar = true;
+					}
+				}while(verificar == false);
+			}
+			if(!telValid.substring(0).matches("[0-9]*")){
+				verificar = false;
+				do {
+					System.out.println("Erro! Um telefone possui apenas numeros.\n "
+							+ "Insira um telefone valido:");
+					user.setTelefone(ler.next());
+					telValid = user.getTelefone();
+					if(!telValid.substring(0).matches("[0-9]*")){
+						verificar = false;
+					}
+					else {
+						verificar = true;
+					}
+				}while(verificar == false);
+			}
 		}
 		
 		
