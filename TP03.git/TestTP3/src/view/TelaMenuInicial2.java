@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class TelaMenuInicial {
+public class TelaMenuInicial2 {
 	
 	static JFrame janela = new JFrame("BikeAqui!");
 	static JLabel titulo = new JLabel("Menu Principal");
@@ -13,7 +13,7 @@ public class TelaMenuInicial {
 	static JButton Fechar = new JButton("Fechar"); 
 	//public static ControleDados dados = new ControleDados(); exemplo
 	
-	public TelaMenuInicial() {
+	public TelaMenuInicial2() {
 		titulo.setFont(new Font("Arial", Font.BOLD, 20));
 		titulo.setBounds(120, 10, 150, 30);
 		Fechar.setBounds(140, 100, 100, 30);
@@ -32,7 +32,7 @@ public class TelaMenuInicial {
 	}
 	
 	public static void main(String[] args) {
-		TelaMenuInicial menu = new TelaMenuInicial();
+		TelaMenuInicial2 menu = new TelaMenuInicial2();
 		
 		Cadastrar.addActionListener((ActionListener) menu);
 		//Fechar.addActionListener((ActionListener) menu);
