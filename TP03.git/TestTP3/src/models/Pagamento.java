@@ -8,6 +8,7 @@ public class Pagamento {
 	private String numeroDoCartao;
 	private String nomeNoCartao;
 	private String codigoDeSeguranca;
+	static public String[] DadosPagamento = new String[50];
 	static  int i = 0, j = 1;
 	static Scanner ler = new Scanner(System.in);
 	
