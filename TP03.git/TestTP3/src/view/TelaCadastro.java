@@ -1,6 +1,7 @@
 package view;
 
 import java.awt.EventQueue;
+
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -59,7 +60,7 @@ public class TelaCadastro {
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	public void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 706);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -72,10 +73,20 @@ public class TelaCadastro {
 		tituloUm.setBounds(111, 99, 239, 31);
 		frame.getContentPane().add(tituloUm);
 		
+		JLabel tituloDois = new JLabel("para efetuar seu cadastro: ");
+		tituloDois.setFont(new Font("Elephant", Font.PLAIN, 17));
+		tituloDois.setBounds(121, 125, 239, 13);
+		frame.getContentPane().add(tituloDois);
+		
 		txtNome = new JTextField();
 		txtNome.setBounds(46, 186, 335, 20);
 		frame.getContentPane().add(txtNome);
 		txtNome.setColumns(10);
+		
+		JLabel tituloNome = new JLabel("Nome (Letras maiusuclas):");
+		tituloNome.setFont(new Font("Cambria", Font.PLAIN, 15));
+		tituloNome.setBounds(46, 165, 176, 14);
+		frame.getContentPane().add(tituloNome);
 		
 		JButton checkNome = new JButton("OK");
 		checkNome.setFont(new Font("Cambria", Font.PLAIN, 11));
@@ -87,16 +98,6 @@ public class TelaCadastro {
 		checkNome.setBackground(new Color(51, 204, 204));
 		checkNome.setBounds(181, 212, 89, 23);
 		frame.getContentPane().add(checkNome);
-		
-		JLabel tituloDois = new JLabel("para efetuar seu cadastro: ");
-		tituloDois.setFont(new Font("Elephant", Font.PLAIN, 17));
-		tituloDois.setBounds(121, 125, 239, 13);
-		frame.getContentPane().add(tituloDois);
-		
-		JLabel tituloNome = new JLabel("Nome (Letras maiusuclas):");
-		tituloNome.setFont(new Font("Cambria", Font.PLAIN, 15));
-		tituloNome.setBounds(46, 165, 176, 14);
-		frame.getContentPane().add(tituloNome);
 		
 		JLabel lblNewLabel_2_1 = new JLabel("E-mail:");
 		lblNewLabel_2_1.setFont(new Font("Cambria", Font.PLAIN, 15));

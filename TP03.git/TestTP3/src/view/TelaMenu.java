@@ -1,7 +1,6 @@
 package view;
 
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.Font;
@@ -62,6 +61,11 @@ public class TelaMenu {
 		JButton usuario = new JButton("Usuario");
 		usuario.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Object src = e.getSource();
+				if(src == usuario) {
+					new TelaUsuario();
+					TelaUsuario.main(null);
+				}
 			}
 		});
 		usuario.setBackground(new Color(255, 204, 255));
@@ -70,6 +74,15 @@ public class TelaMenu {
 		frame.getContentPane().add(usuario);
 		
 		JButton bicicletario = new JButton("Bicicletario");
+		bicicletario.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Object src = e.getSource();
+				if(src == bicicletario) {
+					new TelaBicicletario();
+					TelaBicicletario.main(null);
+				}
+			}
+		});
 		bicicletario.setFont(new Font("Cambria", Font.PLAIN, 15));
 		bicicletario.setBackground(new Color(204, 204, 255));
 		bicicletario.setBounds(162, 138, 113, 36);
@@ -78,6 +91,11 @@ public class TelaMenu {
 		JButton bicicletas = new JButton("Bicicletas");
 		bicicletas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Object src = e.getSource();
+				if(src == bicicletas) {
+					new TelaBicicleta();
+					TelaBicicleta.main(null);
+				}
 			}
 		});
 		bicicletas.setFont(new Font("Cambria", Font.PLAIN, 15));
@@ -88,6 +106,11 @@ public class TelaMenu {
 		JButton viagem = new JButton("Viagem");
 		viagem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Object src = e.getSource();
+				if(src == viagem) {
+					new TelaViagem();
+					TelaViagem.main(null);
+				}
 			}
 		});
 		viagem.setFont(new Font("Cambria", Font.PLAIN, 15));
@@ -98,6 +121,11 @@ public class TelaMenu {
 		JButton pedidos = new JButton("Pedidos");
 		pedidos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Object src = e.getSource();
+				if(src == pedidos) {
+					new TelaPedidos();
+					TelaPedidos.main(null);
+				}
 			}
 		});
 		pedidos.setFont(new Font("Cambria", Font.PLAIN, 15));
@@ -106,6 +134,15 @@ public class TelaMenu {
 		frame.getContentPane().add(pedidos);
 		
 		JButton pagamentos = new JButton("Pagamentos");
+		pagamentos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Object src = e.getSource();
+				if(src == pagamentos) {
+					new TelaPagamento();
+					TelaPagamento.main(null);
+				}
+			}
+		});
 		pagamentos.setFont(new Font("Cambria", Font.PLAIN, 15));
 		pagamentos.setBackground(new Color(204, 255, 153));
 		pagamentos.setBounds(162, 323, 113, 36);

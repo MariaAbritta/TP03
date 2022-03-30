@@ -1,22 +1,19 @@
 package view;
 
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import java.awt.Color;
 import javax.swing.JLabel;
-import java.awt.BorderLayout;
 import java.awt.SystemColor;
 import java.awt.Font;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class TelaInicial {
 
 	private JFrame frame;
-
-	/**
-	 * Launch the application.
-	 */
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -30,17 +27,11 @@ public class TelaInicial {
 		});
 	}
 
-	/**
-	 * Create the application.
-	 */
 	public TelaInicial() {
 		initialize();
 	}
-
-	/**
-	 * Initialize the contents of the frame.
-	 */
-	private void initialize() {
+	
+	public void initialize() {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(SystemColor.control);
 		frame.getContentPane().setLayout(null);
@@ -52,6 +43,16 @@ public class TelaInicial {
 		frame.getContentPane().add(tiruloUm);
 		
 		JButton cadastro = new JButton("Cadastrar-se");
+		cadastro.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Object src = e.getSource();
+				if(src == cadastro) {
+					new TelaCadastro();
+					TelaCadastro.main(null);
+				}
+			}
+		});
+		
 		cadastro.setFont(new Font("Cambria", Font.PLAIN, 15));
 		cadastro.setBackground(new Color(204, 153, 255));
 		cadastro.setBounds(163, 111, 119, 38);
@@ -65,5 +66,6 @@ public class TelaInicial {
 		frame.setBounds(100, 100, 450, 224);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
+	
 
 }
