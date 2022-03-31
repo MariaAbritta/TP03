@@ -6,14 +6,13 @@ import models.*;
 public class ControlerUsuarios {
 
 		private Usuario user = new Usuario();
-		private Pagamento p = new Pagamento();
-		private int qtdUser=0;
+		public static int qtdUser=0;
 		static 	int i = 0, j=0;
 		static Scanner ler = new Scanner(System.in);
 		
 		public void CadastroUser() {
 			cadastroUsuario();
-			
+			listarUsuario();
 		}
 		
 		public void cadastroUsuario() {
@@ -41,8 +40,6 @@ public class ControlerUsuarios {
 			cadastrarTelefone();
 			Usuario.usuario[qtdUser][i] = user.getTelefone();
 			qtdUser++;
-			//Criar controler para os cruds, depois trazer os valores para
-			//dentro do usuario, deixando codigo clean.
 			i=0;
 		}
 		
@@ -282,5 +279,8 @@ public class ControlerUsuarios {
 			}
 		}
 		
+		public void listarUsuario() {
+			
+		}
 		
 }

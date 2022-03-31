@@ -6,8 +6,11 @@ public class Main {
 	public static void main(String[] args) {
 		
 		ControlerUsuarios controlUser = new ControlerUsuarios();
+		ControlerLoging controlLoging = new ControlerLoging();
 		
 		controlUser.CadastroUser();
+		controlUser.CadastroUser();
+		controlLoging.loging();
 		//Instancia do objeto
 //		Tempo tempo = new Tempo();
 
