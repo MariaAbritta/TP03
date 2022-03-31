@@ -9,8 +9,9 @@ public class Main {
 		ControlerLoging controlLoging = new ControlerLoging();
 		
 		controlUser.CadastroUser();
-		controlUser.CadastroUser();
 		controlLoging.loging();
+		controlUser.listarUsuario();
+		controlUser.deletarUsuario();
 		//Instancia do objeto
 //		Tempo tempo = new Tempo();
 
