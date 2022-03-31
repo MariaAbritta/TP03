@@ -6,13 +6,49 @@ import models.*;
 public class ControlerUsuarios {
 
 		private Usuario user = new Usuario();
-//		private ControlerLoging controlLog = new ControlerLoging();
 		public static int qtdUser=0;
 		static 	int i = 0, j=0;
 		static Scanner ler = new Scanner(System.in);
 		
 		public void CadastroUser() {
 			cadastroUsuario();
+		}
+		public void editarUser() {
+			editarUsuario();
+		}
+		
+		public void listarUsuario() {
+			for(int x = 0; x <= 6 ; x++) {
+				if(Usuario.usuario[ControlerLoging.indiceUser][x] != null) {
+					System.out.println(x + ". " + Usuario.usuario[ControlerLoging.indiceUser][x]);
+				}
+			}
+		}
+		
+		public void deletarUsuario() {
+			System.out.println("Deseja excluir usuario??");
+			System.out.println("1.SIM \n 2.NAO");
+			int confirmar =0;
+			confirmar = ler.nextInt();
+			
+			switch(confirmar){
+				case 1:
+					for(int x = 0; x <= 6 ; x++) {
+						if(Usuario.usuario[ControlerLoging.indiceUser][x] != null) {
+							Usuario.usuario[ControlerLoging.indiceUser][x] = null;
+							System.out.println(x + ". " + Usuario.usuario[ControlerLoging.indiceUser][x]);
+						}
+					}
+					System.out.println("Deletado...	 ");
+					break;
+				case 2:
+					System.out.println("OK");
+					break;
+				default:
+					System.out.println("Nao tem essa opção");
+					break;
+			}
+			
 		}
 		
 		public void cadastroUsuario() {
@@ -279,38 +315,45 @@ public class ControlerUsuarios {
 			}
 		}
 		
-		public void listarUsuario() {
-			for(int x = 0; x <= 6 ; x++) {
-				if(Usuario.usuario[ControlerLoging.indiceUser][x] != null) {
-					System.out.println(x + ". " + Usuario.usuario[ControlerLoging.indiceUser][x]);
-				}
+		public void editarUsuario() {
+			int opcao;
+			System.out.println("O que deseja editar??\n");
+			System.out.println("1.Nome");
+			System.out.println("2.Email");
+			System.out.println("3.RG");
+			System.out.println("4.CPF");
+			System.out.println("5.Senha");
+			System.out.println("6.Telefone");
+			opcao = ler.nextInt();
+			
+			switch(opcao) {
+			case 1:
+				cadastrarNome();
+				Usuario.usuario[ControlerLoging.indiceUser][0] = user.getNome();
+				break;
+			case 2:
+				cadastrarEmail();
+				Usuario.usuario[ControlerLoging.indiceUser][1] = user.getEmail();
+				break;
+			case 3:
+				cadastrarRg();
+				Usuario.usuario[ControlerLoging.indiceUser][2] = user.getRg();
+				break;
+			case 4:
+				cadastrarCpf();
+				Usuario.usuario[ControlerLoging.indiceUser][3] = user.getCpf();
+				break;
+			case 5:
+				cadastrarSenha();
+				Usuario.usuario[ControlerLoging.indiceUser][4] = user.getSenha();
+				break;
+			case 6:
+				cadastrarTelefone();
+				Usuario.usuario[ControlerLoging.indiceUser][5] = user.getTelefone();
+				break;
+			default:
+				System.out.println("Opcao nao encontrada");
+				break;
 			}
 		}
-		
-		public void deletarUsuario() {
-			System.out.println("Deseja excluir usuario??");
-			System.out.println("1.SIM \n 2.NAO");
-			int confirmar =0;
-			confirmar = ler.nextInt();
-			
-			switch(confirmar){
-				case 1:
-					for(int x = 0; x <= 6 ; x++) {
-						if(Usuario.usuario[ControlerLoging.indiceUser][x] != null) {
-							Usuario.usuario[ControlerLoging.indiceUser][x] = null;
-							System.out.println(x + ". " + Usuario.usuario[ControlerLoging.indiceUser][x]);
-						}
-					}
-					System.out.println("Deletado...	 ");
-					break;
-				case 2:
-					System.out.println("Ta baum");
-					break;
-				default:
-					System.out.println("Nao tem essa opção");
-					break;
-			}
-			
-		}
-		
 }
