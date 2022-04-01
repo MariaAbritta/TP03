@@ -10,16 +10,9 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import models.Usuario;
-import javax.swing.JMenuBar;
-import java.awt.Button;
-import java.awt.List;
-import java.awt.Canvas;
 import java.awt.Font;
 import javax.swing.SwingConstants;
-
-import controler.ControlerUsuarios;
-
+import controller.ControllerUsuarios;
 import javax.swing.JPasswordField;
 import javax.swing.JPopupMenu;
 import java.awt.Component;
@@ -30,12 +23,12 @@ import java.awt.SystemColor;
 public class TelaCadastro {
 
 	private JFrame frame;
-	private JTextField txtNome;
-	private JTextField txtEmail;
-	private JTextField txtRG;
-	private JTextField txtCPF;
-	private JTextField txtTel;
-	private JPasswordField senha;
+	public JTextField txtNome;
+	public JTextField txtEmail;
+	public JTextField txtRG;
+	public JTextField txtCPF;
+	public JTextField txtTel;
+	public JPasswordField senha;
 
 	/**
 	 * Launch the application.
@@ -64,7 +57,7 @@ public class TelaCadastro {
 	 * Initialize the contents of the frame.
 	 */
 	public void initialize() {
-		ControlerUsuarios control = new ControlerUsuarios();
+		ControllerUsuarios control = new ControllerUsuarios();
 
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 706);
@@ -138,7 +131,7 @@ public class TelaCadastro {
 		txtTel.setBounds(46, 510, 335, 20);
 		frame.getContentPane().add(txtTel);
 
-		JLabel tituloSenha = new JLabel("Senha (Deve come\u00E7ar com 3 letras maiusuclas e ");
+		JLabel tituloSenha = new JLabel("Senha (Deve comecar com 3 letras maiusculas e ");
 		tituloSenha.setVerticalAlignment(SwingConstants.BOTTOM);
 		tituloSenha.setHorizontalAlignment(SwingConstants.LEFT);
 		tituloSenha.setFont(new Font("Cambria", Font.PLAIN, 15));

@@ -1,14 +1,15 @@
 package view;
-import controler.*;
 import java.util.Scanner;
+
+import controller.*;
 
 public class Main {
 	public static void main(String[] args) {
 		
-		ControlerUsuarios controlUser = new ControlerUsuarios();
-		ControlerLoging controlLoging = new ControlerLoging();
+		ControllerUsuarios controlUser = new ControllerUsuarios();
+		ControllerLoging controlLoging = new ControllerLoging();
 		
-		controlUser.CadastroUser();
+		//controlUser.CadastroUser();
 		controlLoging.loging();
 		controlUser.listarUsuario();
 		controlUser.deletarUsuario();

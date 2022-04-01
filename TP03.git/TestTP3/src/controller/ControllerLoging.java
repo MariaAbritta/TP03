@@ -1,14 +1,14 @@
-package controler;
+package controller;
 
 import java.util.Scanner;
 
 import models.Usuario;
 
-public class ControlerLoging {
+public class ControllerLoging {
 	static Scanner ler = new Scanner(System.in);
 	private Usuario u = new Usuario();
 	public static int indiceUser;
-	private ControlerUsuarios controlerU = new ControlerUsuarios(); 
+	private ControllerUsuarios controlerU = new ControllerUsuarios(); 
 	private String userLogin;
 	private String userPassword;
 	private boolean verificador;
@@ -46,7 +46,7 @@ public class ControlerLoging {
 	
 	public boolean validarNome() {
 		
-		for(int i = 0; i <= ControlerUsuarios.qtdUser; i++) {
+		for(int i = 0; i <= ControllerUsuarios.qtdUser; i++) {
 			if(Usuario.usuario[i][0].equals(userLogin)) {
 				indiceUser = i;
 				return true;

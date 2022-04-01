@@ -4,12 +4,16 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import java.awt.SystemColor;
 import java.awt.Color;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import controller.ControllerUsuarios;
+import view.TelaCadastro;
 
 public class TelaUsuario {
 
@@ -62,6 +66,9 @@ public class TelaUsuario {
 		JButton listar = new JButton("Listar dados");
 		listar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null, "Seus dados sao: ", "Dados do usuario",
+						JOptionPane.showConfirmDialog(listar, e));
+				
 			}
 		});
 		listar.setBackground(new Color(255, 204, 255));

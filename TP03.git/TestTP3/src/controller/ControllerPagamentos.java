@@ -1,16 +1,16 @@
-package controler;
+package controller;
 
 import java.util.Scanner;
 
 import models.*;
 
-public class ControlerPagamentos {
+public class ControllerPagamentos {
 	private Pagamento p = new Pagamento();
 	private Usuario user = new Usuario();
 	static Scanner ler = new Scanner(System.in);
 	
 	public void dadosPagamento() {
-		for(int i = 0; i <= ControlerUsuarios.qtdUser; i++ ) {
+		for(int i = 0; i <= ControllerUsuarios.qtdUser; i++ ) {
 			if(Usuario.usuario[i][0] != null) {
 				Pagamento.DadosPagamento[i][0] = Usuario.usuario[1][0];
 			}
