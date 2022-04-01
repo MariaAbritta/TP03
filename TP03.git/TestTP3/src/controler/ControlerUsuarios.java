@@ -10,6 +10,7 @@ public class ControlerUsuarios {
 		static 	int i = 0, j=0;
 		static Scanner ler = new Scanner(System.in);
 		
+
 		public void CadastroUser() {
 			cadastroUsuario();
 		}

@@ -8,7 +8,7 @@ public class Pagamento {
 	private String numeroDoCartao;
 	private String nomeNoCartao;
 	private String codigoDeSeguranca;
-	static public String[] DadosPagamento = new String[50];
+	static public String[][] DadosPagamento = new String[50][50];
 	static  int i = 0, j = 1;
 	static Scanner ler = new Scanner(System.in);
 	
@@ -37,8 +37,6 @@ public class Pagamento {
 	}
 
 	public void setValorTotalPagamento(double valorTotalPagamento) {
-		//Tempo tempo = new Tempo();
-		//valorTotalPagamento = tempo.getMinutosViagem();
 		
 		valorTotalPagamento = valorTotalPagamento * 0.5; 
 		this.valorTotalPagamento = valorTotalPagamento;
@@ -172,49 +170,49 @@ public class Pagamento {
 		/////////////////////////////////////////////////////////////
 		System.out.println("------------------------------");
 	}
-	
-	public void editarPagamento() {
-		System.out.println("--------------------");
-		System.out.println("Editar Pagamento: \n");
-		
-		//nao editaveis
-		System.out.println("Valor a ser pago: " + getValorTotalPagamento());
-		
-		//editaveis
-		System.out.println("Forma de Pagamento (debito, credito):\n");
-		setFormaDePagamento(ler.next());
-		
-		System.out.println("Cadastrar numero do cartao para pagamento: \n");
-		setNumeroDoCartao(ler.next());
-		
-		System.out.println("Cadastrar nome no cartao: \n");
-		setNomeNoCartao(ler.next());
-		
-		System.out.println("Cadastrar codigo de seguranca do cartao: \n");
-		setCodigoDeSeguranca(ler.next());
-		System.out.println("--------------------");
-	}
-	
-	public void deletarPagamento() {
-		System.out.println("\nDeletando Pagamento....\n");
-		setValorTotalPagamento(0);
-		setFormaDePagamento("");
-		setNumeroDoCartao("");
-		setNomeNoCartao("");
-		setCodigoDeSeguranca("");
-	}
-	
-	public void listarPagamento() {
-		System.out.println("------------------------------");
-		System.out.println("Listar Pagamento:");
-		System.out.println("Valor a ser pago: " + getValorTotalPagamento());
-		System.out.println("Forma de pagamento: " + getFormaDePagamento());
-		System.out.println("Numero do cartao: " + getNumeroDoCartao());
-		System.out.println("Nome no cartao: " + getNomeNoCartao());
-		System.out.println("Codigo de seguranca: " + getCodigoDeSeguranca());
-		System.out.println("PAGAMENTO SENDO PROCESSADO...");
-		System.out.println("...");
-		System.out.println("PAGAMENTO REALIZADO!");
-	}
+//	
+//	public void editarPagamento() {
+//		System.out.println("--------------------");
+//		System.out.println("Editar Pagamento: \n");
+//		
+//		//nao editaveis
+//		System.out.println("Valor a ser pago: " + getValorTotalPagamento());
+//		
+//		//editaveis
+//		System.out.println("Forma de Pagamento (debito, credito):\n");
+//		setFormaDePagamento(ler.next());
+//		
+//		System.out.println("Cadastrar numero do cartao para pagamento: \n");
+//		setNumeroDoCartao(ler.next());
+//		
+//		System.out.println("Cadastrar nome no cartao: \n");
+//		setNomeNoCartao(ler.next());
+//		
+//		System.out.println("Cadastrar codigo de seguranca do cartao: \n");
+//		setCodigoDeSeguranca(ler.next());
+//		System.out.println("--------------------");
+//	}
+//	
+//	public void deletarPagamento() {
+//		System.out.println("\nDeletando Pagamento....\n");
+//		setValorTotalPagamento(0);
+//		setFormaDePagamento("");
+//		setNumeroDoCartao("");
+//		setNomeNoCartao("");
+//		setCodigoDeSeguranca("");
+//	}
+//	
+//	public void listarPagamento() {
+//		System.out.println("------------------------------");
+//		System.out.println("Listar Pagamento:");
+//		System.out.println("Valor a ser pago: " + getValorTotalPagamento());
+//		System.out.println("Forma de pagamento: " + getFormaDePagamento());
+//		System.out.println("Numero do cartao: " + getNumeroDoCartao());
+//		System.out.println("Nome no cartao: " + getNomeNoCartao());
+//		System.out.println("Codigo de seguranca: " + getCodigoDeSeguranca());
+//		System.out.println("PAGAMENTO SENDO PROCESSADO...");
+//		System.out.println("...");
+//		System.out.println("PAGAMENTO REALIZADO!");
+//	}
 	
 }
