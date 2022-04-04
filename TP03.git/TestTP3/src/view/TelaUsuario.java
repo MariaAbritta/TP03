@@ -5,18 +5,26 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+
+import models.Usuario;
 
 import java.awt.Font;
+import java.awt.Insets;
 import java.awt.SystemColor;
 import java.awt.Color;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import controller.ControllerUsuarios;
+import view.TelaCadastro;
+import models.Usuario;
 import view.TelaCadastro;
 
 public class TelaUsuario {
 
+	private Usuario user = new Usuario();
+	private TelaCadastro tc = new TelaCadastro();
+	
 	private JFrame frame;
 
 	/**
@@ -66,9 +74,10 @@ public class TelaUsuario {
 		JButton listar = new JButton("Listar dados");
 		listar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "Seus dados sao: ", "Dados do usuario",
-						JOptionPane.showConfirmDialog(listar, e));
-				
+				//JTextField Nome = user.getNome();
+				/*System.out.println("Nome: " + user.getNome() + "\nE-mail: " + user.getEmail() + "\nRG: " + user.getRg() + "\nCPF: " + user.getCpf() + 
+						"\nTelefone: " + user.getTelefone());*/// Printa todas as infos da Pessoa
+				//JOptionPane.showMessageDialog(null, "Seu nome é " + Nome);
 			}
 		});
 		listar.setBackground(new Color(255, 204, 255));
