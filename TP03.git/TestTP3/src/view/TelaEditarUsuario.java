@@ -21,7 +21,7 @@ import java.awt.event.MouseEvent;
 import java.awt.SystemColor;
 import models.Usuario;
 
-public class TelaCadastro {
+public class TelaEditarUsuario {
 
 	private Usuario user = new Usuario();
 	private JFrame frame;
@@ -40,7 +40,7 @@ public class TelaCadastro {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					TelaCadastro window = new TelaCadastro();
+					TelaEditarUsuario window = new TelaEditarUsuario();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -52,7 +52,7 @@ public class TelaCadastro {
 	/**
 	 * Create the application.
 	 */
-	public TelaCadastro() {
+	public TelaEditarUsuario() {
 		initialize();
 	}
 
@@ -63,7 +63,7 @@ public class TelaCadastro {
 		ControllerUsuarios control = new ControllerUsuarios();
 
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 706);
+		frame.setBounds(100, 100, 450, 648);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
@@ -79,7 +79,7 @@ public class TelaCadastro {
 		tituloDois.setBounds(121, 125, 239, 13);
 		frame.getContentPane().add(tituloDois);
 
-		JLabel tituloNome = new JLabel("Nome (Letras maiusuclas):");
+		JLabel tituloNome = new JLabel("Nome (Letras maiusculas):");
 		tituloNome.setFont(new Font("Cambria", Font.PLAIN, 15));
 		tituloNome.setBounds(46, 165, 176, 14);
 		frame.getContentPane().add(tituloNome);
@@ -134,21 +134,11 @@ public class TelaCadastro {
 		txtTel.setBounds(46, 510, 335, 20);
 		frame.getContentPane().add(txtTel);
 
-		JLabel tituloSenha = new JLabel("Senha (Deve comecar com 3 letras maiusculas e ");
-		tituloSenha.setVerticalAlignment(SwingConstants.BOTTOM);
-		tituloSenha.setHorizontalAlignment(SwingConstants.LEFT);
-		tituloSenha.setFont(new Font("Cambria", Font.PLAIN, 15));
-		tituloSenha.setBounds(46, 570, 335, 14);
-		frame.getContentPane().add(tituloSenha);
-
-		senha = new JPasswordField();
-		senha.setBounds(46, 607, 335, 20);
-		frame.getContentPane().add(senha);
 
 		JButton check = new JButton("OK");
 		check.setFont(new Font("Cambria", Font.PLAIN, 11));
 		check.setBackground(SystemColor.desktop);
-		check.setBounds(181, 633, 89, 23);
+		check.setBounds(176, 563, 89, 23);
 		check.addActionListener(new ActionListener() {
 
 			@SuppressWarnings("deprecation")
@@ -196,23 +186,17 @@ public class TelaCadastro {
 		});
 		frame.getContentPane().add(check);
 
-		JLabel lblTerminarCom = new JLabel("terminar com 4 numeros):");
-		lblTerminarCom.setVerticalAlignment(SwingConstants.BOTTOM);
-		lblTerminarCom.setHorizontalAlignment(SwingConstants.LEFT);
-		lblTerminarCom.setFont(new Font("Cambria", Font.PLAIN, 15));
-		lblTerminarCom.setBounds(46, 584, 335, 14);
-		frame.getContentPane().add(lblTerminarCom);
 
-		JLabel lblCadastro = new JLabel("Cadastro");
+		JLabel lblCadastro = new JLabel("Editar");
 		lblCadastro.setForeground(SystemColor.desktop);
 		lblCadastro.setFont(new Font("Elephant", Font.PLAIN, 37));
-		lblCadastro.setBounds(146, 25, 204, 75);
+		lblCadastro.setBounds(156, 25, 204, 75);
 		frame.getContentPane().add(lblCadastro);
 
-		JLabel tiruloUm_1 = new JLabel("Cadastro");
+		JLabel tiruloUm_1 = new JLabel("Editar");
 		tiruloUm_1.setForeground(new Color(51, 204, 204));
 		tiruloUm_1.setFont(new Font("Elephant", Font.PLAIN, 37));
-		tiruloUm_1.setBounds(136, 11, 194, 75);
+		tiruloUm_1.setBounds(146, 11, 194, 75);
 		frame.getContentPane().add(tiruloUm_1);
 	}
 

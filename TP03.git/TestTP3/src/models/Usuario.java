@@ -2,6 +2,7 @@ package models;
 
 import java.util.Arrays;
 import java.util.Scanner;
+import view.TelaCadastro;
 
 public class Usuario {
 	private String nome = "";
@@ -30,8 +31,8 @@ public class Usuario {
 		return nome;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public String setNome(String nome) {
+		return this.nome = nome;
 	}
 
 	public String getEmail() {

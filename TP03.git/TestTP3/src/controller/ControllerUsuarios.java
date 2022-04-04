@@ -11,9 +11,6 @@ public class ControllerUsuarios {
 	static int i = 0, j = 0;
 	static Scanner ler = new Scanner(System.in);
 
-	public void editarUser() {
-		editarUsuario();
-	}
 
 	public void listarUsuario() {
 		for (int x = 0; x <= 6; x++) {
@@ -22,33 +19,6 @@ public class ControllerUsuarios {
 			}
 		}
 	}
-
-	public void deletarUsuario() {
-		System.out.println("Deseja excluir usuario??");
-		System.out.println("1.SIM \n 2.NAO");
-		int confirmar = 0;
-		confirmar = ler.nextInt();
-
-		switch (confirmar) {
-			case 1:
-				for (int x = 0; x <= 6; x++) {
-					if (Usuario.usuario[ControllerLoging.indiceUser][x] != null) {
-						Usuario.usuario[ControllerLoging.indiceUser][x] = null;
-						System.out.println(x + ". " + Usuario.usuario[ControllerLoging.indiceUser][x]);
-					}
-				}
-				System.out.println("Deletado...	 ");
-				break;
-			case 2:
-				System.out.println("OK");
-				break;
-			default:
-				System.out.println("Nao tem essa op��o");
-				break;
-		}
-
-	}
-
 
 	public boolean validarNome(String nomeInput) {
 		System.out.println(nomeInput);
@@ -122,18 +92,5 @@ public class ControllerUsuarios {
 			verificar = false;
 		}
 		return verificar;
-	}
-
-	public void editarUsuario() {
-		int opcao;
-		System.out.println("O que deseja editar??\n");
-		System.out.println("1.Nome");
-		System.out.println("2.Email");
-		System.out.println("3.RG");
-		System.out.println("4.CPF");
-		System.out.println("5.Senha");
-		System.out.println("6.Telefone");
-		opcao = ler.nextInt();
-
 	}
 }

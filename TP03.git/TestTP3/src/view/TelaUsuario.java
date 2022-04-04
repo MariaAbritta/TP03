@@ -5,20 +5,15 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JTextField;
 
 import models.Usuario;
 
 import java.awt.Font;
-import java.awt.Insets;
 import java.awt.SystemColor;
 import java.awt.Color;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import view.TelaCadastro;
-import models.Usuario;
-import view.TelaCadastro;
 
 public class TelaUsuario {
 
@@ -74,10 +69,9 @@ public class TelaUsuario {
 		JButton listar = new JButton("Listar dados");
 		listar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//JTextField Nome = user.getNome();
 				/*System.out.println("Nome: " + user.getNome() + "\nE-mail: " + user.getEmail() + "\nRG: " + user.getRg() + "\nCPF: " + user.getCpf() + 
 						"\nTelefone: " + user.getTelefone());*/// Printa todas as infos da Pessoa
-				//JOptionPane.showMessageDialog(null, "Seu nome é " + Nome);
+				JOptionPane.showMessageDialog(listar, "Seu nome é " + user.getNome());
 			}
 		});
 		listar.setBackground(new Color(255, 204, 255));
@@ -90,6 +84,16 @@ public class TelaUsuario {
 		editar.setBackground(new Color(204, 204, 255));
 		editar.setBounds(155, 145, 130, 34);
 		frame.getContentPane().add(editar);
+		editar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Object src = e.getSource();
+				if(src == editar) {
+					new TelaEditarUsuario();
+					TelaEditarUsuario.main(null);
+				}
+			}
+		});
+		
 		
 		JButton deletar = new JButton("Deletar dados");
 		deletar.setBackground(new Color(255, 255, 204));
