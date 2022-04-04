@@ -148,6 +148,7 @@ public class TelaCadastro {
 		check.setBounds(181, 633, 89, 23);
 		check.addActionListener(new ActionListener() {
 
+			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent e) {
 				String msgErro = "";
 
@@ -212,6 +213,7 @@ public class TelaCadastro {
 		frame.getContentPane().add(tiruloUm_1);
 	}
 
+	@SuppressWarnings("unused")
 	private static void addPopup(Component component, final JPopupMenu popup) {
 		component.addMouseListener(new MouseAdapter() {
 			public void mousePressed(MouseEvent e) {

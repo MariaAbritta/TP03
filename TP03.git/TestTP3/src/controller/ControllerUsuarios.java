@@ -1,40 +1,15 @@
 package controller;
 
 import java.util.Scanner;
-import view.TelaCadastro;
 
 import models.*;
 
 public class ControllerUsuarios {
 
 	private Usuario user = new Usuario();
-	private TelaCadastro tc = new TelaCadastro();
 	public static int qtdUser = 0;
 	static int i = 0, j = 0;
 	static Scanner ler = new Scanner(System.in);
-	
-	public String[][] cadstrarNome() {
-		user.setNome(tc.txtNome.getText());
-		Usuario.usuario[qtdUser][i] = user.getNome();
-		i++;
-		user.setEmail(tc.txtEmail.getText());
-		Usuario.usuario[qtdUser][i] = user.getEmail();
-		i++;
-		user.setRg(tc.txtRG.getText());
-		Usuario.usuario[qtdUser][i] = user.getRg();
-		i++;
-		user.setCpf(tc.txtCPF.getText());
-		Usuario.usuario[qtdUser][i] = user.getCpf();
-		i++;
-		user.setSenha(tc.senha.getText());
-		Usuario.usuario[qtdUser][i] = user.getSenha();
-		i++;
-		user.setTelefone(tc.txtTel.getText());
-		Usuario.usuario[qtdUser][i] = user.getTelefone();
-		qtdUser++;
-		i=0;
-		return Usuario.usuario;
-	}
 
 	public void editarUser() {
 		editarUsuario();
@@ -74,6 +49,7 @@ public class ControllerUsuarios {
 
 	}
 
+
 	public boolean validarNome(String nomeInput) {
 		System.out.println(nomeInput);
 		boolean verificar = true;
@@ -83,7 +59,7 @@ public class ControllerUsuarios {
 		}
 		return verificar;
 	}
-	
+
 	public boolean validarEmail(String emailValid) {
 		System.out.println("Validando Email");
 		boolean verificar = true;
@@ -92,12 +68,6 @@ public class ControllerUsuarios {
 			verificar = false;
 		}
 		return verificar;
-	}
-	
-	public void cadastroEmail() {
-		new TelaCadastro();
-		user.setEmail(tc.txtEmail.getText());
-		Usuario.usuario[ControllerLoging.indiceUser][1] = user.getEmail();
 	}
 
 	public boolean validarRg(String rgValid) {
@@ -113,12 +83,6 @@ public class ControllerUsuarios {
 
 		return verificar;
 	}
-	
-	public void cadastroRg() {
-		new TelaCadastro();
-		user.setRg(tc.txtRG.getText());
-		Usuario.usuario[ControllerLoging.indiceUser][2] = user.getRg();
-	}
 
 	public boolean validarCpf(String cpfValid) {
 		System.out.println("Validando CPF");
@@ -130,12 +94,6 @@ public class ControllerUsuarios {
 			verificar = false;
 		}
 		return verificar;
-	}
-	
-	public void cadastroCpf() {
-		new TelaCadastro();
-		user.setCpf(tc.txtCPF.getText());
-		Usuario.usuario[ControllerLoging.indiceUser][3] = user.getCpf();
 	}
 
 	public boolean validarSenha(String senhaValid) {
@@ -153,12 +111,6 @@ public class ControllerUsuarios {
 		}
 		return verificar;
 	}
-	
-	public void cadastroSenha() {
-		new TelaCadastro();
-		user.setSenha(tc.senha.getText());
-		Usuario.usuario[ControllerLoging.indiceUser][4] = user.getSenha();
-	}
 
 	public boolean validarTelefone(String telValid) {
 		System.out.println("Validando Telefone");
@@ -171,12 +123,6 @@ public class ControllerUsuarios {
 		}
 		return verificar;
 	}
-	
-	public void cadastroTelefone() {
-		new TelaCadastro();
-		user.setTelefone(tc.txtTel.getText());
-		Usuario.usuario[ControllerLoging.indiceUser][5] = user.getTelefone();
-	}
 
 	public void editarUsuario() {
 		int opcao;
@@ -188,6 +134,6 @@ public class ControllerUsuarios {
 		System.out.println("5.Senha");
 		System.out.println("6.Telefone");
 		opcao = ler.nextInt();
-		//Arrumar no front
+
 	}
 }
