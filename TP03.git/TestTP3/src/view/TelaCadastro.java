@@ -12,6 +12,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 import javax.swing.SwingConstants;
+
+import controller.ControllerPagamentos;
 import controller.ControllerUsuarios;
 import javax.swing.JPasswordField;
 import javax.swing.JPopupMenu;
@@ -195,7 +197,10 @@ public class TelaCadastro {
 					Usuario.usuario[ControllerUsuarios.qtdUser][3] = txtCPF.getText();
 					Usuario.usuario[ControllerUsuarios.qtdUser][4] = senha.getText();
 					Usuario.usuario[ControllerUsuarios.qtdUser][5] = txtTel.getText();
+					//contar usuarios cadastrados
 					ControllerUsuarios.contaUser();
+					//Registar os nomes no array de pagamento
+					ControllerPagamentos.dadosPagamento();
 					//outros
 					frame.dispose();
 					TelaMenu.main(null);

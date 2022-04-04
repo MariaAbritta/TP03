@@ -16,15 +16,6 @@ public class ControllerUsuarios {
 		qtdUser++;
 	}
 
-	public String[][] listarUsuario() {
-		for (int x = 0; x <= 6; x++) {
-			if (Usuario.usuario[ControllerLoging.indiceUser][x] != null) {
-				return Usuario.usuario;
-			}
-		}
-		return Usuario.usuario;
-	}
-
 	public boolean validarNome(String nomeInput) {
 		boolean verificar = true;
 		if (!nomeInput.substring(0).matches("[A-Z]*")) {

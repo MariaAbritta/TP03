@@ -7,101 +7,74 @@ import models.*;
 public class ControllerPagamentos {
 	private Pagamento p = new Pagamento();
 	private Usuario user = new Usuario();
+	public static int qtdCartao = 0;
 	static Scanner ler = new Scanner(System.in);
 	
-	public void dadosPagamento() {
+	//relacao de usuarios com seus pagamentos
+	public static void dadosPagamento() {
 		for(int i = 0; i <= ControllerUsuarios.qtdUser; i++ ) {
 			if(Usuario.usuario[i][0] != null) {
-				Pagamento.DadosPagamento[i][0] = Usuario.usuario[1][0];
+				Pagamento.DadosPagamento[i][0] = Usuario.usuario[i][0];
 			}
 		}
 	}	
 	
-	public void cadastroPagamento() {
-		cadastrarFormaDePagamento();
-		cadastrarNumCartao();
-		cadastrarNomeCaartao();
-		cadastrarCvvCartao();
+	//contar cartoes
+	public static void contaCartoes() {
+		qtdCartao++;
 	}
 	
-	public void cadastrarFormaDePagamento(){
-		System.out.println("------------------------------");
-		System.out.println("Pagamento: ");
-		System.out.println("Forma de Pagamento(debito, credito):\n");
-		p.setFormaDePagamento(ler.next());
-		String respostaCartao = p.getFormaDePagamento();
-		boolean verificador = false;
-		validarFormaDePagamento(respostaCartao, verificador);
-	}
-	public void validarFormaDePagamento(String respostaCartao, boolean verificador) {
+	//validacoes
+	public boolean validarFormaDePagamento(String respostaCartao, boolean verificador) {
 		if ((respostaCartao.contains("debito")) || (respostaCartao.contains("credito"))){ 
 			verificador = true;
-		}else{  
-			do {
-				System.out.println("Erro! Escolha apenas debito ou credito: \n");
-				p.setFormaDePagamento(ler.next());
-				respostaCartao = p.getFormaDePagamento();
-				if ((respostaCartao.contains("debito")) || (respostaCartao.contains("credito"))){ 
-					verificador = true;
-				}
-			}while(verificador != true );
 		}
+		else {
+			verificador = false;
+		}
+		return verificador;
 	}
 	
-	public void cadastrarNumCartao(){
-		System.out.println("Cadastrar numero do cartao para pagamento: \n");
-		p.setNumeroDoCartao(ler.next());
-		boolean validador = true;
-		String respostaNumCartao = p.getNumeroDoCartao();
-		validarNumCartao(validador,respostaNumCartao);
-	}
-	public void validarNumCartao(boolean validador,String respostaNumCartao) {
+	public boolean validarNumCartao(boolean validador,String respostaNumCartao) {
 		if(respostaNumCartao.length() != 16){
 			validador = false;
-			do {
-				System.out.println("Erro! Um cartao possui 16 digitos de identificacao. Insira os numeros validos:");
-				p.setNumeroDoCartao(ler.next());
-				respostaNumCartao = p.getNumeroDoCartao();
-				if(respostaNumCartao.length() != 16){
-					validador = false;
-				}
-			}while(validador == false);
+		}
+		else {
+			validador = true;
 		}
 		if(!respostaNumCartao.substring(0).matches("[0-9]*")){
 			validador = false;
-			do {
-				System.out.println("Erro! Digitos de identificacao possui apenas numeros. Insira os numeros validos:");
-				p.setNumeroDoCartao(ler.next());
-				respostaNumCartao = p.getNumeroDoCartao();
-				if(!respostaNumCartao.substring(0).matches("[0-9]*")){
-					validador = false;
-				}
-			}while(validador == false);
+			
 		}
+		else {
+			validador = true;
+		}
+		return validador;
 	}
 	
-	public void cadastrarNomeCaartao() {
-		validarNomeCartao();
-	}
-	public void validarNomeCartao() {
-		
-	}
-	
-	public void cadastrarCvvCartao() {
-		validarCvvCartao();
-	}
-	public void validarCvvCartao() {
-		
+	public boolean validarNomeCartao(String respostaNome, boolean verificador) {
+		if(!respostaNome.substring(0).matches("[A-Z]*")){
+			verificador = false;
+		}
+		else {
+			verificador = true;
+		}
+		return verificador;
 	}
 	
-	//resto
-	public void editarPagamento() {
-		
-	}
-	public void deletarPagamento() {
-		
-	}
-	public void listarPagamento() {
-		
+	public boolean validarCvvCartao(String respostaCvv, boolean verificador) {
+		if(respostaCvv.length() != 3){
+			verificador = false;
+		}
+		else {
+			verificador = true;
+		}
+		if(!respostaCvv.substring(0).matches("[0-9]*")){
+			verificador = false;
+		}
+		else {
+			verificador = true;
+		}
+		return verificador;
 	}
 }
