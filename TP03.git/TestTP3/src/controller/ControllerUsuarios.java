@@ -10,20 +10,23 @@ public class ControllerUsuarios {
 	public static int qtdUser = 0;
 	static int i = 0, j = 0;
 	static Scanner ler = new Scanner(System.in);
+	public static int indiceUser=0;
+	
+	public static void contaUser() {
+		qtdUser++;
+	}
 
-
-	public void listarUsuario() {
+	public String[][] listarUsuario() {
 		for (int x = 0; x <= 6; x++) {
 			if (Usuario.usuario[ControllerLoging.indiceUser][x] != null) {
-				System.out.println(x + ". " + Usuario.usuario[ControllerLoging.indiceUser][x]);
+				return Usuario.usuario;
 			}
 		}
+		return Usuario.usuario;
 	}
 
 	public boolean validarNome(String nomeInput) {
-		System.out.println(nomeInput);
 		boolean verificar = true;
-		System.out.println("Validando Nome");
 		if (!nomeInput.substring(0).matches("[A-Z]*")) {
 			verificar = false;
 		}
@@ -31,7 +34,6 @@ public class ControllerUsuarios {
 	}
 
 	public boolean validarEmail(String emailValid) {
-		System.out.println("Validando Email");
 		boolean verificar = true;
 
 		if (!emailValid.substring(0).matches("(.*)@(.*)")) {
@@ -41,8 +43,6 @@ public class ControllerUsuarios {
 	}
 
 	public boolean validarRg(String rgValid) {
-		System.out.println(rgValid.length());
-		System.out.println("Validando RG");
 		boolean verificar = true;
 		if (rgValid.length() != 7) {
 			verificar = false;
@@ -55,7 +55,6 @@ public class ControllerUsuarios {
 	}
 
 	public boolean validarCpf(String cpfValid) {
-		System.out.println("Validando CPF");
 		boolean verificar = true;
 		if (cpfValid.length() != 11) {
 			verificar = false;
@@ -67,8 +66,6 @@ public class ControllerUsuarios {
 	}
 
 	public boolean validarSenha(String senhaValid) {
-		System.out.println(senhaValid);
-		System.out.println("Validando Senha");
 		boolean verificar = true;
 		if (senhaValid.length() != 7) {
 			verificar = false;
@@ -83,7 +80,6 @@ public class ControllerUsuarios {
 	}
 
 	public boolean validarTelefone(String telValid) {
-		System.out.println("Validando Telefone");
 		boolean verificar = true;
 		if (telValid.length() != 9) {
 			verificar = false;

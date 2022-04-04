@@ -188,12 +188,21 @@ public class TelaCadastro {
 				} else {
 					JOptionPane.showMessageDialog(null, "Confirmar Cadastro", "Deseja Confirmar o Cadastro ?",
 							JOptionPane.DEFAULT_OPTION);
-
+					//registrar os dados no back
+					Usuario.usuario[ControllerUsuarios.qtdUser][0] = txtNome.getText();
+					Usuario.usuario[ControllerUsuarios.qtdUser][1] = txtEmail.getText();
+					Usuario.usuario[ControllerUsuarios.qtdUser][2] = txtRG.getText();
+					Usuario.usuario[ControllerUsuarios.qtdUser][3] = txtCPF.getText();
+					Usuario.usuario[ControllerUsuarios.qtdUser][4] = senha.getText();
+					Usuario.usuario[ControllerUsuarios.qtdUser][5] = txtTel.getText();
+					ControllerUsuarios.contaUser();
+					//outros
 					frame.dispose();
 					TelaMenu.main(null);
 				}
 			}
 		});
+		
 		frame.getContentPane().add(check);
 
 		JLabel lblTerminarCom = new JLabel("terminar com 4 numeros):");

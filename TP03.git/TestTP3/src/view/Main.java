@@ -12,7 +12,7 @@ public class Main {
 		//controlUser.CadastroUser();
 		controlLoging.loging();
 		controlUser.listarUsuario();
-		controlUser.deletarUsuario();
+		//controlUser.deletarUsuario();
 		//Instancia do objeto
 //		Tempo tempo = new Tempo();
 

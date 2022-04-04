@@ -6,6 +6,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
+import controller.ControllerLoging;
+import controller.ControllerUsuarios;
 import models.Usuario;
 
 import java.awt.Font;
@@ -69,9 +71,21 @@ public class TelaUsuario {
 		JButton listar = new JButton("Listar dados");
 		listar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				/*System.out.println("Nome: " + user.getNome() + "\nE-mail: " + user.getEmail() + "\nRG: " + user.getRg() + "\nCPF: " + user.getCpf() + 
-						"\nTelefone: " + user.getTelefone());*/// Printa todas as infos da Pessoa
-				JOptionPane.showMessageDialog(listar, "Seu nome é " + user.getNome());
+				// Printa todas as infos da Pessoa
+				for(int i=0; i<=6; i++) {
+					if (Usuario.usuario[ControllerLoging.indiceUser][i] != null) {
+						
+					}
+				}
+				JOptionPane.showMessageDialog(listar, 
+						"Seu nome é: " + Usuario.usuario[ControllerUsuarios.indiceUser][0] +
+						"\nSeu email é: " +	 Usuario.usuario[ControllerUsuarios.indiceUser][1] +
+						"\nSeu RG é: " + Usuario.usuario[ControllerUsuarios.indiceUser][2] +
+						"\nSeu CPF é: " + Usuario.usuario[ControllerUsuarios.indiceUser][3] +
+						"\nSeu Senha é: " + Usuario.usuario[ControllerUsuarios.indiceUser][4] +
+						"\nSeu TeleFone é: " + Usuario.usuario[ControllerUsuarios.indiceUser][5]
+						);
+				
 			}
 		});
 		listar.setBackground(new Color(255, 204, 255));
