@@ -61,7 +61,6 @@ public class TelaCadastro {
 	 */
 	public void initialize() {
 		ControllerUsuarios control = new ControllerUsuarios();
-
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 706);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -184,7 +183,7 @@ public class TelaCadastro {
 				}
 
 				if (msgErro.length() > 0) {
-					JOptionPane.showMessageDialog(null, msgErro, "Título da Janela", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null, msgErro, "ERRO", JOptionPane.ERROR_MESSAGE);
 				} else {
 					JOptionPane.showMessageDialog(null, "Confirmar Cadastro", "Deseja Confirmar o Cadastro ?",
 							JOptionPane.DEFAULT_OPTION);

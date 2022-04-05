@@ -10,7 +10,7 @@ public class Main {
 		ControllerLoging controlLoging = new ControllerLoging();
 		
 		//controlUser.CadastroUser();
-		controlLoging.loging();
+		//controlLoging.loging();
 		//controlUser.deletarUsuario();
 		//Instancia do objeto
 //		Tempo tempo = new Tempo();

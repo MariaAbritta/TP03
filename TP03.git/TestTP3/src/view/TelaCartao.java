@@ -12,16 +12,13 @@ import java.awt.Font;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPopupMenu;
-
 import java.awt.Color;
 import java.awt.Component;
-
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import controller.ControllerPagamentos;
 import controller.ControllerUsuarios;
 import models.Pagamento;
-import models.Usuario;
 
 public class TelaCartao {
 
@@ -31,7 +28,6 @@ public class TelaCartao {
 	private JTextField txtNome;
 	private JTextField textCVV;
 	static public String[][] cartao = new String[50][50];
-	ControllerPagamentos control = new ControllerPagamentos();
 
 
 
@@ -62,6 +58,8 @@ public class TelaCartao {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		ControllerPagamentos control = new ControllerPagamentos();
+		
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 517);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -91,9 +89,9 @@ public class TelaCartao {
 		tituloDois.setBounds(109, 99, 239, 13);
 		frame.getContentPane().add(tituloDois);
 		
-		JLabel tituloForma = new JLabel("Forma de pagamento:");
+		JLabel tituloForma = new JLabel("Forma de pagamento(Letras maiusculas):");
 		tituloForma.setFont(new Font("Cambria", Font.PLAIN, 15));
-		tituloForma.setBounds(51, 136, 176, 14);
+		tituloForma.setBounds(51, 136, 289, 14);
 		frame.getContentPane().add(tituloForma);
 		
 		textForma = new JTextField();
@@ -111,10 +109,10 @@ public class TelaCartao {
 		txtNumCartao.setBounds(51, 238, 335, 20);
 		frame.getContentPane().add(txtNumCartao);
 		
-		JLabel tituloNome = new JLabel("Nome:");
+		JLabel tituloNome = new JLabel("Nome(Letras maiusculas):");
 		tituloNome.setVerticalAlignment(SwingConstants.BOTTOM);
 		tituloNome.setFont(new Font("Cambria", Font.PLAIN, 15));
-		tituloNome.setBounds(51, 298, 46, 14);
+		tituloNome.setBounds(51, 298, 177, 14);
 		frame.getContentPane().add(tituloNome);
 		
 		txtNome = new JTextField();
@@ -153,7 +151,7 @@ public class TelaCartao {
 					return;
 				}
 				if (!control.validarFormaDePagamento(textForma.getText())) {
-					msgErro += "Nome invalido\n";
+					msgErro += "Forma de pagamento invalida\n";
 				}
 				if (!control.validarNumCartao(txtNumCartao.getText())) {
 					msgErro += "Numero de cartao invalido\n";
@@ -165,7 +163,7 @@ public class TelaCartao {
 					msgErro += "CVV invalido\n";
 				}
 				if (msgErro.length() > 0) {
-					JOptionPane.showMessageDialog(null, msgErro, "Título da Janela", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null, msgErro, "ERRO", JOptionPane.ERROR_MESSAGE);
 				} else {
 					JOptionPane.showMessageDialog(null, "Confirmar Cadastro", "Deseja Confirmar o Cadastro?",
 							JOptionPane.DEFAULT_OPTION);
@@ -176,7 +174,7 @@ public class TelaCartao {
 					Pagamento.DadosPagamento[ControllerPagamentos.qtdCartao][3] = textCVV.getText();
 
 					//contar usuarios cadastrados
-					ControllerUsuarios.contaUser();
+					ControllerPagamentos.contaCartoes();
 					//Registar os nomes no array de pagamento
 					ControllerPagamentos.dadosPagamento();
 					//outros

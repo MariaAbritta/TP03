@@ -8,7 +8,6 @@ public class ControllerPagamentos {
 	private Pagamento p = new Pagamento();
 	private Usuario user = new Usuario();
 	public static int qtdCartao = 0;
-	static Scanner ler = new Scanner(System.in);
 	
 	//relacao de usuarios com seus pagamentos
 	public static void dadosPagamento() {
@@ -26,11 +25,14 @@ public class ControllerPagamentos {
 	
 	//validacoes
 	public boolean validarFormaDePagamento(String respostaCartao) {
-		boolean verificador = true;
-		if ((respostaCartao.contains("debito")) || (respostaCartao.contains("credito"))){ 
-			verificador = false;
+		boolean verificar = true;
+		if (respostaCartao.substring(0).matches("[A-Z]*")) {
+			verificar = true;
 		}
-		return verificador;
+		if (!respostaCartao.substring(0).matches("[A-Z]*")) {
+			verificar = false;
+		}
+		return verificar;
 	}
 	
 	public boolean validarNumCartao(String respostaNumCartao) {
@@ -46,6 +48,9 @@ public class ControllerPagamentos {
 	
 	public boolean validarNomeCartao(String nomeInput) {
 		boolean verificar = true;
+		if (nomeInput.substring(0).matches("[A-Z]*")) {
+			verificar = true;
+		}
 		if (!nomeInput.substring(0).matches("[A-Z]*")) {
 			verificar = false;
 		}

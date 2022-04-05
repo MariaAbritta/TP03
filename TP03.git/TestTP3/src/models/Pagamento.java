@@ -20,7 +20,7 @@ public class Pagamento {
 		this.formaDePagamento = fPagamento;
 		this.valorTotalPagamento = vTotal;
 		this.numeroDoCartao = numCartao;
-		this.nomeNoCartao = nomeCartao;
+		Pagamento.nomeNoCartao = nomeCartao;
 		this.codigoDeSeguranca = cvc;
 	}
 	
