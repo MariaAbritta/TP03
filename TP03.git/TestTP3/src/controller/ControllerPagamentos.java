@@ -25,55 +25,40 @@ public class ControllerPagamentos {
 	}
 	
 	//validacoes
-	public boolean validarFormaDePagamento(String respostaCartao, boolean verificador) {
+	public boolean validarFormaDePagamento(String respostaCartao) {
+		boolean verificador = true;
 		if ((respostaCartao.contains("debito")) || (respostaCartao.contains("credito"))){ 
-			verificador = true;
-		}
-		else {
 			verificador = false;
 		}
 		return verificador;
 	}
 	
-	public boolean validarNumCartao(boolean validador,String respostaNumCartao) {
+	public boolean validarNumCartao(String respostaNumCartao) {
+		boolean validador = true;
 		if(respostaNumCartao.length() != 16){
 			validador = false;
 		}
-		else {
-			validador = true;
-		}
 		if(!respostaNumCartao.substring(0).matches("[0-9]*")){
-			validador = false;
-			
-		}
-		else {
-			validador = true;
+			validador = false;	
 		}
 		return validador;
 	}
 	
-	public boolean validarNomeCartao(String respostaNome, boolean verificador) {
-		if(!respostaNome.substring(0).matches("[A-Z]*")){
-			verificador = false;
+	public boolean validarNomeCartao(String nomeInput) {
+		boolean verificar = true;
+		if (!nomeInput.substring(0).matches("[A-Z]*")) {
+			verificar = false;
 		}
-		else {
-			verificador = true;
-		}
-		return verificador;
+		return verificar;
 	}
 	
-	public boolean validarCvvCartao(String respostaCvv, boolean verificador) {
+	public boolean validarCvvCartao(String respostaCvv) {
+		boolean verificador = true;
 		if(respostaCvv.length() != 3){
 			verificador = false;
 		}
-		else {
-			verificador = true;
-		}
 		if(!respostaCvv.substring(0).matches("[0-9]*")){
 			verificador = false;
-		}
-		else {
-			verificador = true;
 		}
 		return verificador;
 	}

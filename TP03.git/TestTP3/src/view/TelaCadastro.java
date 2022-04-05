@@ -12,7 +12,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 import javax.swing.SwingConstants;
-
 import controller.ControllerPagamentos;
 import controller.ControllerUsuarios;
 import javax.swing.JPasswordField;
@@ -25,7 +24,6 @@ import models.Usuario;
 
 public class TelaCadastro {
 
-	private Usuario user = new Usuario();
 	private JFrame frame;
 	public JTextField txtNome;
 	public JTextField txtEmail;
@@ -81,7 +79,7 @@ public class TelaCadastro {
 		tituloDois.setBounds(121, 125, 239, 13);
 		frame.getContentPane().add(tituloDois);
 
-		JLabel tituloNome = new JLabel("Nome (Letras maiusuclas):");
+		JLabel tituloNome = new JLabel("Nome (Letras maiusculas):");
 		tituloNome.setFont(new Font("Cambria", Font.PLAIN, 15));
 		tituloNome.setBounds(46, 165, 176, 14);
 		frame.getContentPane().add(tituloNome);

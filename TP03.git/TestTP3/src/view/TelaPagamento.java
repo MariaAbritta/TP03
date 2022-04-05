@@ -1,13 +1,15 @@
 package view;
 
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.SystemColor;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.Color;
 import javax.swing.JButton;
+import models.Pagamento;
 
 public class TelaPagamento {
 
@@ -62,6 +64,15 @@ public class TelaPagamento {
 		cartao.setFont(new Font("Cambria", Font.PLAIN, 15));
 		cartao.setBounds(165, 100, 110, 32);
 		frame.getContentPane().add(cartao);
+		cartao.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Object src = e.getSource();
+				if(src == cartao) {
+					new TelaCartao();
+					TelaCartao.main(null);
+				}
+			}
+		});
 		
 		JButton listar = new JButton("Listar dados");
 		listar.setBackground(new Color(204, 255, 255));

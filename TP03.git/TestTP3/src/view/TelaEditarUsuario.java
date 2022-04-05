@@ -12,6 +12,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 import javax.swing.SwingConstants;
+
+import controller.ControllerPagamentos;
 import controller.ControllerUsuarios;
 import javax.swing.JPasswordField;
 import javax.swing.JPopupMenu;
@@ -63,7 +65,7 @@ public class TelaEditarUsuario {
 		ControllerUsuarios control = new ControllerUsuarios();
 
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 648);
+		frame.setBounds(100, 100, 450, 706);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
@@ -74,7 +76,7 @@ public class TelaEditarUsuario {
 		tituloUm.setBounds(111, 99, 239, 31);
 		frame.getContentPane().add(tituloUm);
 
-		JLabel tituloDois = new JLabel("para efetuar seu cadastro: ");
+		JLabel tituloDois = new JLabel("para editar seu cadastro: ");
 		tituloDois.setFont(new Font("Elephant", Font.PLAIN, 17));
 		tituloDois.setBounds(121, 125, 239, 13);
 		frame.getContentPane().add(tituloDois);
@@ -134,11 +136,10 @@ public class TelaEditarUsuario {
 		txtTel.setBounds(46, 510, 335, 20);
 		frame.getContentPane().add(txtTel);
 
-
 		JButton check = new JButton("OK");
 		check.setFont(new Font("Cambria", Font.PLAIN, 11));
 		check.setBackground(SystemColor.desktop);
-		check.setBounds(176, 563, 89, 23);
+		check.setBounds(181, 633, 89, 23);
 		check.addActionListener(new ActionListener() {
 
 			@SuppressWarnings("deprecation")
@@ -146,8 +147,7 @@ public class TelaEditarUsuario {
 				String msgErro = "";
 
 				if (txtNome.getText().length() == 0 || txtEmail.getText().length() == 0 || txtRG.getText().length() == 0
-						|| txtCPF.getText().length() == 0 || txtTel.getText().length() == 0
-						|| senha.getText().length() == 0) {
+						|| txtCPF.getText().length() == 0 || txtTel.getText().length() == 0) {
 					JOptionPane.showMessageDialog(null, "Alguma informacao esta vazia! Preencha todos os campos!", "Falta de dados",
 							JOptionPane.ERROR_MESSAGE);
 
@@ -168,35 +168,42 @@ public class TelaEditarUsuario {
 				if (!control.validarTelefone(txtTel.getText())) {
 					msgErro += "Telefone invalido\n";
 				}
-				if (!control.validarSenha(senha.getText())) {
-					System.out.println(senha.getPassword());
-					msgErro += "Senha invalida\n";
-				}
 
 				if (msgErro.length() > 0) {
 					JOptionPane.showMessageDialog(null, msgErro, "Título da Janela", JOptionPane.ERROR_MESSAGE);
 				} else {
 					JOptionPane.showMessageDialog(null, "Confirmar Cadastro", "Deseja Confirmar o Cadastro ?",
 							JOptionPane.DEFAULT_OPTION);
-
+					//registrar os dados no back
+					Usuario.usuario[ControllerUsuarios.qtdUser][0] = txtNome.getText();
+					Usuario.usuario[ControllerUsuarios.qtdUser][1] = txtEmail.getText();
+					Usuario.usuario[ControllerUsuarios.qtdUser][2] = txtRG.getText();
+					Usuario.usuario[ControllerUsuarios.qtdUser][3] = txtCPF.getText();
+					Usuario.usuario[ControllerUsuarios.qtdUser][5] = txtTel.getText();
+					//contar usuarios cadastrados
+					ControllerUsuarios.contaUser();
+					//Registar os nomes no array de pagamento
+					ControllerPagamentos.dadosPagamento();
+					//outros
 					frame.dispose();
 					TelaMenu.main(null);
 				}
 			}
 		});
+		
 		frame.getContentPane().add(check);
 
 
 		JLabel lblCadastro = new JLabel("Editar");
 		lblCadastro.setForeground(SystemColor.desktop);
 		lblCadastro.setFont(new Font("Elephant", Font.PLAIN, 37));
-		lblCadastro.setBounds(156, 25, 204, 75);
+		lblCadastro.setBounds(146, 25, 204, 75);
 		frame.getContentPane().add(lblCadastro);
 
 		JLabel tiruloUm_1 = new JLabel("Editar");
 		tiruloUm_1.setForeground(new Color(51, 204, 204));
 		tiruloUm_1.setFont(new Font("Elephant", Font.PLAIN, 37));
-		tiruloUm_1.setBounds(146, 11, 194, 75);
+		tiruloUm_1.setBounds(136, 11, 194, 75);
 		frame.getContentPane().add(tiruloUm_1);
 	}
 

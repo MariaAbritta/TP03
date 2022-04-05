@@ -82,8 +82,8 @@ public class TelaUsuario {
 						"\nSeu email é: " +	 Usuario.usuario[ControllerUsuarios.indiceUser][1] +
 						"\nSeu RG é: " + Usuario.usuario[ControllerUsuarios.indiceUser][2] +
 						"\nSeu CPF é: " + Usuario.usuario[ControllerUsuarios.indiceUser][3] +
-						"\nSeu Senha é: " + Usuario.usuario[ControllerUsuarios.indiceUser][4] +
-						"\nSeu TeleFone é: " + Usuario.usuario[ControllerUsuarios.indiceUser][5]
+						"\nSUA Senha é: " + Usuario.usuario[ControllerUsuarios.indiceUser][4] +
+						"\nSeu Telefone é: " + Usuario.usuario[ControllerUsuarios.indiceUser][5]
 						);
 				
 			}
