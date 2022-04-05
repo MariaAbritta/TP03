@@ -20,7 +20,7 @@ import controller.ControllerPagamentos;
 import controller.ControllerUsuarios;
 import models.Pagamento;
 
-public class TelaCartao {
+public class TelaCadastroCartao {
 
 	private JFrame frame;
 	private JTextField textForma;
@@ -38,7 +38,7 @@ public class TelaCartao {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					TelaCartao window = new TelaCartao();
+					TelaCadastroCartao window = new TelaCadastroCartao();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -50,7 +50,7 @@ public class TelaCartao {
 	/**
 	 * Create the application.
 	 */
-	public TelaCartao() {
+	public TelaCadastroCartao() {
 		initialize();
 	}
 

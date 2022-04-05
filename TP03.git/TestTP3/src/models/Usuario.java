@@ -2,7 +2,7 @@ package models;
 
 import java.util.Arrays;
 import java.util.Scanner;
-import view.TelaCadastro;
+import view.TelaCadastroUsuario;
 
 public class Usuario {
 	private String nome = "";

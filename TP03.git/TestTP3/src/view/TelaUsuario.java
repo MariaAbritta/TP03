@@ -5,11 +5,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-
 import controller.ControllerLoging;
 import controller.ControllerUsuarios;
 import models.Usuario;
-
 import java.awt.Font;
 import java.awt.SystemColor;
 import java.awt.Color;
@@ -20,7 +18,7 @@ import java.awt.event.ActionEvent;
 public class TelaUsuario {
 
 	private Usuario user = new Usuario();
-	private TelaCadastro tc = new TelaCadastro();
+	private TelaCadastroUsuario tc = new TelaCadastroUsuario();
 	
 	private JFrame frame;
 

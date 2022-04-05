@@ -47,8 +47,8 @@ public class TelaInicial {
 			public void actionPerformed(ActionEvent e) {
 				Object src = e.getSource();
 				if(src == cadastro) {
-					new TelaCadastro();
-					TelaCadastro.main(null);
+					new TelaCadastroUsuario();
+					TelaCadastroUsuario.main(null);
 				}
 			}
 		});

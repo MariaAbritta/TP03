@@ -3,17 +3,26 @@ package view;
 import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
+import controller.ControllerLoging;
+import controller.ControllerPagamentos;
+import controller.ControllerUsuarios;
+import models.Pagamento;
+import models.Usuario;
 import java.awt.Font;
 import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.Color;
 import javax.swing.JButton;
-import models.Pagamento;
+import view.TelaCadastroCartao;
 
 public class TelaPagamento {
 
 	private JFrame frame;
+	private TelaCadastroCartao tcc = new TelaCadastroCartao();
+
 
 	/**
 	 * Launch the application.
@@ -68,13 +77,30 @@ public class TelaPagamento {
 			public void actionPerformed(ActionEvent e) {
 				Object src = e.getSource();
 				if(src == cartao) {
-					new TelaCartao();
-					TelaCartao.main(null);
+					new TelaCadastroCartao();
+					TelaCadastroCartao.main(null);
 				}
 			}
 		});
 		
 		JButton listar = new JButton("Listar dados");
+		listar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// Printa todas as infos da Pessoa
+				for(int i=0; i<=4; i++) {
+					if (Pagamento.DadosPagamento[ControllerPagamentos.qtdCartao][i] != null) {
+						
+					}
+				}
+				JOptionPane.showMessageDialog(listar, 
+						"\nForma de pagamento: " + Pagamento.DadosPagamento[ControllerPagamentos.qtdCartao][0] +
+						"\nNumero do cartao: " +	 Pagamento.DadosPagamento[ControllerPagamentos.qtdCartao][1] +
+						"\nNome no cartao: " + Pagamento.DadosPagamento[ControllerPagamentos.qtdCartao][2] +
+						"\nCVV: " + Pagamento.DadosPagamento[ControllerPagamentos.qtdCartao][3]
+						);
+				
+			}
+		});
 		listar.setBackground(new Color(204, 255, 255));
 		listar.setFont(new Font("Cambria", Font.PLAIN, 15));
 		listar.setBounds(165, 143, 110, 32);

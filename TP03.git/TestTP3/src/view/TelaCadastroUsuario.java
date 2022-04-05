@@ -22,7 +22,7 @@ import java.awt.event.MouseEvent;
 import java.awt.SystemColor;
 import models.Usuario;
 
-public class TelaCadastro {
+public class TelaCadastroUsuario {
 
 	private JFrame frame;
 	public JTextField txtNome;
@@ -40,7 +40,7 @@ public class TelaCadastro {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					TelaCadastro window = new TelaCadastro();
+					TelaCadastroUsuario window = new TelaCadastroUsuario();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -52,7 +52,7 @@ public class TelaCadastro {
 	/**
 	 * Create the application.
 	 */
-	public TelaCadastro() {
+	public TelaCadastroUsuario() {
 		initialize();
 	}
 
