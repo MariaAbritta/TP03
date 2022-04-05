@@ -2,6 +2,7 @@ package models;
 
 import java.util.Scanner;
 import java.util.Random;
+import models.Bicicleta;
 
 public class Bicicletario {
 	//Atributos
@@ -9,6 +10,9 @@ public class Bicicletario {
 	private String funcionamento;
 	private int horarioCliente;
 	private int disponibilidadeBicicletas;
+	private int disponibilidadeBicicletasEco;
+	Bicicleta bicicleta = new Bicicleta();
+
 	
 	public Bicicletario() {
 		super();
@@ -39,12 +43,24 @@ public class Bicicletario {
 		this.funcionamento = funcionamento;
 	}
 
-	public int getDisponibilidadeBicicletas() {
+	public int getDisponibilidadeBicicletaSarah() {
 		return disponibilidadeBicicletas;
 	}
 
-	public void setDisponibilidadeBicicletas(int disponibilidadeBicicletas) {
+	public int setDisponibilidadeBicicletasSarah(int disponibilidadeBicicletasEco) {
 		this.disponibilidadeBicicletas = disponibilidadeBicicletas;
+		disponibilidadeBicicletas = bicicleta.BikesSarahUrb.length;
+		return disponibilidadeBicicletas;
+	}
+	
+	public int getDisponibilidadeBicicletaEco() {
+		return disponibilidadeBicicletasEco;
+	}
+
+	public int setDisponibilidadeBicicletasEco(int disponibilidadeBicicletasEco) {
+		this.disponibilidadeBicicletasEco = disponibilidadeBicicletasEco;
+		disponibilidadeBicicletasEco = bicicleta.BikesEcoUrb.length;
+		return disponibilidadeBicicletas;
 	}
 	
 	//Metodos
@@ -52,7 +68,12 @@ public class Bicicletario {
 		System.out.println("Localizacao: \n" + getLocalizacao());
 	}
 	
-	public void buscarBicicletario() {
+	public String buscarBicicletario(String loc) {
+		loc = "Qual bicicletario deseja buscar bicicletas?";
+		return loc;
+	}
+	
+	public void BuscarBicicletario() {
 		
 		int opcaoBike = 0;
 		int numBikes = 0;
@@ -73,8 +94,8 @@ public class Bicicletario {
 								+ "Horarios: Atendimento 24 horas.\n"
 						);
 						numBikes = random.nextInt(20);
-						setDisponibilidadeBicicletas(numBikes);
-						System.out.println("Numero de Bicicletas disponiveis: "+ getDisponibilidadeBicicletas());
+						setDisponibilidadeBicicletasSarah(numBikes);
+						System.out.println("Numero de Bicicletas disponiveis: "+ getDisponibilidadeBicicletaSarah());
 						System.out.println("Funcionamento: Das 6h as 21h");
 						StatusFuncionamento();
 						System.out.println("Status no horario escolhido: " + getFuncionamento());
@@ -89,8 +110,8 @@ public class Bicicletario {
 							+ "Horarios: Diariamente, das 06h as 22h\n"
 					);
 					numBikes = random.nextInt(20);
-					setDisponibilidadeBicicletas(numBikes);
-					System.out.println("Numero de Bicicletas disponiveis: "+ getDisponibilidadeBicicletas());
+					setDisponibilidadeBicicletasEco(numBikes);
+					System.out.println("Numero de Bicicletas disponiveis: "+ getDisponibilidadeBicicletaEco());
 					System.out.println("Funcionamento: Das 6h as 21h");
 					StatusFuncionamento();
 					System.out.println("Status: " + getFuncionamento());

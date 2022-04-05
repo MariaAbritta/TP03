@@ -2,6 +2,7 @@ package view;
 import java.util.Scanner;
 
 import controller.*;
+import models.Bicicletario;
 
 public class Main {
 	public static void main(String[] args) {
@@ -9,19 +10,25 @@ public class Main {
 		ControllerUsuarios controlUser = new ControllerUsuarios();
 		ControllerLoging controlLoging = new ControllerLoging();
 		
+		
 		//controlUser.CadastroUser();
 		//controlLoging.loging();
 		//controlUser.deletarUsuario();
 		//Instancia do objeto
 //		Tempo tempo = new Tempo();
 
-//		Scanner resposta = new Scanner(System.in);
+		Scanner resposta = new Scanner(System.in);
 		
 		//variaveis locais
-//		int opcaoMenu = 0;
-//		int opcaoMenuCadastro = 0;
-//		int opcaoMenusInternos = 0;
-//		boolean cadastrado = true;
+		int opcaoMenu = 0;
+		int opcaoMenuCadastro = 0;
+		int opcaoMenusInternos = 0;
+		boolean cadastrado = true;
+		
+		
+		menuBicicletario();
+		opcaoMenusInternos = resposta.nextInt();
+		execBicicletario(opcaoMenusInternos);
 		
 		//Pagamento pagamento = new Pagamento();
 		//pagamento.cadastrarPagamento();
@@ -121,14 +128,14 @@ public class Main {
 //		System.out.print("|------------------------------|\n");
 //	}
 //	
-//	public static void menuBicicletario() {
-//		System.out.print("|-------- App BikeAqui! -------|\n");
-//		System.out.print("|------------------------------|\n");
-//		System.out.print("|          Bicicletario        |\n");
-//		System.out.print("| Opcao 1 - Listar Bicicletario|\n");
-//		System.out.print("| Opcao 2 - Buscar Bicicletario|\n");
-//		System.out.print("|------------------------------|\n");
-//	}
+	public static void menuBicicletario() {
+		System.out.print("|-------- App BikeAqui! -------|\n");
+		System.out.print("|------------------------------|\n");
+		System.out.print("|          Bicicletario        |\n");
+		System.out.print("| Opcao 1 - Listar Bicicletario|\n");
+		System.out.print("| Opcao 2 - Buscar Bicicletario|\n");
+		System.out.print("|------------------------------|\n");
+	}
 //	
 //	public static void menuBicicletas() {
 //		System.out.print("|-------- App BikeAqui! -------|\n");
@@ -210,20 +217,20 @@ public class Main {
 //		}
 //	}
 	
-//	public static void execBicicletario(int opcaoMenusInternos) {
-//		Bicicletario bicicletario = new Bicicletario();
-//		switch(opcaoMenusInternos) {
-//			case 1:
-//				bicicletario.listarBicicletario();
-//				break;
-//			case 2:
-//				bicicletario.buscarBicicletario();
-//				break;
-//			default:
-//				System.out.print("| Opcao nao encontrada   |\n");
-//				break;
-//		}
-//	}
+	public static void execBicicletario(int opcaoMenusInternos) {
+		Bicicletario bicicletario = new Bicicletario();
+		switch(opcaoMenusInternos) {
+			case 1:
+				bicicletario.listarBicicletario();
+				break;
+			case 2:
+				bicicletario.BuscarBicicletario();
+				break;
+			default:
+				System.out.print("| Opcao nao encontrada   |\n");
+				break;
+		}
+	}
 	
 //	public static void execBicicletas(int opcaoMenusInternos) {
 //		Bicicleta bicicletas = new Bicicleta();

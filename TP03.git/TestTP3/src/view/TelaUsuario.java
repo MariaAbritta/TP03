@@ -57,13 +57,13 @@ public class TelaUsuario {
 		JLabel lblUsuario = new JLabel("Usuario");
 		lblUsuario.setForeground(SystemColor.desktop);
 		lblUsuario.setFont(new Font("Elephant", Font.PLAIN, 37));
-		lblUsuario.setBounds(155, 14, 204, 75);
+		lblUsuario.setBounds(141, 14, 204, 75);
 		frame.getContentPane().add(lblUsuario);
 		
 		JLabel tiruloUm_1 = new JLabel("Usuario");
 		tiruloUm_1.setForeground(new Color(51, 204, 204));
 		tiruloUm_1.setFont(new Font("Elephant", Font.PLAIN, 37));
-		tiruloUm_1.setBounds(145, 0, 194, 75);
+		tiruloUm_1.setBounds(131, 0, 194, 75);
 		frame.getContentPane().add(tiruloUm_1);
 		
 		JButton listar = new JButton("Listar dados");

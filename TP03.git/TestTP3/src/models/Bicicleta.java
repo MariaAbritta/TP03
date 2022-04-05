@@ -12,6 +12,7 @@ public class Bicicleta {
 	private String tipo;
 	int[][] IdBikes = new int[1][6];
 	String[] BikesSarahUrb = new String [15];
+	String[] BikesEcoUrb = new String [15];
 	Random random = new Random();
 	Scanner resposta = new Scanner(System.in);
 	
@@ -84,7 +85,7 @@ public class Bicicleta {
 						System.out.println("Quantas bicilcetas urbanas deseja alugar?:");
 						int numeroAluguel = resposta.nextInt();
 						resposta.nextLine();
-						verificando(numeroAluguel, BikesSarahUrb, "alugada!");
+						verificandoSarah(numeroAluguel, BikesSarahUrb, "alugada!");
 						break;
 					case "nao":
 						//Caso nao, voltar ao main menu
@@ -97,7 +98,27 @@ public class Bicicleta {
 				}
 				break;
 			case 2:
-				System.out.println("entrei2");
+				System.out.println("Ativas : " + BikesEcoUrb.length);
+				System.out.println("Deseja alugar alguma? sim // nao");
+				String opAluguelUrbana2 = "";
+				opAluguelUrbana2 = resposta.next();
+				
+				switch(opAluguelUrbana2) {
+					case "sim":
+						System.out.println("Quantas bicilcetas urbanas deseja alugar?:");
+						int numeroAluguel = resposta.nextInt();
+						resposta.nextLine();
+						verificandoEco(numeroAluguel, BikesEcoUrb, "alugada!");
+						break;
+					case "nao":
+						//Caso nao, voltar ao main menu
+						System.out.println("OK!\n");
+						break;
+					default:
+						//Caso nao encontrada
+						System.out.println("Opcao inexistente! \n");
+						break;
+				}
 				break;
 			default:
 				System.out.println("Esse bicicletario nao existe.");
@@ -135,8 +156,8 @@ public class Bicicleta {
         return id;
 	}
 	
-	public static void verificando (int quantasQuer, String[] BikesSarahUrb, String verificando) {
-	    if(!verificaNulo(BikesSarahUrb)) {
+	public static void verificandoSarah (int quantasQuer, String[] BikesSarahUrb, String verificando) {
+	    if(!verificaNuloSarah(BikesSarahUrb)) {
 	        System.out.println("Não existe mais bicicletas urbanas disponiveis.");
 	        System.out.println("Não existe mais bicicletas urbanas disponiveis.");
 	        return;
@@ -156,9 +177,41 @@ public class Bicicleta {
 	    System.out.println(Arrays.toString(BikesSarahUrb));
 	}
 	
-	public static boolean verificaNulo(String[] BikesSarahUrb){
+	public static boolean verificaNuloSarah(String[] BikesSarahUrb){
     boolean nulo = false;
 	    for (String s: BikesSarahUrb) {
+	        if (s == null) {
+	            nulo = true;
+	            break;
+	        }
+	    }
+	    return nulo;
+	}
+	
+	public static void verificandoEco (int quantasQuer, String[] BikesEcoUrb, String verificando) {
+	    if(!verificaNuloEco(BikesEcoUrb)) {
+	        System.out.println("Não existe mais bicicletas urbanas disponiveis.");
+	        System.out.println("Não existe mais bicicletas urbanas disponiveis.");
+	        return;
+	    }
+	    int j = 1;
+	    if(BikesEcoUrb.length >= quantasQuer){
+	        for (int i = 0; i < BikesEcoUrb.length; i++){
+	            if(BikesEcoUrb[i] == null){
+	                if(j > quantasQuer){
+	                    break;
+	                }
+	                BikesEcoUrb[i] = verificando;
+	                j++;
+	            }
+	        }
+	    }
+	    System.out.println(Arrays.toString(BikesEcoUrb));
+	}
+	
+	public static boolean verificaNuloEco(String[] BikesEcoUrb){
+    boolean nulo = false;
+	    for (String s: BikesEcoUrb) {
 	        if (s == null) {
 	            nulo = true;
 	            break;
