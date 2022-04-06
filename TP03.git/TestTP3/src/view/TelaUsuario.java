@@ -1,25 +1,20 @@
 package view;
 
+import java.awt.Color;
 import java.awt.EventQueue;
-
+import java.awt.Font;
+import java.awt.SystemColor;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import controller.ControllerLoging;
-import controller.ControllerUsuarios;
-import models.Usuario;
-import java.awt.Font;
-import java.awt.SystemColor;
-import java.awt.Color;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+
+import models.Dados;
 
 public class TelaUsuario {
 
-	private Usuario user = new Usuario();
-	private TelaCadastroUsuario tc = new TelaCadastroUsuario();
-	
 	private JFrame frame;
 
 	/**
@@ -53,39 +48,38 @@ public class TelaUsuario {
 		frame.setBounds(100, 100, 450, 287);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		
+
 		JLabel lblUsuario = new JLabel("Usuario");
 		lblUsuario.setForeground(SystemColor.desktop);
 		lblUsuario.setFont(new Font("Elephant", Font.PLAIN, 37));
 		lblUsuario.setBounds(141, 14, 204, 75);
 		frame.getContentPane().add(lblUsuario);
-		
+
 		JLabel tiruloUm_1 = new JLabel("Usuario");
 		tiruloUm_1.setForeground(new Color(51, 204, 204));
 		tiruloUm_1.setFont(new Font("Elephant", Font.PLAIN, 37));
 		tiruloUm_1.setBounds(131, 0, 194, 75);
 		frame.getContentPane().add(tiruloUm_1);
-		
+
 		JButton listar = new JButton("Listar dados");
 		listar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// Printa todas as infos da Pessoa
-				JOptionPane.showMessageDialog(listar, 
-						"Seu nome È: " + Usuario.usuario[ControllerUsuarios.indiceUser][0] +
-						"\nSeu email È: " +	 Usuario.usuario[ControllerUsuarios.indiceUser][1] +
-						"\nSeu RG È: " + Usuario.usuario[ControllerUsuarios.indiceUser][2] +
-						"\nSeu CPF È: " + Usuario.usuario[ControllerUsuarios.indiceUser][3] +
-						"\nSUA Senha È: " + Usuario.usuario[ControllerUsuarios.indiceUser][4] +
-						"\nSeu Telefone È: " + Usuario.usuario[ControllerUsuarios.indiceUser][5]
-						);
-				
+				JOptionPane.showMessageDialog(listar,
+						"Seu nome : " + TelaLoging.usuarioLogado.getNome() +
+								"\nSeu email : " + TelaLoging.usuarioLogado.getEmail() +
+								"\nSeu RG : " + TelaLoging.usuarioLogado.getRg() +
+								"\nSeu CPF : " + TelaLoging.usuarioLogado.getCpf() +
+								"\nSUA Senha : " + TelaLoging.usuarioLogado.getSenha() +
+								"\nSeu Telefone : " + TelaLoging.usuarioLogado.getTelefone());
+
 			}
 		});
 		listar.setBackground(new Color(255, 204, 255));
 		listar.setFont(new Font("Cambria", Font.PLAIN, 15));
 		listar.setBounds(155, 100, 130, 34);
 		frame.getContentPane().add(listar);
-		
+
 		JButton editar = new JButton("Editar dados");
 		editar.setFont(new Font("Cambria", Font.PLAIN, 15));
 		editar.setBackground(new Color(204, 204, 255));
@@ -94,18 +88,27 @@ public class TelaUsuario {
 		editar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Object src = e.getSource();
-				if(src == editar) {
-					new TelaEditarUsuario();
+				if (src == editar) {
+					frame.dispose();
 					TelaEditarUsuario.main(null);
 				}
 			}
 		});
-		
-		
+
 		JButton deletar = new JButton("Deletar dados");
 		deletar.setBackground(new Color(255, 255, 204));
 		deletar.setFont(new Font("Cambria", Font.PLAIN, 15));
 		deletar.setBounds(155, 190, 130, 34);
+
+		deletar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Dados.getUsuarios().remove(TelaLoging.usuarioLogado);
+				System.out.println(Dados.getUsuarios().size());
+				JOptionPane.showMessageDialog(deletar, "Usu√°rio Deletado, saindo do programa");
+				frame.dispose();
+				TelaInicial.main(null);
+			}
+		});
 		frame.getContentPane().add(deletar);
 	}
 

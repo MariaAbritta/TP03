@@ -1,66 +1,22 @@
 package controller;
 
-import java.util.Scanner;
-
+import models.Dados;
 import models.Usuario;
 
 public class ControllerLoging {
-	static Scanner ler = new Scanner(System.in);
-	private Usuario u = new Usuario();
-	public static int indiceUser;
-	private ControllerUsuarios controlerU = new ControllerUsuarios(); 
-	private String userLogin;
-	private String userPassword;
-	private boolean verificador;
-	
+
 	public void loging() {
-		System.out.println("Login\n");
-		System.out.println(Usuario.usuario[0][0]);
-		System.out.println("Nome: \n");
-		userLogin = ler.next();
-		System.out.println("Senha: \n");
-		userPassword = ler.next();
-		verificador = validarLogin();
+
 	}
-	
-	public boolean validarLogin() {
-		
-		verificador = validarNome();
-		if(verificador) {
-			verificador = validarSenha();
-			if(verificador) {
-				System.out.println("Sucesso no login\n");
-				return true;
-			}
-			else {
-				System.out.println("Senha invalida\n");
-				return false;
+
+	public static Usuario validarLogin(String login, String senha) {
+
+		for (Usuario usr : Dados.getUsuarios()) {
+			if (usr.getNome().equals(login) && usr.getSenha().equals(senha)) {
+				return usr;
 			}
 		}
-		else {
-			System.out.println("Nome invalido\n");
-			return false;
-		}
-		
-	}
-	
-	public boolean validarNome() {
-		
-		for(int i = 0; i <= ControllerUsuarios.qtdUser; i++) {
-			if(Usuario.usuario[i][0].equals(userLogin)) {
-				indiceUser = i;
-				return true;
-			}
-		}
-		return verificador;
-	}
-	
-	public boolean validarSenha() {
-		for(int i = 0; i < 50; i++) {
-			if(Usuario.usuario[indiceUser][i] != null && Usuario.usuario[indiceUser][i].equals(userPassword)) {
-				return true;
-			}
-		}
-		return false;
+		return null;
+
 	}
 }

@@ -1,38 +1,34 @@
 package models;
 
+import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.Random;
-import models.Bicicleta;
 
 public class Bicicletario {
-	//Atributos
-	private String localizacao;
-	private String funcionamento;
-	private int horarioCliente;
+	// Atributos
+	public String localidade;
+	public String funcionamento;
+	public int horarioCliente;
 	private int disponibilidadeBicicletas;
 	private int disponibilidadeBicicletasEco;
-	Bicicleta bicicleta = new Bicicleta();
+	public ArrayList<Bicicleta> bicicletas = new ArrayList<>();
+	Bicicleta bicicleta = new Bicicleta(null, disponibilidadeBicicletas);
 
-	
-	public Bicicletario() {
-		super();
-	}
-	
-	public Bicicletario(String loc, String func, int dispoBikes) {
-		this.localizacao = loc;
+
+	public Bicicletario(String loc, String func) {
+		this.localidade = loc;
 		this.funcionamento = func;
-		this.disponibilidadeBicicletas = dispoBikes;
+		this.setDisponibilidadeBicicletas();
 	}
 
-	//Gets and sets
-	public String getLocalizacao() {
-		localizacao = "1 - Brasilia - Asa Sul - Parque da Cidade Dona Sarah Kubitschek\n"
+	// Gets and sets
+	public String getLocalidade() {
+		localidade = "1 - Brasilia - Asa Sul - Parque da Cidade Dona Sarah Kubitschek\n"
 				+ "2 - Brasilia - Aguas Claras - Parque Ecologico de Aguas Claras\n";
-		return localizacao;
+		return this.localidade;
 	}
 
-	public void setLocalizacao(String localizacao) {
-		this.localizacao = localizacao;
+	public void setLocalidade(String localidade) {
+		this.localidade = localidade;
 	}
 
 	public String getFuncionamento() {
@@ -43,6 +39,31 @@ public class Bicicletario {
 		this.funcionamento = funcionamento;
 	}
 
+	public int getDisponibilidadeBicicletas() {
+		int cont = 0;
+		for (Bicicleta bicicleta : this.getBicicletas()) {
+			cont++;
+		}
+
+		return cont;
+	}
+
+	public void setDisponibilidadeBicicletas() {
+		int cont = 0;
+		for (Bicicleta bicicleta : this.getBicicletas()) {
+			cont++;
+		}
+		this.disponibilidadeBicicletas = cont;
+	}
+
+	public ArrayList<Bicicleta> getBicicletas() {
+		return bicicletas;
+	}
+
+	public void setBicicletas(ArrayList<Bicicleta> bicicletas) {
+		this.bicicletas = bicicletas;
+	}
+	
 	public int getDisponibilidadeBicicletaSarah() {
 		return disponibilidadeBicicletas;
 	}
@@ -62,86 +83,18 @@ public class Bicicletario {
 		disponibilidadeBicicletasEco = bicicleta.BikesEcoUrb.length;
 		return disponibilidadeBicicletas;
 	}
-	
-	//Metodos
+
+	// Metodos
 	public void listarBicicletario() {
-		System.out.println("Localizacao: \n" + getLocalizacao());
+		System.out.println("Localidade: \n" + getLocalidade());
 	}
-	
+
 	public String buscarBicicletario(String loc) {
 		loc = "Qual bicicletario deseja buscar bicicletas?";
 		return loc;
 	}
 	
-	/*public void BuscarBicicletario() {
-		
-		int opcaoBike = 0;
-		int numBikes = 0;
-		Scanner resposta = new Scanner(System.in);
-		Random random = new Random();
-		
-		System.out.println("Buscar Bicicletario: ");
-		System.out.println("Digite 1 para ver o Parque da Cidade Dona Sarah Kubitschek");
-		System.out.println("Digite 2 para ver o Parque Ecologico de Aguas Claras");
-		opcaoBike = resposta.nextInt();
-		
-		do {
-			switch(opcaoBike){
-				case 1:
-						System.out.println("------------------------------\n");
-						System.out.println("Parque da Cidade Dona Sarah Kubitschek:");
-						System.out.println("Endereco: Srps - Brasilia, DF, 70297-400\n"
-								+ "Horarios: Atendimento 24 horas.\n"
-						);
-						numBikes = random.nextInt(20);
-						setDisponibilidadeBicicletasSarah(numBikes);
-						System.out.println("Numero de Bicicletas disponiveis: "+ getDisponibilidadeBicicletaSarah());
-						System.out.println("Funcionamento: Das 6h as 21h");
-						StatusFuncionamento();
-						System.out.println("Status no horario escolhido: " + getFuncionamento());
-						System.out.println("------------------------------");
-					break;
-				case 2:
-					System.out.println("------------------------------\n");
-					System.out.println("Parque Ecologico de Aguas Claras");
-					System.out.println("Endereco: Avenida Castanheiras.\n"
-							+ "Situado atras da Residencia Oficial de Aguas Claras,\n"
-							+ "entre as quadras 301, 104, 105 e 106 da cidade.\n"
-							+ "Horarios: Diariamente, das 06h as 22h\n"
-					);
-					numBikes = random.nextInt(20);
-					setDisponibilidadeBicicletasEco(numBikes);
-					System.out.println("Numero de Bicicletas disponiveis: "+ getDisponibilidadeBicicletaEco());
-					System.out.println("Funcionamento: Das 6h as 21h");
-					StatusFuncionamento(hora);
-					System.out.println("Status: " + getFuncionamento());
-					System.out.println("------------------------------");
-					break;
-				default:
-					System.out.println("Opcao invalida. Por favor, escolha uma\n"
-							+ "opcao 1 ou 2, somente.\n");
-			}
-		}while (opcaoBike >= 3);
-	}*/
-	
-	/*public String StatusFuncionamento() {
-		Scanner resposta = new Scanner(System.in);
-		int hora = 0;
-		System.out.println("Qual horario voce deseja ir ao bicicletario?: ");
-		hora = resposta.nextInt();
-		
-		if(hora>=6 || hora<=21){
-			setFuncionamento("Ativo");
-		}else if(hora<6 || hora>21){
-			setFuncionamento("Inativo");
-		}else{
-			setFuncionamento("Invalido horario nao encontrado");
-		}
-		return funcionamento;
-	}*/
-	
 	public boolean StatusFuncionamento(String hora){
-		Scanner resposta = new Scanner(System.in);
 		boolean verificar = true;
 		System.out.println("Qual horario voce deseja ir ao bicicletario?: ");
 		switch(hora) {
@@ -166,8 +119,6 @@ public class Bicicletario {
 					System.out.println("Hora inválida.");
 					break;
 			}
-			return verificar;
-		}
+		return verificar;
 	}
-
-
+}

@@ -1,7 +1,6 @@
 package view;
 
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -12,8 +11,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 import javax.swing.SwingConstants;
-
-import controller.ControllerPagamentos;
 import controller.ControllerUsuarios;
 import javax.swing.JPasswordField;
 import javax.swing.JPopupMenu;
@@ -21,11 +18,11 @@ import java.awt.Component;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.SystemColor;
-import models.Usuario;
+
+import models.Dados;
 
 public class TelaEditarUsuario {
 
-	private Usuario user = new Usuario();
 	private JFrame frame;
 	public JTextField txtNome;
 	public JTextField txtEmail;
@@ -33,7 +30,6 @@ public class TelaEditarUsuario {
 	public JTextField txtCPF;
 	public JTextField txtTel;
 	public JPasswordField senha;
-	static public String[][] usuario = new String[50][50];
 
 	/**
 	 * Launch the application.
@@ -85,7 +81,7 @@ public class TelaEditarUsuario {
 		tituloNome.setFont(new Font("Cambria", Font.PLAIN, 15));
 		tituloNome.setBounds(46, 165, 176, 14);
 		frame.getContentPane().add(tituloNome);
-		
+
 		txtNome = new JTextField();
 		txtNome.setBounds(46, 186, 335, 20);
 		frame.getContentPane().add(txtNome);
@@ -144,55 +140,36 @@ public class TelaEditarUsuario {
 
 			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent e) {
-				String msgErro = "";
+				String msgErro = control.verificaCadastro(txtNome.getText(), txtEmail.getText(), txtRG.getText(),
+						txtCPF.getText(), txtTel.getText(),
+						TelaLoging.usuarioLogado.getSenha());
 
-				if (txtNome.getText().length() == 0 || txtEmail.getText().length() == 0 || txtRG.getText().length() == 0
-						|| txtCPF.getText().length() == 0 || txtTel.getText().length() == 0) {
-					JOptionPane.showMessageDialog(null, "Alguma informacao esta vazia! Preencha todos os campos!", "Falta de dados",
+				if (msgErro == null) {
+					JOptionPane.showMessageDialog(null, "Alguma informacao esta vazia! Preencha todos os campos!",
+							"Falta de dados",
 							JOptionPane.ERROR_MESSAGE);
-
 					return;
-				}
-				if (!control.validarNome(txtNome.getText())) {
-					msgErro += "Nome invalido\n";
-				}
-				if (!control.validarEmail(txtEmail.getText())) {
-					msgErro += "Email invalido\n";
-				}
-				if (!control.validarRg(txtRG.getText())) {
-					msgErro += "Rg invalido\n";
-				}
-				if (!control.validarCpf(txtCPF.getText())) {
-					msgErro += "Cpf invalido\n";
-				}
-				if (!control.validarTelefone(txtTel.getText())) {
-					msgErro += "Telefone invalido\n";
 				}
 
 				if (msgErro.length() > 0) {
-					JOptionPane.showMessageDialog(null, msgErro, "Título da Janela", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null, msgErro, "ERRO", JOptionPane.ERROR_MESSAGE);
 				} else {
-					JOptionPane.showMessageDialog(null, "Confirmar Cadastro", "Deseja Confirmar o Cadastro ?",
+					JOptionPane.showMessageDialog(null, "Confirmar Edição", "Deseja Confirmar a Edição ?",
 							JOptionPane.DEFAULT_OPTION);
-					//registrar os dados no back
-					Usuario.usuario[ControllerUsuarios.qtdUser][0] = txtNome.getText();
-					Usuario.usuario[ControllerUsuarios.qtdUser][1] = txtEmail.getText();
-					Usuario.usuario[ControllerUsuarios.qtdUser][2] = txtRG.getText();
-					Usuario.usuario[ControllerUsuarios.qtdUser][3] = txtCPF.getText();
-					Usuario.usuario[ControllerUsuarios.qtdUser][5] = txtTel.getText();
-					//contar usuarios cadastrados
-					ControllerUsuarios.contaUser();
-					//Registar os nomes no array de pagamento
-					ControllerPagamentos.dadosPagamento();
-					//outros
+
+					Dados.getUsuarios().get(Dados.getUsuarios().indexOf(TelaLoging.usuarioLogado)).editarDados(
+							txtNome.getText(), txtEmail.getText(), txtRG.getText(),
+							txtCPF.getText(), TelaLoging.usuarioLogado.getSenha(), txtTel.getText());
+
+
+					// outros
 					frame.dispose();
 					TelaMenu.main(null);
 				}
 			}
 		});
-		
-		frame.getContentPane().add(check);
 
+		frame.getContentPane().add(check);
 
 		JLabel lblCadastro = new JLabel("Editar");
 		lblCadastro.setForeground(SystemColor.desktop);

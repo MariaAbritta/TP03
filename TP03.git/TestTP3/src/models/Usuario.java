@@ -1,24 +1,18 @@
 package models;
 
-import java.util.Arrays;
-import java.util.Scanner;
-import view.TelaCadastroUsuario;
+import java.util.ArrayList;
 
 public class Usuario {
-	private String nome = "";
-	private String email = "";
+	private String nome;
+	private String email;
 	private String rg;
 	private String cpf;
 	private String senha;
 	private String telefone;
-	static public String[][] usuario = new String[50][50];
-	static Scanner ler = new Scanner(System.in);
-	
-	public Usuario() {
-		super();	
-	}
-	
-	public Usuario(String n, String e,String r, String c, String s, String t) {
+
+	private ArrayList<Cartao> cartoes = new ArrayList<>();
+
+	public Usuario(String n, String e, String r, String c, String s, String t) {
 		nome = n;
 		email = e;
 		rg = r;
@@ -26,7 +20,7 @@ public class Usuario {
 		senha = s;
 		telefone = t;
 	}
-	
+
 	public String getNome() {
 		return nome;
 	}
@@ -73,6 +67,19 @@ public class Usuario {
 
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
+	}
+
+	public ArrayList<Cartao> getCartoes() {
+		return cartoes;
+	}
+
+	public void editarDados(String nome, String email, String rg, String cpf, String senha, String telefone) {
+		this.setNome(nome);
+		this.setEmail(email);
+		this.setRg(rg);
+		this.setCpf(cpf);
+		this.setSenha(senha);
+		this.setTelefone(telefone);
 	}
 
 }

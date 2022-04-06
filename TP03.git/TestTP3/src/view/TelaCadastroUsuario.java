@@ -12,7 +12,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 import javax.swing.SwingConstants;
-import controller.ControllerPagamentos;
 import controller.ControllerUsuarios;
 import javax.swing.JPasswordField;
 import javax.swing.JPopupMenu;
@@ -20,6 +19,8 @@ import java.awt.Component;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.SystemColor;
+
+import models.Dados;
 import models.Usuario;
 
 public class TelaCadastroUsuario {
@@ -31,7 +32,6 @@ public class TelaCadastroUsuario {
 	public static JTextField txtCPF;
 	public static JTextField txtTel;
 	public static JPasswordField senha;
-	static public String[][] usuario = new String[50][50];
 
 	/**
 	 * Launch the application.
@@ -82,7 +82,7 @@ public class TelaCadastroUsuario {
 		tituloNome.setFont(new Font("Cambria", Font.PLAIN, 15));
 		tituloNome.setBounds(46, 165, 176, 14);
 		frame.getContentPane().add(tituloNome);
-		
+
 		txtNome = new JTextField();
 		txtNome.setBounds(46, 186, 335, 20);
 		frame.getContentPane().add(txtNome);
@@ -152,34 +152,15 @@ public class TelaCadastroUsuario {
 
 			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent e) {
-				String msgErro = "";
+				String msgErro = control.verificaCadastro(txtNome.getText(), txtEmail.getText(), txtRG.getText(),
+						txtCPF.getText(), txtTel.getText(),
+						senha.getText());
 
-				if (txtNome.getText().length() == 0 || txtEmail.getText().length() == 0 || txtRG.getText().length() == 0
-						|| txtCPF.getText().length() == 0 || txtTel.getText().length() == 0
-						|| senha.getText().length() == 0) {
-					JOptionPane.showMessageDialog(null, "Alguma informacao esta vazia! Preencha todos os campos!", "Falta de dados",
+				if (msgErro == null) {
+					JOptionPane.showMessageDialog(null, "Alguma informacao esta vazia! Preencha todos os campos!",
+							"Falta de dados",
 							JOptionPane.ERROR_MESSAGE);
-
 					return;
-				}
-				if (!control.validarNome(txtNome.getText())) {
-					msgErro += "Nome invalido\n";
-				}
-				if (!control.validarEmail(txtEmail.getText())) {
-					msgErro += "Email invalido\n";
-				}
-				if (!control.validarRg(txtRG.getText())) {
-					msgErro += "Rg invalido\n";
-				}
-				if (!control.validarCpf(txtCPF.getText())) {
-					msgErro += "Cpf invalido\n";
-				}
-				if (!control.validarTelefone(txtTel.getText())) {
-					msgErro += "Telefone invalido\n";
-				}
-				if (!control.validarSenha(senha.getText())) {
-					System.out.println(senha.getPassword());
-					msgErro += "Senha invalida\n";
 				}
 
 				if (msgErro.length() > 0) {
@@ -187,19 +168,19 @@ public class TelaCadastroUsuario {
 				} else {
 					JOptionPane.showMessageDialog(null, "Confirmar Cadastro", "Deseja Confirmar o Cadastro ?",
 							JOptionPane.DEFAULT_OPTION);
-					//registrar os dados no back
-					ControllerUsuarios.cadastroUser();
-					//contar usuarios cadastrados
-					ControllerUsuarios.contaUser();
-					//Registar os nomes no array de pagamento
-					ControllerPagamentos.dadosPagamento();
-					//outros
+
+					Dados.getUsuarios().add(new Usuario(txtNome.getText(), txtEmail.getText(), txtRG.getText(),
+							txtCPF.getText(), senha.getText(), txtTel.getText()));
+
+					System.out.println(Dados.getUsuarios().get(Dados.getUsuarios().size() - 1).getNome());
+
+					// outros
 					frame.dispose();
-					TelaMenu.main(null);
+					TelaLoging.main(null);
 				}
 			}
 		});
-		
+
 		frame.getContentPane().add(check);
 
 		JLabel lblTerminarCom = new JLabel("terminar com 4 numeros):");

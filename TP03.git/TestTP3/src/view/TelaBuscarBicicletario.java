@@ -15,7 +15,7 @@ import models.Bicicletario;
 public class TelaBuscarBicicletario {
 
 	private JFrame frame;
-	Bicicletario bicicletario = new Bicicletario();
+	Bicicletario bicicletario = new Bicicletario(null, null);
 
 	/**
 	 * Launch the application.

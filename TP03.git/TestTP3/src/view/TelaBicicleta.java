@@ -4,14 +4,22 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
+import models.Bicicletario;
+
 import java.awt.Font;
 import java.awt.SystemColor;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.Color;
 import javax.swing.JButton;
 
 public class TelaBicicleta {
 
 	private JFrame frame;
+	Bicicletario bicicletario = new Bicicletario(null, null);
+
 
 	/**
 	 * Launch the application.
@@ -58,12 +66,28 @@ public class TelaBicicleta {
 		frame.getContentPane().add(tiruloUm_1);
 		
 		JButton buscar = new JButton("Buscar bicicletas");
+		buscar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Object src = e.getSource();
+				if (src == buscar) {
+					frame.dispose();
+					TelaBuscarBikes.main(null);
+				}
+			}
+		});
 		buscar.setBackground(new Color(153, 204, 255));
 		buscar.setFont(new Font("Cambria", Font.PLAIN, 15));
 		buscar.setBounds(142, 100, 147, 37);
 		frame.getContentPane().add(buscar);
 		
 		JButton listar = new JButton("Listar bicicletas");
+		listar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// Printa todas as infos da Pessoa
+				JOptionPane.showMessageDialog(listar, "Numero de Bicicletas disponiveis Parque Sarah Kubitschek: "+ bicicletario.setDisponibilidadeBicicletasSarah(0) + "\nNumero de Bicicletas disponiveis Parque Ecologico: : " + bicicletario.setDisponibilidadeBicicletasEco(0));
+				
+			}
+		});
 		listar.setBackground(new Color(255, 255, 204));
 		listar.setFont(new Font("Cambria", Font.PLAIN, 15));
 		listar.setBounds(142, 159, 147, 37);

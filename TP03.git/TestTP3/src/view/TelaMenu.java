@@ -45,25 +45,25 @@ public class TelaMenu {
 		frame.setBounds(100, 100, 450, 422);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		
+
 		JLabel tiruloUm = new JLabel("BikeAqui!");
 		tiruloUm.setForeground(SystemColor.desktop);
 		tiruloUm.setFont(new Font("Elephant", Font.PLAIN, 37));
 		tiruloUm.setBounds(130, 14, 204, 75);
 		frame.getContentPane().add(tiruloUm);
-		
+
 		JLabel tiruloUm_1 = new JLabel("BikeAqui!");
 		tiruloUm_1.setForeground(new Color(51, 204, 204));
 		tiruloUm_1.setFont(new Font("Elephant", Font.PLAIN, 37));
 		tiruloUm_1.setBounds(120, 0, 194, 75);
 		frame.getContentPane().add(tiruloUm_1);
-		
+
 		JButton usuario = new JButton("Usuario");
 		usuario.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Object src = e.getSource();
-				if(src == usuario) {
-					new TelaUsuario();
+				if (src == usuario) {
+					frame.dispose();
 					TelaUsuario.main(null);
 				}
 			}
@@ -72,13 +72,13 @@ public class TelaMenu {
 		usuario.setFont(new Font("Cambria", Font.PLAIN, 15));
 		usuario.setBounds(162, 91, 113, 36);
 		frame.getContentPane().add(usuario);
-		
+
 		JButton bicicletario = new JButton("Bicicletario");
 		bicicletario.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Object src = e.getSource();
-				if(src == bicicletario) {
-					new TelaBicicletario();
+				if (src == bicicletario) {
+					frame.dispose();
 					TelaBicicletario.main(null);
 				}
 			}
@@ -87,13 +87,13 @@ public class TelaMenu {
 		bicicletario.setBackground(new Color(204, 204, 255));
 		bicicletario.setBounds(162, 138, 113, 36);
 		frame.getContentPane().add(bicicletario);
-		
+
 		JButton bicicletas = new JButton("Bicicletas");
 		bicicletas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Object src = e.getSource();
-				if(src == bicicletas) {
-					new TelaBicicleta();
+				if (src == bicicletas) {
+					frame.dispose();
 					TelaBicicleta.main(null);
 				}
 			}
@@ -102,13 +102,13 @@ public class TelaMenu {
 		bicicletas.setBackground(new Color(255, 255, 204));
 		bicicletas.setBounds(162, 183, 113, 36);
 		frame.getContentPane().add(bicicletas);
-		
+
 		JButton viagem = new JButton("Viagem");
 		viagem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Object src = e.getSource();
-				if(src == viagem) {
-					new TelaViagem();
+				if (src == viagem) {
+					frame.dispose();
 					TelaViagem.main(null);
 				}
 			}
@@ -117,13 +117,13 @@ public class TelaMenu {
 		viagem.setBackground(new Color(153, 204, 255));
 		viagem.setBounds(162, 229, 113, 36);
 		frame.getContentPane().add(viagem);
-		
+
 		JButton pedidos = new JButton("Pedidos");
 		pedidos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Object src = e.getSource();
-				if(src == pedidos) {
-					new TelaPedidos();
+				if (src == pedidos) {
+					frame.dispose();
 					TelaPedidos.main(null);
 				}
 			}
@@ -132,13 +132,13 @@ public class TelaMenu {
 		pedidos.setBackground(new Color(204, 255, 255));
 		pedidos.setBounds(162, 276, 113, 36);
 		frame.getContentPane().add(pedidos);
-		
+
 		JButton pagamentos = new JButton("Pagamentos");
 		pagamentos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Object src = e.getSource();
-				if(src == pagamentos) {
-					new TelaPagamento();
+				if (src == pagamentos) {
+					frame.dispose();
 					TelaPagamento.main(null);
 				}
 			}

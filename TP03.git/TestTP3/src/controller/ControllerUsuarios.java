@@ -1,31 +1,38 @@
 package controller;
 
-import java.util.Scanner;
-
-import models.*;
-import view.TelaCadastroUsuario;
+import models.Dados;
+import models.Usuario;
 
 public class ControllerUsuarios {
 
-	private Usuario user = new Usuario();
-	public static int qtdUser = 0;
-	static int i = 0, j = 0;
-	static Scanner ler = new Scanner(System.in);
-	public static int indiceUser=0;
-	
-	public static void contaUser() {
-		qtdUser++;
+	public String verificaCadastro(String nome, String email, String rg, String cpf, String tel, String senha) {
+		String msgErro = "";
+		if (nome.length() == 0 || email.length() == 0 || rg.length() == 0
+				|| cpf.length() == 0 || tel.length() == 0
+				|| senha.length() == 0) {
+			return null;
+		}
+		if (!validarNome(nome)) {
+			msgErro += "Nome invalido\n";
+		}
+		if (!validarEmail(email)) {
+			msgErro += "Email invalido\n";
+		}
+		if (!validarRg(rg)) {
+			msgErro += "Rg invalido\n";
+		}
+		if (!validarCpf(cpf)) {
+			msgErro += "Cpf invalido\n";
+		}
+		if (!validarTelefone(tel)) {
+			msgErro += "Telefone invalido\n";
+		}
+		if (!validarSenha(senha)) {
+			msgErro += "Senha invalida\n";
+		}
+		return msgErro;
 	}
 
-	public static void cadastroUser() {
-		Usuario.usuario[ControllerUsuarios.qtdUser][0] = TelaCadastroUsuario.txtNome.getText();
-		Usuario.usuario[ControllerUsuarios.qtdUser][1] = TelaCadastroUsuario.txtEmail.getText();
-		Usuario.usuario[ControllerUsuarios.qtdUser][2] = TelaCadastroUsuario.txtRG.getText();
-		Usuario.usuario[ControllerUsuarios.qtdUser][3] = TelaCadastroUsuario.txtCPF.getText();
-		Usuario.usuario[ControllerUsuarios.qtdUser][4] = TelaCadastroUsuario.senha.getText();
-		Usuario.usuario[ControllerUsuarios.qtdUser][5] = TelaCadastroUsuario.txtTel.getText();
-	}
-	
 	public boolean validarNome(String nomeInput) {
 		boolean verificar = true;
 		if (!nomeInput.substring(0).matches("[A-Z]*")) {
@@ -89,5 +96,9 @@ public class ControllerUsuarios {
 			verificar = false;
 		}
 		return verificar;
+	}
+
+	public void deletarUsuario(Usuario usr) {
+		Dados.getUsuarios().remove(usr);
 	}
 }

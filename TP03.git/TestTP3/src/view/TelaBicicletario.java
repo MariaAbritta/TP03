@@ -12,12 +12,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import models.Bicicletario;
+import models.Dados;
 
 public class TelaBicicletario {
 
 	private JFrame frame;
-	Bicicletario bicicletario = new Bicicletario();
-
+	Bicicletario bicicletario = new Bicicletario(null, null);
 
 	/**
 	 * Launch the application.
@@ -47,16 +47,16 @@ public class TelaBicicletario {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 274);
+		frame.setBounds(100, 100, 450, 267);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		
+
 		JLabel tiruloUm_1 = new JLabel("Bicicletarios");
 		tiruloUm_1.setForeground(SystemColor.desktop);
 		tiruloUm_1.setFont(new Font("Elephant", Font.PLAIN, 37));
 		tiruloUm_1.setBounds(99, 14, 246, 75);
 		frame.getContentPane().add(tiruloUm_1);
-		
+
 		JLabel lblBicicletarios = new JLabel("Bicicletarios");
 		lblBicicletarios.setForeground(new Color(51, 204, 204));
 		lblBicicletarios.setFont(new Font("Elephant", Font.PLAIN, 37));
@@ -67,7 +67,7 @@ public class TelaBicicletario {
 		listar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// Printa todas as infos da Pessoa
-				JOptionPane.showMessageDialog(listar, bicicletario.getLocalizacao());
+				JOptionPane.showMessageDialog(listar, bicicletario.getLocalidade());
 				
 			}
 		});
@@ -75,14 +75,14 @@ public class TelaBicicletario {
 		listar.setFont(new Font("Cambria", Font.PLAIN, 15));
 		listar.setBounds(134, 100, 163, 33);
 		frame.getContentPane().add(listar);
-		
+
 		JButton buscar = new JButton("Buscar bicicletarios");
 		buscar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// Printa todas as infos da Pessoa
-				new TelaBuscarBicicletario();
+				frame.dispose();
 				TelaBuscarBicicletario.main(null);
-				
+
 			}
 		});
 		buscar.setBackground(new Color(204, 255, 255));
@@ -90,8 +90,8 @@ public class TelaBicicletario {
 		buscar.setBounds(134, 144, 163, 33);
 		frame.getContentPane().add(buscar);
 		
-		JButton funcionamento = new JButton("Funcionamento");
-		funcionamento.addActionListener(new ActionListener() {
+		JButton funcio = new JButton("Funcionalidade");
+		funcio.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// Printa todas as infos da Pessoa
 				new TelaFuncioBicicletario();
@@ -99,9 +99,10 @@ public class TelaBicicletario {
 				
 			}
 		});
-		funcionamento.setFont(new Font("Cambria", Font.PLAIN, 15));
-		funcionamento.setBackground(new Color(204, 204, 255));
-		funcionamento.setBounds(134, 188, 163, 34);
-		frame.getContentPane().add(funcionamento);
+		funcio.setFont(new Font("Cambria", Font.PLAIN, 15));
+		funcio.setBackground(new Color(204, 153, 255));
+		funcio.setBounds(134, 186, 163, 27);
+		frame.getContentPane().add(funcio);
+
 	}
 }

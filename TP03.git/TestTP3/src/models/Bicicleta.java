@@ -4,35 +4,27 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
-
 public class Bicicleta {
-	//atributos
-	private String localizacao;
+	// atributos
+	private Bicicletario localizacao;
 	private long IdBicicleta;
-	private String tipo;
-	int[][] IdBikes = new int[1][6];
 	String[] BikesSarahUrb = new String [15];
 	String[] BikesEcoUrb = new String [15];
+	int[][] IdBikes = new int[1][6];
+
 	Random random = new Random();
 	Scanner resposta = new Scanner(System.in);
-	
-	public Bicicleta() {
-		super();
-	}
-	
-	public Bicicleta(String loc, int ID, String type) {
+
+	public Bicicleta(Bicicletario loc, int ID) {
 		this.localizacao = loc;
 		this.IdBicicleta = ID;
-		this.tipo = type;
-	}
-	
-	public  String  getLocalizacao() {
-		Bicicletario bicicletario = new Bicicletario();
-		localizacao = bicicletario.getLocalizacao();
-		return localizacao;
 	}
 
-	public void setLocalizacao(String localizacao) {
+	public Bicicletario getLocalizacao() {
+		return this.localizacao;
+	}
+
+	public void setLocalizacao(Bicicletario localizacao) {
 		this.localizacao = localizacao;
 	}
 
@@ -45,42 +37,23 @@ public class Bicicleta {
 		IdBicicleta = idBicicleta;
 	}
 
-	public String getTipo() {
-		return tipo;
-	}
-
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
+	// Metodos
+	public String buscarBikeSarah(String buscado) {
+		buscado = "Ativas : " + BikesSarahUrb.length + "\nDeseja alugar alguma?\n";
+		return buscado;
 	}
 	
-	//Metodos
-	public void buscarBicicleta() {
-
-		System.out.println("------------------------------");
-		System.out.println("Busque uma bicicleta: ");
-		System.out.println("------------------------------");
-		System.out.println("Bicicletas Urbanas:");
-		System.out.println("Se voce pretende andar de bike pelas ruas da cidade, \n"
-				+ "seja para uso como transporte ao trabalho, \n"
-				+ "faculdade ou simplesmente para aqueles passeios nos parques, \n"
-				+ "jardins e ciclovias, a escolha e uma bicicleta urbana.\n");
-		System.out.println("Em qual bicicletario voce se encontra?: ");
-		Bicicleta loc = new Bicicleta();
-		loc.localizacao = " ";
-		String localizacao = loc.getLocalizacao();
-		System.out.println(localizacao);
-		int respostaLoc;
-		respostaLoc = resposta.nextInt();
-		resposta.nextLine();
-		//bug
-		switch(respostaLoc) {
-			case 1:
-				System.out.println("Ativas : " + BikesSarahUrb.length);
-				System.out.println("Deseja alugar alguma? sim // nao");
-				String opAluguelUrbana = "";
-				opAluguelUrbana = resposta.next();
-				
-				switch(opAluguelUrbana) {
+	public boolean alugarBikessarah(boolean verificado) {
+		verificado = true;
+		int alugado = 0;
+		verificandoSarah(verificado, alugado, BikesSarahUrb, "alugada!");
+		if (verificandoSarah(verificado, alugado, BikesSarahUrb, "alugada!")) {
+			verificado = false;
+		}
+		return verificado;
+	}
+	
+	/*public void buscarBicicleta() {
 					case "sim":
 						System.out.println("Quantas bicilcetas urbanas deseja alugar?:");
 						int numeroAluguel = resposta.nextInt();
@@ -126,16 +99,16 @@ public class Bicicleta {
 		}
 		//Fazer as ativas e inativas
 		System.out.println("------------------------------");
-	}
-	
+
+	}*/
+
 	public void listarBicicleta() {
-		
+
 		System.out.println("Localizacao: " + getLocalizacao());
 		System.out.println("ID da Bicicleta: " + getIdBicicleta());
 	}
 
 	public int estoque() {
-		
 		int id = 0; //nao sei como declarar essa variave para levar todos os numeros, ele ta retornando so o ultimo por ser int.
 		
 		//Definindo id para uma bike do array de 50.
@@ -156,11 +129,11 @@ public class Bicicleta {
         return id;
 	}
 	
-	public static void verificandoSarah (int quantasQuer, String[] BikesSarahUrb, String verificando) {
+	public static boolean verificandoSarah (boolean verificado, int quantasQuer, String[] BikesSarahUrb, String verificando) {
 	    if(!verificaNuloSarah(BikesSarahUrb)) {
 	        System.out.println("Não existe mais bicicletas urbanas disponiveis.");
 	        System.out.println("Não existe mais bicicletas urbanas disponiveis.");
-	        return;
+	        verificado = true;
 	    }
 	    int j = 1;
 	    if(BikesSarahUrb.length >= quantasQuer){
@@ -173,8 +146,10 @@ public class Bicicleta {
 	                j++;
 	            }
 	        }
+	        verificado = false;
 	    }
 	    System.out.println(Arrays.toString(BikesSarahUrb));
+	    return verificado;
 	}
 	
 	public static boolean verificaNuloSarah(String[] BikesSarahUrb){
@@ -219,8 +194,7 @@ public class Bicicleta {
 	    }
 	    return nulo;
 	}
-	
+
 }
 
-//Bicicleta Ã© um array em que seus ID's representam elas
-
+// Bicicleta Ã© um array em que seus ID's representam elas
