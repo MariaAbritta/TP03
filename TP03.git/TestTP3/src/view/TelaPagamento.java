@@ -86,7 +86,7 @@ public class TelaPagamento {
 		JButton listar = new JButton("Listar dados");
 		listar.addActionListener(new ActionListener() {
 			//so lista o primeiro cartao aqui
-
+			int cartaoX=1;
 			public void actionPerformed(ActionEvent e) {
 				for(int x=1; x <= ControllerPagamentos.ultPosi;x++) {
 					if(
@@ -94,14 +94,18 @@ public class TelaPagamento {
 							Pagamento.DadosPagamento[ControllerUsuarios.indiceUser][x+1]!=null &&
 							Pagamento.DadosPagamento[ControllerUsuarios.indiceUser][x+2]!=null &&
 							Pagamento.DadosPagamento[ControllerUsuarios.indiceUser][x+3]!=null 
-							) {
+							){
+						if(cartaoX>=1) {
+							cartaoX++;
+						}
 						JOptionPane.showMessageDialog(listar,
+								"Cartao "+ (cartaoX-1) +
 								"\nForma de pagamento: " + Pagamento.DadosPagamento[ControllerUsuarios.indiceUser][x] +
 								"\nNumero do cartao: " +	 Pagamento.DadosPagamento[ControllerUsuarios.indiceUser][x+1] +
 								"\nNome no cartao: " + Pagamento.DadosPagamento[ControllerUsuarios.indiceUser][x+2] +
 								"\nCVV: " + Pagamento.DadosPagamento[ControllerUsuarios.indiceUser][x+3]
 						);
-						x=x*4;
+						x=x+3;
 					}
 					else {
 						break;
