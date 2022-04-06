@@ -46,7 +46,7 @@ public class TelaPagamento {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 328);
+		frame.setBounds(100, 100, 450, 318);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
@@ -104,6 +104,12 @@ public class TelaPagamento {
 		deletar.setBackground(new Color(255, 255, 204));
 		deletar.setBounds(165, 186, 110, 32);
 		frame.getContentPane().add(deletar);
+		
+		JButton btnPagar = new JButton("Pagar");
+		btnPagar.setFont(new Font("Cambria", Font.PLAIN, 15));
+		btnPagar.setBackground(new Color(255, 204, 255));
+		btnPagar.setBounds(165, 229, 110, 32);
+		frame.getContentPane().add(btnPagar);
 	}
 
 }

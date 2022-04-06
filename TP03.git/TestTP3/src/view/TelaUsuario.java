@@ -104,7 +104,7 @@ public class TelaUsuario {
 			public void actionPerformed(ActionEvent e) {
 				Dados.getUsuarios().remove(TelaLoging.usuarioLogado);
 				System.out.println(Dados.getUsuarios().size());
-				JOptionPane.showMessageDialog(deletar, "Usuário Deletado, saindo do programa");
+				JOptionPane.showMessageDialog(deletar, "Usuario Deletado, saindo do programa");
 				frame.dispose();
 				TelaInicial.main(null);
 			}

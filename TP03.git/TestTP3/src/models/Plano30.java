@@ -1,16 +1,14 @@
 package models;
 
-public class Plano30 implements IPlano{
+public class Plano30{
 		
 	protected double valorFixo = 5.75;
 		
 		
-	public Double valorTotalPagamento() {
-		System.out.println("------------------------------");
-		System.out.println("Você escolheu o plano de 30  minutos de uso!");
-		System.out.println("O valor total é: "+ valorFixo);
-		System.out.println("------------------------------");
-		return valorFixo;
+	public String valorTotalPagamento(String ponte) {
+		ponte = "Você escolheu o plano de 30  minutos de uso!" + "\nO valor total é: " +
+				getValorFixo() + " reais.";
+		return ponte;
 	}
 
 	//Gets and sets

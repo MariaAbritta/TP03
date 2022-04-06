@@ -42,7 +42,7 @@ public class TelaMenu {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 422);
+		frame.setBounds(100, 100, 450, 371);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
@@ -118,21 +118,6 @@ public class TelaMenu {
 		viagem.setBounds(162, 229, 113, 36);
 		frame.getContentPane().add(viagem);
 
-		JButton pedidos = new JButton("Pedidos");
-		pedidos.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Object src = e.getSource();
-				if (src == pedidos) {
-					frame.dispose();
-					TelaPedidos.main(null);
-				}
-			}
-		});
-		pedidos.setFont(new Font("Cambria", Font.PLAIN, 15));
-		pedidos.setBackground(new Color(204, 255, 255));
-		pedidos.setBounds(162, 276, 113, 36);
-		frame.getContentPane().add(pedidos);
-
 		JButton pagamentos = new JButton("Pagamentos");
 		pagamentos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -145,7 +130,7 @@ public class TelaMenu {
 		});
 		pagamentos.setFont(new Font("Cambria", Font.PLAIN, 15));
 		pagamentos.setBackground(new Color(204, 255, 153));
-		pagamentos.setBounds(162, 323, 113, 36);
+		pagamentos.setBounds(162, 276, 113, 36);
 		frame.getContentPane().add(pagamentos);
 	}
 

@@ -42,7 +42,7 @@ public class TelaPedidos {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 201);
+		frame.setBounds(100, 100, 450, 236);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -58,14 +58,30 @@ public class TelaPedidos {
 		tiruloUm_1.setBounds(130, 0, 194, 75);
 		frame.getContentPane().add(tiruloUm_1);
 		
-		JButton listar = new JButton("Listar Pedidos");
+		JButton listar = new JButton("Escolher plano");
 		listar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Object src = e.getSource();
+				if (src == listar) {
+					frame.dispose();
+					TelaPlanos.main(null);
+				}
 			}
 		});
 		listar.setFont(new Font("Cambria", Font.PLAIN, 15));
 		listar.setBackground(new Color(204, 204, 255));
 		listar.setBounds(150, 100, 129, 36);
 		frame.getContentPane().add(listar);
+		
+		JButton btnEscolherPlano = new JButton("Listar pedidos");
+		btnEscolherPlano.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		btnEscolherPlano.setFont(new Font("Cambria", Font.PLAIN, 15));
+		btnEscolherPlano.setBackground(new Color(255, 255, 204));
+		btnEscolherPlano.setBounds(150, 150, 129, 36);
+		frame.getContentPane().add(btnEscolherPlano);
 	}
 }

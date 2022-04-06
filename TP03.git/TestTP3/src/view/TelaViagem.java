@@ -57,31 +57,31 @@ public class TelaViagem {
 		tiruloUm.setBounds(140, 0, 194, 75);
 		frame.getContentPane().add(tiruloUm);
 		
-		JButton cadastrar = new JButton("Cadastrar dados");
+		JButton cadastrar = new JButton("Cadastrar viagem");
 		cadastrar.setBackground(new Color(255, 204, 255));
 		cadastrar.setFont(new Font("Cambria", Font.PLAIN, 15));
 		cadastrar.setBounds(146, 100, 151, 35);
 		frame.getContentPane().add(cadastrar);
 		
-		JButton listar = new JButton("Listar dados");
+		JButton listar = new JButton("Listar viagens");
 		listar.setBackground(new Color(204, 204, 255));
 		listar.setFont(new Font("Cambria", Font.PLAIN, 15));
 		listar.setBounds(146, 146, 151, 35);
 		frame.getContentPane().add(listar);
 		
-		JButton editar = new JButton("Editar dados");
+		JButton editar = new JButton("Editar viagens");
 		editar.setBackground(new Color(255, 255, 204));
 		editar.setFont(new Font("Cambria", Font.PLAIN, 15));
 		editar.setBounds(146, 192, 151, 35);
 		frame.getContentPane().add(editar);
 		
-		JButton deletar = new JButton("Deletar dados");
+		JButton deletar = new JButton("Deletar viagens");
 		deletar.setBackground(new Color(153, 204, 255));
 		deletar.setFont(new Font("Cambria", Font.PLAIN, 15));
 		deletar.setBounds(146, 238, 151, 35);
 		frame.getContentPane().add(deletar);
 		
-		JButton buscar = new JButton("Buscar dados");
+		JButton buscar = new JButton("Buscar viagens");
 		buscar.setBackground(new Color(204, 255, 255));
 		buscar.setFont(new Font("Cambria", Font.PLAIN, 15));
 		buscar.setBounds(146, 284, 151, 35);
