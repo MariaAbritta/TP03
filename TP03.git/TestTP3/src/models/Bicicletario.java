@@ -73,7 +73,7 @@ public class Bicicletario {
 		return loc;
 	}
 	
-	public void BuscarBicicletario() {
+	/*public void BuscarBicicletario() {
 		
 		int opcaoBike = 0;
 		int numBikes = 0;
@@ -113,7 +113,7 @@ public class Bicicletario {
 					setDisponibilidadeBicicletasEco(numBikes);
 					System.out.println("Numero de Bicicletas disponiveis: "+ getDisponibilidadeBicicletaEco());
 					System.out.println("Funcionamento: Das 6h as 21h");
-					StatusFuncionamento();
+					StatusFuncionamento(hora);
 					System.out.println("Status: " + getFuncionamento());
 					System.out.println("------------------------------");
 					break;
@@ -122,9 +122,9 @@ public class Bicicletario {
 							+ "opcao 1 ou 2, somente.\n");
 			}
 		}while (opcaoBike >= 3);
-	}
+	}*/
 	
-	public String StatusFuncionamento() {
+	/*public String StatusFuncionamento() {
 		Scanner resposta = new Scanner(System.in);
 		int hora = 0;
 		System.out.println("Qual horario voce deseja ir ao bicicletario?: ");
@@ -138,7 +138,36 @@ public class Bicicletario {
 			setFuncionamento("Invalido horario nao encontrado");
 		}
 		return funcionamento;
+	}*/
+	
+	public boolean StatusFuncionamento(String hora){
+		Scanner resposta = new Scanner(System.in);
+		boolean verificar = true;
+		System.out.println("Qual horario voce deseja ir ao bicicletario?: ");
+		switch(hora) {
+				case "6":
+				case "7":
+				case "8":
+				case "9":
+				case "10":
+				case "11":
+				case "12":
+				case "13":
+				case "14":
+				case "15":
+				case "16":
+				case "17":
+				case "18":
+				case "19":
+				case "20":
+					verificar = false;
+					break;
+				default: 
+					System.out.println("Hora inválida.");
+					break;
+			}
+			return verificar;
+		}
 	}
 
-}
 

@@ -5,19 +5,13 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-
-import controller.ControllerLoging;
-import controller.ControllerUsuarios;
-
 import java.awt.Font;
 import java.awt.Color;
 import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
 import models.Bicicletario;
-import models.Usuario;
 
 public class TelaBicicletario {
 
@@ -97,6 +91,14 @@ public class TelaBicicletario {
 		frame.getContentPane().add(buscar);
 		
 		JButton funcionamento = new JButton("Funcionamento");
+		funcionamento.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// Printa todas as infos da Pessoa
+				new TelaFuncioBicicletario();
+				TelaFuncioBicicletario.main(null);
+				
+			}
+		});
 		funcionamento.setFont(new Font("Cambria", Font.PLAIN, 15));
 		funcionamento.setBackground(new Color(204, 204, 255));
 		funcionamento.setBounds(134, 188, 163, 34);

@@ -17,18 +17,18 @@ public class Main {
 		//Instancia do objeto
 //		Tempo tempo = new Tempo();
 
-		Scanner resposta = new Scanner(System.in);
+//		Scanner resposta = new Scanner(System.in);
 		
 		//variaveis locais
-		int opcaoMenu = 0;
-		int opcaoMenuCadastro = 0;
-		int opcaoMenusInternos = 0;
-		boolean cadastrado = true;
+//		int opcaoMenu = 0;
+//		int opcaoMenuCadastro = 0;
+//		int opcaoMenusInternos = 0;
+//		boolean cadastrado = true;
 		
 		
-		menuBicicletario();
-		opcaoMenusInternos = resposta.nextInt();
-		execBicicletario(opcaoMenusInternos);
+//		menuBicicletario();
+//		opcaoMenusInternos = resposta.nextInt();
+//		execBicicletario(opcaoMenusInternos);
 		
 		//Pagamento pagamento = new Pagamento();
 		//pagamento.cadastrarPagamento();
@@ -217,20 +217,20 @@ public class Main {
 //		}
 //	}
 	
-	public static void execBicicletario(int opcaoMenusInternos) {
-		Bicicletario bicicletario = new Bicicletario();
-		switch(opcaoMenusInternos) {
-			case 1:
-				bicicletario.listarBicicletario();
-				break;
-			case 2:
-				bicicletario.BuscarBicicletario();
-				break;
-			default:
-				System.out.print("| Opcao nao encontrada   |\n");
-				break;
-		}
-	}
+//	public static void execBicicletario(int opcaoMenusInternos) {
+//		Bicicletario bicicletario = new Bicicletario();
+//		switch(opcaoMenusInternos) {
+//			case 1:
+//				bicicletario.listarBicicletario();
+//				break;
+//			case 2:
+//				bicicletario.BuscarBicicletario();
+//				break;
+//			default:
+//				System.out.print("| Opcao nao encontrada   |\n");
+//				break;
+//		}
+//	}
 	
 //	public static void execBicicletas(int opcaoMenusInternos) {
 //		Bicicleta bicicletas = new Bicicleta();
