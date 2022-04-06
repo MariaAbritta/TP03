@@ -85,20 +85,28 @@ public class TelaPagamento {
 		
 		JButton listar = new JButton("Listar dados");
 		listar.addActionListener(new ActionListener() {
+			//so lista o primeiro cartao aqui
+
 			public void actionPerformed(ActionEvent e) {
-				// Printa todas as infos da Pessoa
-				for(int i=0; i<=4; i++) {
-					if (Pagamento.DadosPagamento[ControllerPagamentos.qtdCartao][i] != null) {
-						
+				for(int x=1; x <= ControllerPagamentos.ultPosi;x++) {
+					if(
+							Pagamento.DadosPagamento[ControllerUsuarios.indiceUser][x]!=null &&
+							Pagamento.DadosPagamento[ControllerUsuarios.indiceUser][x+1]!=null &&
+							Pagamento.DadosPagamento[ControllerUsuarios.indiceUser][x+2]!=null &&
+							Pagamento.DadosPagamento[ControllerUsuarios.indiceUser][x+3]!=null 
+							) {
+						JOptionPane.showMessageDialog(listar,
+								"\nForma de pagamento: " + Pagamento.DadosPagamento[ControllerUsuarios.indiceUser][x] +
+								"\nNumero do cartao: " +	 Pagamento.DadosPagamento[ControllerUsuarios.indiceUser][x+1] +
+								"\nNome no cartao: " + Pagamento.DadosPagamento[ControllerUsuarios.indiceUser][x+2] +
+								"\nCVV: " + Pagamento.DadosPagamento[ControllerUsuarios.indiceUser][x+3]
+						);
+						x=x*4;
+					}
+					else {
+						break;
 					}
 				}
-				JOptionPane.showMessageDialog(listar, 
-						"\nForma de pagamento: " + Pagamento.DadosPagamento[ControllerPagamentos.qtdCartao][0] +
-						"\nNumero do cartao: " +	 Pagamento.DadosPagamento[ControllerPagamentos.qtdCartao][1] +
-						"\nNome no cartao: " + Pagamento.DadosPagamento[ControllerPagamentos.qtdCartao][2] +
-						"\nCVV: " + Pagamento.DadosPagamento[ControllerPagamentos.qtdCartao][3]
-						);
-				
 			}
 		});
 		listar.setBackground(new Color(204, 255, 255));

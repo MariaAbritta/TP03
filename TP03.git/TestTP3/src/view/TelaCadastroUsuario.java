@@ -25,12 +25,12 @@ import models.Usuario;
 public class TelaCadastroUsuario {
 
 	private JFrame frame;
-	public JTextField txtNome;
-	public JTextField txtEmail;
-	public JTextField txtRG;
-	public JTextField txtCPF;
-	public JTextField txtTel;
-	public JPasswordField senha;
+	public static JTextField txtNome;
+	public static JTextField txtEmail;
+	public static JTextField txtRG;
+	public static JTextField txtCPF;
+	public static JTextField txtTel;
+	public static JPasswordField senha;
 	static public String[][] usuario = new String[50][50];
 
 	/**
@@ -188,12 +188,7 @@ public class TelaCadastroUsuario {
 					JOptionPane.showMessageDialog(null, "Confirmar Cadastro", "Deseja Confirmar o Cadastro ?",
 							JOptionPane.DEFAULT_OPTION);
 					//registrar os dados no back
-					Usuario.usuario[ControllerUsuarios.qtdUser][0] = txtNome.getText();
-					Usuario.usuario[ControllerUsuarios.qtdUser][1] = txtEmail.getText();
-					Usuario.usuario[ControllerUsuarios.qtdUser][2] = txtRG.getText();
-					Usuario.usuario[ControllerUsuarios.qtdUser][3] = txtCPF.getText();
-					Usuario.usuario[ControllerUsuarios.qtdUser][4] = senha.getText();
-					Usuario.usuario[ControllerUsuarios.qtdUser][5] = txtTel.getText();
+					ControllerUsuarios.cadastroUser();
 					//contar usuarios cadastrados
 					ControllerUsuarios.contaUser();
 					//Registar os nomes no array de pagamento

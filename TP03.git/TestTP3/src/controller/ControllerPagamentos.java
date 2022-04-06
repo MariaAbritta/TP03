@@ -3,11 +3,13 @@ package controller;
 import java.util.Scanner;
 
 import models.*;
+import view.TelaCadastroCartao;
 
 public class ControllerPagamentos {
 	private Pagamento p = new Pagamento();
 	private Usuario user = new Usuario();
 	public static int qtdCartao = 0;
+	public static int ultPosi=0;
 	
 	//relacao de usuarios com seus pagamentos
 	public static void dadosPagamento() {
@@ -21,6 +23,27 @@ public class ControllerPagamentos {
 	//contar cartoes
 	public static void contaCartoes() {
 		qtdCartao++;
+	}
+	public static void cadastrarCartao() {
+		if(qtdCartao == 0) {
+			Pagamento.DadosPagamento[ControllerUsuarios.indiceUser][1] = TelaCadastroCartao.textForma.getText();
+			Pagamento.DadosPagamento[ControllerUsuarios.indiceUser][2] = TelaCadastroCartao.txtNumCartao.getText();
+			Pagamento.DadosPagamento[ControllerUsuarios.indiceUser][3] = TelaCadastroCartao.txtNome.getText();
+			Pagamento.DadosPagamento[ControllerUsuarios.indiceUser][4] = TelaCadastroCartao.textCVV.getText();
+			ultPosi = 4;
+			contaCartoes();
+			return;
+		}
+		else if(qtdCartao >= 1) {
+			Pagamento.DadosPagamento[ControllerUsuarios.indiceUser][ultPosi+1] = TelaCadastroCartao.textForma.getText();
+			Pagamento.DadosPagamento[ControllerUsuarios.indiceUser][ultPosi+2] = TelaCadastroCartao.txtNumCartao.getText();
+			Pagamento.DadosPagamento[ControllerUsuarios.indiceUser][ultPosi+3] = TelaCadastroCartao.txtNome.getText();
+			Pagamento.DadosPagamento[ControllerUsuarios.indiceUser][ultPosi+4] = TelaCadastroCartao.textCVV.getText();
+			ultPosi = ultPosi+4;
+			contaCartoes();
+			return;
+		}
+		
 	}
 	
 	//validacoes

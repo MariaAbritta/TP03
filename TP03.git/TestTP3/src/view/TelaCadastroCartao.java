@@ -23,10 +23,10 @@ import models.Pagamento;
 public class TelaCadastroCartao {
 
 	private JFrame frame;
-	private JTextField textForma;
-	private JTextField txtNumCartao;
-	private JTextField txtNome;
-	private JTextField textCVV;
+	public static JTextField textForma;
+	public static JTextField txtNumCartao;
+	public static JTextField txtNome;
+	public static JTextField textCVV;
 	static public String[][] cartao = new String[50][50];
 
 
@@ -167,16 +167,10 @@ public class TelaCadastroCartao {
 				} else {
 					JOptionPane.showMessageDialog(null, "Confirmar Cadastro", "Deseja Confirmar o Cadastro?",
 							JOptionPane.DEFAULT_OPTION);
-					//registrar os dados no back
-					Pagamento.DadosPagamento[ControllerPagamentos.qtdCartao][0] = textForma.getText();
-					Pagamento.DadosPagamento[ControllerPagamentos.qtdCartao][1] = txtNumCartao.getText();
-					Pagamento.DadosPagamento[ControllerPagamentos.qtdCartao][2] = txtNome.getText();
-					Pagamento.DadosPagamento[ControllerPagamentos.qtdCartao][3] = textCVV.getText();
 
-					//contar usuarios cadastrados
-					ControllerPagamentos.contaCartoes();
-					//Registar os nomes no array de pagamento
-					ControllerPagamentos.dadosPagamento();
+					//registrar os dados no back
+					ControllerPagamentos.cadastrarCartao();
+					
 					//outros
 					frame.dispose();
 					TelaMenu.main(null);

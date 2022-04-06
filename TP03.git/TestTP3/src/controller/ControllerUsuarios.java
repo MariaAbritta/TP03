@@ -3,6 +3,7 @@ package controller;
 import java.util.Scanner;
 
 import models.*;
+import view.TelaCadastroUsuario;
 
 public class ControllerUsuarios {
 
@@ -16,6 +17,15 @@ public class ControllerUsuarios {
 		qtdUser++;
 	}
 
+	public static void cadastroUser() {
+		Usuario.usuario[ControllerUsuarios.qtdUser][0] = TelaCadastroUsuario.txtNome.getText();
+		Usuario.usuario[ControllerUsuarios.qtdUser][1] = TelaCadastroUsuario.txtEmail.getText();
+		Usuario.usuario[ControllerUsuarios.qtdUser][2] = TelaCadastroUsuario.txtRG.getText();
+		Usuario.usuario[ControllerUsuarios.qtdUser][3] = TelaCadastroUsuario.txtCPF.getText();
+		Usuario.usuario[ControllerUsuarios.qtdUser][4] = TelaCadastroUsuario.senha.getText();
+		Usuario.usuario[ControllerUsuarios.qtdUser][5] = TelaCadastroUsuario.txtTel.getText();
+	}
+	
 	public boolean validarNome(String nomeInput) {
 		boolean verificar = true;
 		if (!nomeInput.substring(0).matches("[A-Z]*")) {

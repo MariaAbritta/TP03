@@ -70,11 +70,6 @@ public class TelaUsuario {
 		listar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// Printa todas as infos da Pessoa
-				for(int i=0; i<=6; i++) {
-					if (Usuario.usuario[ControllerLoging.indiceUser][i] != null) {
-						
-					}
-				}
 				JOptionPane.showMessageDialog(listar, 
 						"Seu nome é: " + Usuario.usuario[ControllerUsuarios.indiceUser][0] +
 						"\nSeu email é: " +	 Usuario.usuario[ControllerUsuarios.indiceUser][1] +
