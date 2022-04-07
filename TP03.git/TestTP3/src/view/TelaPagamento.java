@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
 
 import models.Dados;
 import models.Pagamento;
+import models.Usuario;
 
 public class TelaPagamento {
 
@@ -92,11 +93,24 @@ public class TelaPagamento {
 				}
 			}
 		});
-
-		listar.setBackground(new Color(204, 255, 255));
-		listar.setFont(new Font("Cambria", Font.PLAIN, 15));
-		listar.setBounds(165, 143, 110, 32);
-		frame.getContentPane().add(listar);
+		
+		JButton listar1 = new JButton("Listar dados");
+		listar1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// Printa todas as infos de pagamento
+				JOptionPane.showMessageDialog(listar1,
+//						"Seu nome : " + TelaLoging.usuarioLogado.getNome() +
+								"\nForma de pagamento : " + Usuario.getCartoes()
+//								"\nNome no cartao : " + Dados.getPagamentos().get(Dados.getPagamentos().size()-1).getNomeNoCartao() +
+//								"\nNumero do cartao : " +  Dados.getPagamentos().get(Dados.getPagamentos().size()-1).getNumeroDoCartao() +
+//								"\nCodigo de segurança : " +  Dados.getPagamentos().get(Dados.getPagamentos().size()-1).getCodigoDeSeguranca()
+								);
+			}
+		});
+		listar1.setBackground(new Color(204, 255, 255));
+		listar1.setFont(new Font("Cambria", Font.PLAIN, 15));
+		listar1.setBounds(165, 143, 110, 32);
+		frame.getContentPane().add(listar1);
 
 		JButton deletar = new JButton(
 				"Deletar");

@@ -10,7 +10,7 @@ public class Usuario {
 	private String senha;
 	private String telefone;
 
-	private ArrayList<Cartao> cartoes = new ArrayList<>();
+	private static ArrayList<Cartao> cartoes = new ArrayList<>();
 
 	public Usuario(String n, String e, String r, String c, String s, String t) {
 		nome = n;
@@ -69,7 +69,7 @@ public class Usuario {
 		this.telefone = telefone;
 	}
 
-	public ArrayList<Cartao> getCartoes() {
+	public static ArrayList<Cartao> getCartoes() {
 		return cartoes;
 	}
 
