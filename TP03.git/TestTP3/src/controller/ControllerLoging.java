@@ -19,4 +19,15 @@ public class ControllerLoging {
 		return null;
 
 	}
+	
+	public static Usuario validarBusca(String login) {
+
+		for (Usuario usr : Dados.getUsuarios()) {
+			if (usr.getNome().equals(login)) {
+				return usr;
+			}
+		}
+		return null;
+
+	}
 }

@@ -61,7 +61,7 @@ public class TelaEditarUsuario {
 		ControllerUsuarios control = new ControllerUsuarios();
 
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 706);
+		frame.setBounds(100, 100, 450, 639);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
@@ -135,7 +135,7 @@ public class TelaEditarUsuario {
 		JButton check = new JButton("OK");
 		check.setFont(new Font("Cambria", Font.PLAIN, 11));
 		check.setBackground(SystemColor.desktop);
-		check.setBounds(181, 633, 89, 23);
+		check.setBounds(174, 559, 89, 23);
 		check.addActionListener(new ActionListener() {
 
 			@SuppressWarnings("deprecation")

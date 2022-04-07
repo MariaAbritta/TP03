@@ -45,7 +45,7 @@ public class TelaUsuario {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 287);
+		frame.setBounds(100, 100, 450, 328);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
@@ -98,7 +98,7 @@ public class TelaUsuario {
 		JButton deletar = new JButton("Deletar dados");
 		deletar.setBackground(new Color(255, 255, 204));
 		deletar.setFont(new Font("Cambria", Font.PLAIN, 15));
-		deletar.setBounds(155, 190, 130, 34);
+		deletar.setBounds(155, 235, 130, 34);
 
 		deletar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -110,6 +110,20 @@ public class TelaUsuario {
 			}
 		});
 		frame.getContentPane().add(deletar);
+		
+		JButton btnBuscarUsuario = new JButton("Buscar usuario");
+		btnBuscarUsuario.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Object src = e.getSource();
+				if (src == btnBuscarUsuario) {
+					frame.dispose();
+					TelaBuscarUsuario.main(null);
+				}
+			}
+		});
+		btnBuscarUsuario.setFont(new Font("Cambria", Font.PLAIN, 15));
+		btnBuscarUsuario.setBackground(new Color(153, 204, 255));
+		btnBuscarUsuario.setBounds(155, 190, 130, 34);
+		frame.getContentPane().add(btnBuscarUsuario);
 	}
-
 }
