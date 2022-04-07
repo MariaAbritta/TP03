@@ -69,7 +69,11 @@ public class TelaBicicleta {
 		listar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// Printa todas as infos da Pessoa
-				JOptionPane.showMessageDialog(listar, "Numero de Bicicletas disponiveis Parque Sarah Kubitschek: "+ bicicletario.setDisponibilidadeBicicletasSarah(0) + "\nNumero de Bicicletas disponiveis Parque Ecologico: : " + bicicletario.setDisponibilidadeBicicletasEco(0));
+				JOptionPane.showMessageDialog(listar, 
+						"Numero de Bicicletas disponiveis Parque Sarah Kubitschek: "+ 
+						bicicletario.setDisponibilidadeBicicletasSarah(0) + 
+						"\nNumero de Bicicletas disponiveis Parque Ecologico: : " +
+						bicicletario.setDisponibilidadeBicicletasEco(0));
 				
 			}
 		});
