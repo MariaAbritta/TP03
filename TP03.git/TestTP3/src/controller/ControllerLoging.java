@@ -2,6 +2,7 @@ package controller;
 
 import models.Dados;
 import models.Usuario;
+import models.Pagamento;
 
 public class ControllerLoging {
 

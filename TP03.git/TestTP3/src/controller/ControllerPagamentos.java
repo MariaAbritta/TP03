@@ -1,6 +1,8 @@
 package controller;
 
 import models.Cartao;
+import models.Dados;
+import models.Pagamento;
 import models.Usuario;
 
 public class ControllerPagamentos {
@@ -52,5 +54,16 @@ public class ControllerPagamentos {
 			verificador = false;
 		}
 		return verificador;
+	}
+	
+	public static Pagamento validarBusca(String login) {
+
+		for (Pagamento usr : Dados.getPagamentos()) {
+			if (usr.getCodigoDeSeguranca().equals(login)) {
+				return usr;
+			}
+		}
+		return null;
+
 	}
 }

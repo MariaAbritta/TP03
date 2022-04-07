@@ -1,21 +1,25 @@
 package view;
 
 import java.awt.EventQueue;
+
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import java.awt.Color;
 import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JTextField;
-import controller.ControllerLoging;
-import javax.swing.JButton;
-import models.Dados;
-import view.TelaCadastroUsuario;
 
-public class TelaBuscarUsuario {
+import javax.swing.JTextField;
+
+import controller.ControllerLoging;
+import controller.ControllerPagamentos;
+
+import javax.swing.JButton;
+
+public class TelaBuscarCartao {
 
 	private JFrame frame;
 	private JTextField textField;
@@ -27,7 +31,7 @@ public class TelaBuscarUsuario {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					TelaBuscarUsuario window = new TelaBuscarUsuario();
+					TelaBuscarCartao window = new TelaBuscarCartao();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -39,7 +43,7 @@ public class TelaBuscarUsuario {
 	/**
 	 * Create the application.
 	 */
-	public TelaBuscarUsuario() {
+	public TelaBuscarCartao() {
 		initialize();
 	}
 
@@ -48,56 +52,54 @@ public class TelaBuscarUsuario {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 238);
+		frame.setBounds(100, 100, 450, 222);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel lblFuncionamento = new JLabel("Funcionamento");
-		lblFuncionamento.setForeground(SystemColor.desktop);
-		lblFuncionamento.setFont(new Font("Elephant", Font.PLAIN, 37));
-		lblFuncionamento.setBounds(92, 21, 312, 75);
-		frame.getContentPane().add(lblFuncionamento);
-		
-		JLabel tiruloUm_1 = new JLabel("Funcionamento");
-		tiruloUm_1.setForeground(new Color(51, 204, 204));
+		JLabel tiruloUm_1 = new JLabel("Buscar cartao");
+		tiruloUm_1.setForeground(SystemColor.desktop);
 		tiruloUm_1.setFont(new Font("Elephant", Font.PLAIN, 37));
-		tiruloUm_1.setBounds(82, 10, 302, 75);
+		tiruloUm_1.setBounds(85, 14, 302, 75);
 		frame.getContentPane().add(tiruloUm_1);
 		
-		JLabel lblBusquePeloNome = new JLabel("Busque pelo nome do usuario que deseja encontrar:");
-		lblBusquePeloNome.setFont(new Font("Cambria", Font.PLAIN, 15));
-		lblBusquePeloNome.setBounds(49, 96, 335, 14);
-		frame.getContentPane().add(lblBusquePeloNome);
+		JLabel lblBuscarCartao = new JLabel("Buscar cartao");
+		lblBuscarCartao.setForeground(new Color(51, 204, 204));
+		lblBuscarCartao.setFont(new Font("Elephant", Font.PLAIN, 37));
+		lblBuscarCartao.setBounds(75, 0, 312, 75);
+		frame.getContentPane().add(lblBuscarCartao);
+		
+		JLabel lblBusquePeloCvv = new JLabel("Busque pelo CVV do cartao que deseja encontrar:");
+		lblBusquePeloCvv.setFont(new Font("Cambria", Font.PLAIN, 15));
+		lblBusquePeloCvv.setBounds(47, 86, 335, 14);
+		frame.getContentPane().add(lblBusquePeloCvv);
 		
 		textField = new JTextField();
 		textField.setColumns(10);
-		textField.setBounds(49, 117, 335, 20);
+		textField.setBounds(47, 107, 335, 20);
 		frame.getContentPane().add(textField);
 		
 		JButton check = new JButton("OK");
 		check.addActionListener(new ActionListener() {
 			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent e) {
-
-				TelaLoging.usuarioLogado = ControllerLoging.validarBusca(textField.getText());
-				if (TelaLoging.usuarioLogado == null) {
+				TelaCadastroCartao.cartaoCadastrado = ControllerPagamentos.validarBusca(textField.getText());
+				if (TelaCadastroCartao.cartaoCadastrado == null) {
 					JOptionPane.showMessageDialog(check,
-							"Usuario nao encontrado!");				
+							"Cartao nao encontrado!");				
 					} else {
 					frame.dispose();
 					JOptionPane.showMessageDialog(check,
-							"Seu nome : " + TelaLoging.usuarioLogado.getNome() +
-									"\nSeu email : " + TelaLoging.usuarioLogado.getEmail() +
-									"\nSeu RG : " + TelaLoging.usuarioLogado.getRg() +
-									"\nSeu CPF : " + TelaLoging.usuarioLogado.getCpf() +
-									"\nSUA Senha : " + TelaLoging.usuarioLogado.getSenha() +
-									"\nSeu Telefone : " + TelaLoging.usuarioLogado.getTelefone());
+							"Forma de pagamento: " + TelaCadastroCartao.textForma.getText() +
+									"\nNumero do cartao : " + TelaCadastroCartao.txtNumCartao.getText() +
+									"\nNome no cartao : " + TelaCadastroCartao.txtNome.getText() +
+									"\nCVV: " + TelaCadastroCartao.textCVV.getText());
 				}
 			}
 		});
 		check.setFont(new Font("Cambria", Font.PLAIN, 11));
 		check.setBackground(SystemColor.desktop);
-		check.setBounds(171, 148, 89, 23);
+		check.setBounds(169, 138, 89, 23);
 		frame.getContentPane().add(check);
 	}
+
 }

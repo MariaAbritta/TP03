@@ -47,7 +47,7 @@ public class TelaPagamento {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 318);
+		frame.setBounds(100, 100, 450, 348);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
@@ -77,34 +77,17 @@ public class TelaPagamento {
 				}
 			}
 		});
-
-		JButton listar = new JButton("Listar dados");
-		listar.addActionListener(new ActionListener() {
-
-			public void actionPerformed(ActionEvent e) {
-				for (Pagamento pgt : Dados.getPagamentos()) {
-
-					JOptionPane.showMessageDialog(listar,
-							"\nForma de pagamento: " + pgt.getFormaDePagamento() +
-									"\nNumero do cartao: " + pgt.getNumeroDoCartao() +
-									"\nNome no cartao: " + pgt.getNomeNoCartao() +
-									"\nCVV: " + pgt.getCodigoDeSeguranca() + "\n\n");
-
-				}
-			}
-		});
 		
 		JButton listar1 = new JButton("Listar dados");
 		listar1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				// Printa todas as infos de pagamento
+				// Printa todas as infos da Pessoa
 				JOptionPane.showMessageDialog(listar1,
-//						"Seu nome : " + TelaLoging.usuarioLogado.getNome() +
-								"\nForma de pagamento : " + Usuario.getCartoes()
-//								"\nNome no cartao : " + Dados.getPagamentos().get(Dados.getPagamentos().size()-1).getNomeNoCartao() +
-//								"\nNumero do cartao : " +  Dados.getPagamentos().get(Dados.getPagamentos().size()-1).getNumeroDoCartao() +
-//								"\nCodigo de segurança : " +  Dados.getPagamentos().get(Dados.getPagamentos().size()-1).getCodigoDeSeguranca()
-								);
+						"Forma de pagamento: " + TelaCadastroCartao.textForma.getText() +
+								"\nNumero do cartao : " + TelaCadastroCartao.txtNumCartao.getText() +
+								"\nNome no cartao : " + TelaCadastroCartao.txtNome.getText() +
+								"\nCVV: " + TelaCadastroCartao.textCVV.getText());
+
 			}
 		});
 		listar1.setBackground(new Color(204, 255, 255));
@@ -112,18 +95,41 @@ public class TelaPagamento {
 		listar1.setBounds(165, 143, 110, 32);
 		frame.getContentPane().add(listar1);
 
-		JButton deletar = new JButton(
-				"Deletar");
+		JButton deletar = new JButton("Deletar");
+		deletar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Dados.getPagamentos().remove(TelaCadastroCartao.cartaoCadastrado);
+				System.out.println(Dados.getPagamentos().size());
+				JOptionPane.showMessageDialog(deletar, "Cartao deletado.");
+				frame.dispose();
+				TelaMenu.main(null);
+			}
+		});
 		deletar.setFont(new Font("Cambria", Font.PLAIN, 15));
 		deletar.setBackground(new Color(255, 255, 204));
-		deletar.setBounds(165, 186, 110, 32);
+		deletar.setBounds(165, 223, 110, 32);
 		frame.getContentPane().add(deletar);
 		
 		JButton btnPagar = new JButton("Pagar");
 		btnPagar.setFont(new Font("Cambria", Font.PLAIN, 15));
 		btnPagar.setBackground(new Color(255, 204, 255));
-		btnPagar.setBounds(165, 229, 110, 32);
+		btnPagar.setBounds(165, 266, 110, 32);
 		frame.getContentPane().add(btnPagar);
+		
+		JButton buscar = new JButton("Buscar");
+		buscar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Object src = e.getSource();
+				if (src == buscar) {
+					frame.dispose();
+					TelaBuscarCartao.main(null);
+				}
+			}
+		});
+		buscar.setFont(new Font("Cambria", Font.PLAIN, 15));
+		buscar.setBackground(SystemColor.desktop);
+		buscar.setBounds(165, 186, 110, 26);
+		frame.getContentPane().add(buscar);
 	}
 
 }

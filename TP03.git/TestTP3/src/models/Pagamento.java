@@ -48,7 +48,7 @@ public class Pagamento {
 		this.numeroDoCartao = numeroDoCartao;
 	}
 
-	public String getNomeNoCartao() {
+	public String getNomeNoCartao(String pagamento) {
 		return nomeNoCartao;
 	}
 

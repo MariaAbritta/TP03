@@ -19,6 +19,8 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 import controller.ControllerPagamentos;
+import models.Pagamento;
+import models.Usuario;
 
 public class TelaCadastroCartao {
 
@@ -27,6 +29,7 @@ public class TelaCadastroCartao {
 	public static JTextField txtNumCartao;
 	public static JTextField txtNome;
 	public static JTextField textCVV;
+	static Pagamento cartaoCadastrado;
 
 	/**
 	 * Launch the application.
