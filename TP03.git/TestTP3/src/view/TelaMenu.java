@@ -42,7 +42,7 @@ public class TelaMenu {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 371);
+		frame.setBounds(100, 100, 450, 325);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
@@ -85,7 +85,7 @@ public class TelaMenu {
 		});
 		bicicletario.setFont(new Font("Cambria", Font.PLAIN, 15));
 		bicicletario.setBackground(new Color(204, 204, 255));
-		bicicletario.setBounds(162, 138, 113, 36);
+		bicicletario.setBounds(162, 185, 113, 36);
 		frame.getContentPane().add(bicicletario);
 
 		JButton bicicletas = new JButton("Bicicletas");
@@ -100,23 +100,8 @@ public class TelaMenu {
 		});
 		bicicletas.setFont(new Font("Cambria", Font.PLAIN, 15));
 		bicicletas.setBackground(new Color(255, 255, 204));
-		bicicletas.setBounds(162, 183, 113, 36);
+		bicicletas.setBounds(162, 230, 113, 36);
 		frame.getContentPane().add(bicicletas);
-
-		JButton viagem = new JButton("Viagem");
-		viagem.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Object src = e.getSource();
-				if (src == viagem) {
-					frame.dispose();
-					TelaViagem.main(null);
-				}
-			}
-		});
-		viagem.setFont(new Font("Cambria", Font.PLAIN, 15));
-		viagem.setBackground(new Color(153, 204, 255));
-		viagem.setBounds(162, 229, 113, 36);
-		frame.getContentPane().add(viagem);
 
 		JButton pagamentos = new JButton("Pagamentos");
 		pagamentos.addActionListener(new ActionListener() {
@@ -129,8 +114,8 @@ public class TelaMenu {
 			}
 		});
 		pagamentos.setFont(new Font("Cambria", Font.PLAIN, 15));
-		pagamentos.setBackground(new Color(204, 255, 153));
-		pagamentos.setBounds(162, 276, 113, 36);
+		pagamentos.setBackground(new Color(204, 255, 255));
+		pagamentos.setBounds(162, 138, 113, 36);
 		frame.getContentPane().add(pagamentos);
 	}
 

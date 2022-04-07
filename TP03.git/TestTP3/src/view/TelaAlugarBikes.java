@@ -1,21 +1,26 @@
 package view;
 
 import java.awt.EventQueue;
+
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+
+import models.Bicicleta;
+import models.Bicicletario;
+
 import java.awt.Font;
-import java.awt.Color;
 import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.Color;
 import javax.swing.JButton;
-import models.Bicicletario;
 
-public class TelaBuscarBicicletario {
+public class TelaAlugarBikes {
 
 	private JFrame frame;
-	Bicicletario bicicletario = new Bicicletario(null, null);
+	Bicicleta bicicleta = new Bicicleta(null, 0);
+
 
 	/**
 	 * Launch the application.
@@ -24,7 +29,7 @@ public class TelaBuscarBicicletario {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					TelaBuscarBicicletario window = new TelaBuscarBicicletario();
+					TelaAlugarBikes window = new TelaAlugarBikes();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -36,7 +41,7 @@ public class TelaBuscarBicicletario {
 	/**
 	 * Create the application.
 	 */
-	public TelaBuscarBicicletario() {
+	public TelaAlugarBikes() {
 		initialize();
 	}
 
@@ -45,54 +50,50 @@ public class TelaBuscarBicicletario {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 220);
+		frame.setBounds(100, 100, 450, 224);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		
+		JLabel lblBicicletas = new JLabel("Bicicletas");
+		lblBicicletas.setForeground(SystemColor.desktop);
+		lblBicicletas.setFont(new Font("Elephant", Font.PLAIN, 37));
+		lblBicicletas.setBounds(126, 11, 246, 75);
+		frame.getContentPane().add(lblBicicletas);
+		
+		JLabel tiruloUm_1 = new JLabel("Bicicletas");
+		tiruloUm_1.setForeground(new Color(0, 204, 204));
+		tiruloUm_1.setFont(new Font("Elephant", Font.PLAIN, 37));
+		tiruloUm_1.setBounds(116, 0, 246, 75);
+		frame.getContentPane().add(tiruloUm_1);
 		
 		JButton sarah = new JButton("Sarah Kubitschek");
 		sarah.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// Printa todas as infos da Pessoa
-				JOptionPane.showMessageDialog(sarah, "Endereco: Srps - Brasilia, DF, 70297-400\n"
-						+ "Horarios: Atendimento 24 horas.\n" + 
-						"Numero de Bicicletas disponiveis: "+ bicicletario.setDisponibilidadeBicicletasSarah(0));
 				frame.dispose();
-				TelaMenu.main(null);
+				JOptionPane.showMessageDialog(sarah, bicicleta.listarBicicletasSarah(null));
+				frame.dispose();
+				TelaPagamentoFinal.main(null);
 			}
 		});
 		sarah.setFont(new Font("Cambria", Font.PLAIN, 15));
 		sarah.setBackground(new Color(255, 204, 255));
-		sarah.setBounds(151, 86, 147, 34);
+		sarah.setBounds(147, 86, 147, 34);
 		frame.getContentPane().add(sarah);
 		
 		JButton eco = new JButton("Parque Ecologico");
 		eco.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// Printa todas as infos da Pessoa
-				JOptionPane.showMessageDialog(eco, "Endereco: Avenida Castanheiras.\n"
-						+ "Situado atras da Residencia Oficial de Aguas Claras,\n"
-						+ "entre as quadras 301, 104, 105 e 106 da cidade.\n"
-						+ "Horarios: Diariamente, das 06h as 22h\n"+ 
-						"Numero de Bicicletas disponiveis: "+ bicicletario.setDisponibilidadeBicicletasEco(0));
 				frame.dispose();
-				TelaMenu.main(null);
+				JOptionPane.showMessageDialog(eco, bicicleta.listarBicicletasEco(null));
+				frame.dispose();
+				TelaPagamentoFinal.main(null);
 			}
 		});
 		eco.setFont(new Font("Cambria", Font.PLAIN, 15));
 		eco.setBackground(new Color(255, 255, 204));
-		eco.setBounds(151, 131, 147, 34);
+		eco.setBounds(147, 131, 147, 34);
 		frame.getContentPane().add(eco);
-		
-		JLabel lblBicicletarios = new JLabel("Bicicletarios");
-		lblBicicletarios.setForeground(SystemColor.desktop);
-		lblBicicletarios.setFont(new Font("Elephant", Font.PLAIN, 37));
-		lblBicicletarios.setBounds(102, 11, 246, 75);
-		frame.getContentPane().add(lblBicicletarios);
-		
-		JLabel tiruloUm_1 = new JLabel("Bicicletarios");
-		tiruloUm_1.setForeground(new Color(0, 204, 204));
-		tiruloUm_1.setFont(new Font("Elephant", Font.PLAIN, 37));
-		tiruloUm_1.setBounds(92, 0, 246, 75);
-		frame.getContentPane().add(tiruloUm_1);
 	}
 }

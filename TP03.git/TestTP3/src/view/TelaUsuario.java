@@ -72,8 +72,10 @@ public class TelaUsuario {
 								"\nSeu CPF : " + TelaLoging.usuarioLogado.getCpf() +
 								"\nSUA Senha : " + TelaLoging.usuarioLogado.getSenha() +
 								"\nSeu Telefone : " + TelaLoging.usuarioLogado.getTelefone());
-
+				frame.dispose();
+				TelaMenu.main(null);
 			}
+			
 		});
 		listar.setBackground(new Color(255, 204, 255));
 		listar.setFont(new Font("Cambria", Font.PLAIN, 15));

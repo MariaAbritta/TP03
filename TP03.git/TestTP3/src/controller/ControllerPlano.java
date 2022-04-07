@@ -8,7 +8,6 @@ import models.Plano1440;
 public class ControllerPlano {
 	public static void aceitarPlano30min(Plano30 p30,String resposta) {
 		p30.valorTotalPagamento(resposta);
-		//usr.getCartoes().add(new Cartao(numero, cvv, nome));
 	}
 	
 	// validacoes

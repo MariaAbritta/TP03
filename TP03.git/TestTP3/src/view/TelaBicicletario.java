@@ -68,7 +68,8 @@ public class TelaBicicletario {
 			public void actionPerformed(ActionEvent e) {
 				// Printa todas as infos da Pessoa
 				JOptionPane.showMessageDialog(listar, bicicletario.getLocalidade());
-				
+				frame.dispose();
+				TelaMenu.main(null);
 			}
 		});
 		listar.setBackground(new Color(204, 255, 153));

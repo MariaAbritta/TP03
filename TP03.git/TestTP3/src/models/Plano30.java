@@ -7,7 +7,7 @@ public class Plano30{
 		
 	public String valorTotalPagamento(String ponte) {
 		ponte = "Você escolheu o plano de 30  minutos de uso!" + "\nO valor total é: " +
-				getValorFixo() + " reais.";
+				getValorFixo() + " reais." + "\nPagamento realizado!" + "\nObrigada por usar nosso app!";
 		return ponte;
 	}
 

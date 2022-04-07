@@ -95,28 +95,10 @@ public class TelaBuscarCartao {
 
 					
 				}
+				frame.dispose();
+				TelaMenu.main(null);
 			}
 		});
-		/*check.addActionListener(new ActionListener() {
-			@SuppressWarnings("deprecation")
-			public void actionPerformed(ActionEvent e) {
-
-				TelaLoging.usuarioLogado = ControllerLoging.validarBusca(textField.getText());
-				if (TelaLoging.usuarioLogado == null) {
-					JOptionPane.showMessageDialog(check,
-							"Usuario nao encontrado!");				
-					} else {
-					frame.dispose();
-					JOptionPane.showMessageDialog(check,
-							"Seu nome : " + TelaLoging.usuarioLogado.getNome() +
-									"\nSeu email : " + TelaLoging.usuarioLogado.getEmail() +
-									"\nSeu RG : " + TelaLoging.usuarioLogado.getRg() +
-									"\nSeu CPF : " + TelaLoging.usuarioLogado.getCpf() +
-									"\nSUA Senha : " + TelaLoging.usuarioLogado.getSenha() +
-									"\nSeu Telefone : " + TelaLoging.usuarioLogado.getTelefone());
-				}
-			}
-		});*/
 		check.setFont(new Font("Cambria", Font.PLAIN, 11));
 		check.setBackground(SystemColor.desktop);
 		check.setBounds(169, 138, 89, 23);

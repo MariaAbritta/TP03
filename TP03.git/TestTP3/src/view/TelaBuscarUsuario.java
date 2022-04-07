@@ -93,6 +93,8 @@ public class TelaBuscarUsuario {
 									"\nSUA Senha : " + TelaLoging.usuarioLogado.getSenha() +
 									"\nSeu Telefone : " + TelaLoging.usuarioLogado.getTelefone());
 				}
+				frame.dispose();
+				TelaMenu.main(null);
 			}
 		});
 		check.setFont(new Font("Cambria", Font.PLAIN, 11));

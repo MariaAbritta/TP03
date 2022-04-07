@@ -102,8 +102,8 @@ public class TelaFuncioBicicletario {
 				if (msgOk.length() > 0) {
 					JOptionPane.showMessageDialog(null, msgOk, ":)", JOptionPane.INFORMATION_MESSAGE);
 				}
-					frame.dispose();
-					TelaBicicletario.main(null);
+				frame.dispose();
+				TelaMenu.main(null);
 				}
 		});
 		

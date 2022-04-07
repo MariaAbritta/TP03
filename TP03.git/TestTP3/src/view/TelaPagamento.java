@@ -47,7 +47,7 @@ public class TelaPagamento {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 348);
+		frame.setBounds(100, 100, 450, 310);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
@@ -87,7 +87,8 @@ public class TelaPagamento {
 								"\nNumero do cartao : " + TelaCadastroCartao.txtNumCartao.getText() +
 								"\nNome no cartao : " + TelaCadastroCartao.txtNome.getText() +
 								"\nCVV: " + TelaCadastroCartao.textCVV.getText());
-
+				frame.dispose();
+				TelaMenu.main(null);
 			}
 		});
 		listar1.setBackground(new Color(204, 255, 255));
@@ -109,12 +110,6 @@ public class TelaPagamento {
 		deletar.setBackground(new Color(255, 255, 204));
 		deletar.setBounds(165, 223, 110, 32);
 		frame.getContentPane().add(deletar);
-		
-		JButton btnPagar = new JButton("Pagar");
-		btnPagar.setFont(new Font("Cambria", Font.PLAIN, 15));
-		btnPagar.setBackground(new Color(255, 204, 255));
-		btnPagar.setBounds(165, 266, 110, 32);
-		frame.getContentPane().add(btnPagar);
 		
 		JButton buscar = new JButton("Buscar");
 		buscar.addActionListener(new ActionListener() {
