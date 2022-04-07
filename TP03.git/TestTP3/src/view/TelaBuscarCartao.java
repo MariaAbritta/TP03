@@ -68,7 +68,7 @@ public class TelaBuscarCartao {
 		lblBuscarCartao.setBounds(75, 0, 312, 75);
 		frame.getContentPane().add(lblBuscarCartao);
 		
-		JLabel lblBusquePeloCvv = new JLabel("Busque pelo CVV do cartao que deseja encontrar:");
+		JLabel lblBusquePeloCvv = new JLabel("Busque CVV do cartao que deseja encontrar:");
 		lblBusquePeloCvv.setFont(new Font("Cambria", Font.PLAIN, 15));
 		lblBusquePeloCvv.setBounds(47, 86, 335, 14);
 		frame.getContentPane().add(lblBusquePeloCvv);
@@ -80,22 +80,43 @@ public class TelaBuscarCartao {
 		
 		JButton check = new JButton("OK");
 		check.addActionListener(new ActionListener() {
-			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent e) {
 				TelaCadastroCartao.cartaoCadastrado = ControllerPagamentos.validarBusca(textField.getText());
-				if (TelaCadastroCartao.cartaoCadastrado == null) {
+				if(TelaCadastroCartao.cartaoCadastrado != null) {
 					JOptionPane.showMessageDialog(check,
-							"Cartao nao encontrado!");				
-					} else {
+							"Cartao nao encontrado!");	
+				} else {
 					frame.dispose();
-					JOptionPane.showMessageDialog(check,
-							"Forma de pagamento: " + TelaCadastroCartao.textForma.getText() +
-									"\nNumero do cartao : " + TelaCadastroCartao.txtNumCartao.getText() +
-									"\nNome no cartao : " + TelaCadastroCartao.txtNome.getText() +
-									"\nCVV: " + TelaCadastroCartao.textCVV.getText());
+						JOptionPane.showMessageDialog(check,
+								"Forma de pagamento: " + TelaCadastroCartao.textForma.getText() +
+								"\nNumero do cartao : " + TelaCadastroCartao.txtNumCartao.getText() +
+								"\nNome no cartao : " + TelaCadastroCartao.txtNome.getText() +
+								"\nCVV: " + TelaCadastroCartao.textCVV.getText());
+
+					
 				}
 			}
 		});
+		/*check.addActionListener(new ActionListener() {
+			@SuppressWarnings("deprecation")
+			public void actionPerformed(ActionEvent e) {
+
+				TelaLoging.usuarioLogado = ControllerLoging.validarBusca(textField.getText());
+				if (TelaLoging.usuarioLogado == null) {
+					JOptionPane.showMessageDialog(check,
+							"Usuario nao encontrado!");				
+					} else {
+					frame.dispose();
+					JOptionPane.showMessageDialog(check,
+							"Seu nome : " + TelaLoging.usuarioLogado.getNome() +
+									"\nSeu email : " + TelaLoging.usuarioLogado.getEmail() +
+									"\nSeu RG : " + TelaLoging.usuarioLogado.getRg() +
+									"\nSeu CPF : " + TelaLoging.usuarioLogado.getCpf() +
+									"\nSUA Senha : " + TelaLoging.usuarioLogado.getSenha() +
+									"\nSeu Telefone : " + TelaLoging.usuarioLogado.getTelefone());
+				}
+			}
+		});*/
 		check.setFont(new Font("Cambria", Font.PLAIN, 11));
 		check.setBackground(SystemColor.desktop);
 		check.setBounds(169, 138, 89, 23);

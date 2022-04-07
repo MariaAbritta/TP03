@@ -49,7 +49,7 @@ public class TelaBicicleta {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 253);
+		frame.setBounds(100, 100, 450, 189);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -65,21 +65,6 @@ public class TelaBicicleta {
 		tiruloUm_1.setBounds(122, 0, 194, 75);
 		frame.getContentPane().add(tiruloUm_1);
 		
-		JButton buscar = new JButton("Buscar bicicletas");
-		buscar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Object src = e.getSource();
-				if (src == buscar) {
-					frame.dispose();
-					TelaBuscarBikes.main(null);
-				}
-			}
-		});
-		buscar.setBackground(new Color(153, 204, 255));
-		buscar.setFont(new Font("Cambria", Font.PLAIN, 15));
-		buscar.setBounds(142, 100, 147, 37);
-		frame.getContentPane().add(buscar);
-		
 		JButton listar = new JButton("Listar bicicletas");
 		listar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -90,7 +75,7 @@ public class TelaBicicleta {
 		});
 		listar.setBackground(new Color(255, 255, 204));
 		listar.setFont(new Font("Cambria", Font.PLAIN, 15));
-		listar.setBounds(142, 159, 147, 37);
+		listar.setBounds(142, 100, 147, 37);
 		frame.getContentPane().add(listar);
 	}
 

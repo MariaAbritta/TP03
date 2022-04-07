@@ -56,11 +56,11 @@ public class ControllerPagamentos {
 		return verificador;
 	}
 	
-	public static Pagamento validarBusca(String login) {
+	public static Pagamento validarBusca(String resposta) {
 
-		for (Pagamento usr : Dados.getPagamentos()) {
-			if (usr.getCodigoDeSeguranca().equals(login)) {
-				return usr;
+		for (Pagamento pgmnt : Dados.getPagamentos()) {
+			if (pgmnt.getCodigoDeSeguranca().equals(resposta)) {
+				return pgmnt;
 			}
 		}
 		return null;
