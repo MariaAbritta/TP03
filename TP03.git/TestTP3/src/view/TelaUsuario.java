@@ -90,6 +90,7 @@ public class TelaUsuario {
 				Object src = e.getSource();
 				if (src == editar) {
 					frame.dispose();
+					
 					TelaEditarUsuario.main(null);
 				}
 			}
