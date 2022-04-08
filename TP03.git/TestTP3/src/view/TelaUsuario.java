@@ -12,7 +12,11 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import models.Dados;
-
+/**
+ * Tela de usuário.
+ * @author Maria Abritta e Thyago Moura 
+ * @version 1.0 (Abril 2022)
+ */
 public class TelaUsuario {
 
 	private JFrame frame;

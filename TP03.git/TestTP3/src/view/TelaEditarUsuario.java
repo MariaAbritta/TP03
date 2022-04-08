@@ -20,7 +20,11 @@ import java.awt.event.MouseEvent;
 import java.awt.SystemColor;
 
 import models.Dados;
-
+/**
+ * Tela de editar usuário.
+ * @author Maria Abritta e Thyago Moura 
+ * @version 1.0 (Abril 2022)
+ */
 public class TelaEditarUsuario {
 
 	private JFrame frame;
@@ -132,6 +136,9 @@ public class TelaEditarUsuario {
 		txtTel.setBounds(46, 510, 335, 20);
 		frame.getContentPane().add(txtTel);
 
+		/**
+		 * Faz a verificação das verificações necessárias de cada informação.
+		 */
 		JButton check = new JButton("OK");
 		check.setFont(new Font("Cambria", Font.PLAIN, 11));
 		check.setBackground(SystemColor.desktop);

@@ -14,7 +14,11 @@ import javax.swing.JPasswordField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
+/**
+ * Tela de login.
+ * @author Maria Abritta e Thyago Moura 
+ * @version 1.0 (Abril 2022)
+ */
 public class TelaLoging {
 
 	private JFrame frame;
@@ -106,6 +110,9 @@ public class TelaLoging {
 		passwordField.setBounds(53, 251, 335, 20);
 		frame.getContentPane().add(passwordField);
 
+		/**
+		 * Tenta encontrar se o usuário já foi cadastrado ou não.
+		 */
 		JButton check = new JButton("OK");
 		check.addActionListener(new ActionListener() {
 			@SuppressWarnings("deprecation")

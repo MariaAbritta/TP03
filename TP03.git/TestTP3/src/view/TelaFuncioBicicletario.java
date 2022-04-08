@@ -15,7 +15,11 @@ import controller.ControllerUsuarios;
 import models.Usuario;
 import javax.swing.JButton;
 import models.Bicicletario;
-
+/**
+ * Tela funcionamento dos bicicletários.
+ * @author Maria Abritta e Thyago Moura 
+ * @version 1.0 (Abril 2022)
+ */
 public class TelaFuncioBicicletario {
 
 	private JFrame frame;
@@ -76,6 +80,9 @@ public class TelaFuncioBicicletario {
 		textField.setBounds(47, 117, 335, 20);
 		frame.getContentPane().add(textField);
 		
+		/**
+		 * Faz a verificação do horário perguntado.
+		 */
 		JButton check = new JButton("OK");
 		check.addActionListener(new ActionListener() {
 

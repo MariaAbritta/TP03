@@ -14,7 +14,11 @@ import controller.ControllerLoging;
 import javax.swing.JButton;
 import models.Dados;
 import view.TelaCadastroUsuario;
-
+/**
+ * Tela de buscar usuário
+ * @author Maria Abritta e Thyago Moura 
+ * @version 1.0 (Abril 2022)
+ */
 public class TelaBuscarUsuario {
 
 	private JFrame frame;
@@ -74,6 +78,9 @@ public class TelaBuscarUsuario {
 		textField.setBounds(49, 117, 335, 20);
 		frame.getContentPane().add(textField);
 		
+		/**
+		 * Tenta encontrar o usuário em questão.
+		 */
 		JButton check = new JButton("OK");
 		check.addActionListener(new ActionListener() {
 			@SuppressWarnings("deprecation")

@@ -22,7 +22,11 @@ import java.awt.SystemColor;
 
 import models.Dados;
 import models.Usuario;
-
+/**
+ * Tela de cadastro de usuário.
+ * @author Maria Abritta e Thyago Moura 
+ * @version 1.0 (Abril 2022)
+ */
 public class TelaCadastroUsuario {
 
 	private JFrame frame;
@@ -144,6 +148,9 @@ public class TelaCadastroUsuario {
 		senha.setBounds(46, 607, 335, 20);
 		frame.getContentPane().add(senha);
 
+		/**
+		 * Faz a verificação das verificações necessárias de cada informação.
+		 */
 		JButton check = new JButton("OK");
 		check.setFont(new Font("Cambria", Font.PLAIN, 11));
 		check.setBackground(SystemColor.desktop);

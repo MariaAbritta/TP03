@@ -18,7 +18,11 @@ import controller.ControllerLoging;
 import controller.ControllerPagamentos;
 
 import javax.swing.JButton;
-
+/**
+ * Tela de buscar cartão
+ * @author Maria Abritta e Thyago Moura 
+ * @version 1.0 (Abril 2022)
+ */
 public class TelaBuscarCartao {
 
 	private JFrame frame;
@@ -78,6 +82,9 @@ public class TelaBuscarCartao {
 		textField.setBounds(47, 107, 335, 20);
 		frame.getContentPane().add(textField);
 		
+		/**
+		 * Tenta encontrar o cartão em questão.
+		 */
 		JButton check = new JButton("OK");
 		check.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

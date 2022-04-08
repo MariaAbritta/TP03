@@ -16,7 +16,7 @@ import java.awt.event.ActionListener;
 import java.awt.Color;
 import javax.swing.JButton;
 /**
- * Equipara se os dados fornecidos estão nos dados cadastrados de loging
+ * Tela de aluguel de biciletas
  * @author Maria Abritta e Thyago Moura 
  * @version 1.0 (Abril 2022)
  */

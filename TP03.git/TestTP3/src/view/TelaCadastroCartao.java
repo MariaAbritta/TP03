@@ -21,7 +21,11 @@ import javax.swing.SwingConstants;
 import controller.ControllerPagamentos;
 import models.Pagamento;
 import models.Usuario;
-
+/**
+ * Tela de cadastro de cartão.
+ * @author Maria Abritta e Thyago Moura 
+ * @version 1.0 (Abril 2022)
+ */
 public class TelaCadastroCartao {
 
 	private JFrame frame;
@@ -132,6 +136,9 @@ public class TelaCadastroCartao {
 		textCVV.setBounds(51, 400, 335, 20);
 		frame.getContentPane().add(textCVV);
 
+		/**
+		 * 	 * Verifica o cadastro inteiro de usuário, se está de acordo com as verificações específicas, não manda mensagem de erro.
+		 */
 		JButton check = new JButton("OK");
 		check.setFont(new Font("Cambria", Font.PLAIN, 11));
 		check.setBackground(SystemColor.desktop);

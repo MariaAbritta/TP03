@@ -14,7 +14,7 @@ import javax.swing.JButton;
 import models.Bicicletario;
 import models.Dados;
 /**
- * Equipara se os dados fornecidos estão nos dados cadastrados de loging
+ * Tela geral de bicicletários.
  * @author Maria Abritta e Thyago Moura 
  * @version 1.0 (Abril 2022)
  */

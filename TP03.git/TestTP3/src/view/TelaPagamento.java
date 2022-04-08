@@ -14,7 +14,11 @@ import javax.swing.JOptionPane;
 import models.Dados;
 import models.Pagamento;
 import models.Usuario;
-
+/**
+ * Tela de pagamento.
+ * @author Maria Abritta e Thyago Moura 
+ * @version 1.0 (Abril 2022)
+ */
 public class TelaPagamento {
 
 	private JFrame frame;
@@ -78,6 +82,9 @@ public class TelaPagamento {
 			}
 		});
 		
+		/**
+		 * Lista os dados do cartão cadastrado
+		 */
 		JButton listar1 = new JButton("Listar dados");
 		listar1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -96,6 +103,9 @@ public class TelaPagamento {
 		listar1.setBounds(165, 143, 110, 32);
 		frame.getContentPane().add(listar1);
 
+		/**
+		 * Apaga os dados do cartão deletado.
+		 */
 		JButton deletar = new JButton("Deletar");
 		deletar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -111,6 +121,9 @@ public class TelaPagamento {
 		deletar.setBounds(165, 223, 110, 32);
 		frame.getContentPane().add(deletar);
 		
+		/**
+		 * Busca pelo CVV do cartão em questão
+		 */
 		JButton buscar = new JButton("Buscar");
 		buscar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

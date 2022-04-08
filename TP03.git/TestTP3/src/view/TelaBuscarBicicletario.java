@@ -12,7 +12,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import models.Bicicletario;
 /**
- * Equipara se os dados fornecidos estão nos dados cadastrados de loging
+ * Tela de buscar bisicletários
  * @author Maria Abritta e Thyago Moura 
  * @version 1.0 (Abril 2022)
  */

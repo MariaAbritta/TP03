@@ -13,7 +13,11 @@ import javax.swing.JButton;
 import models.Plano30;
 import models.Plano60;
 import models.Plano1440;
-
+/**
+ * Tela dos planos de tempo.
+ * @author Maria Abritta e Thyago Moura 
+ * @version 1.0 (Abril 2022)
+ */
 public class TelaPlanos {
 
 	private JFrame frame;
