@@ -1,7 +1,11 @@
 package models;
 
 import java.util.Scanner;
-
+/**
+ * Recebe os dados do pagamento. 
+ * @author Maria Abritta e Thyago Moura 
+ * @version 1.0 (Abril 2022)
+ */
 public class Pagamento {
 	private String formaDePagamento;
 	private double valorTotalPagamento;

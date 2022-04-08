@@ -14,7 +14,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.Color;
 import javax.swing.JButton;
-
+/**
+ * Equipara se os dados fornecidos estão nos dados cadastrados de loging
+ * @author Maria Abritta e Thyago Moura 
+ * @version 1.0 (Abril 2022)
+ */
 public class TelaBicicleta {
 
 	private JFrame frame;
@@ -64,6 +68,9 @@ public class TelaBicicleta {
 		tiruloUm_1.setBounds(122, 0, 194, 75);
 		frame.getContentPane().add(tiruloUm_1);
 		
+		/**
+		 * Redireciona o usuário para escolher em qual parque ele quer alugar uma bicicleta.
+		 */
 		JButton alugar = new JButton("Alugar bicicletas");
 		alugar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

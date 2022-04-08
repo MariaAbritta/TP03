@@ -2,7 +2,11 @@ package models;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-
+/**
+ * Recebe os dados dos bicicletários, além de listar e exibir a funcionalidade.
+ * @author Maria Abritta e Thyago Moura 
+ * @version 1.0 (Abril 2022)
+ */
 public class Bicicletario {
 	// Atributos
 	public String localidade;
@@ -85,15 +89,19 @@ public class Bicicletario {
 	}
 
 	// Metodos
+	
+	/**
+	 * Apenas lista a localidade dos bicicletários.
+	 */
 	public void listarBicicletario() {
 		System.out.println("Localidade: \n" + getLocalidade());
 	}
-
-	public String buscarBicicletario(String loc) {
-		loc = "Qual bicicletario deseja buscar bicicletas?";
-		return loc;
-	}
 	
+	/**
+	 * Faz a busca do horário que o usuário quer utilizar um dos nossos bicicletários.
+	 * @param hora
+	 * @return booleano verdadeiro ou falso.
+	 */
 	public boolean StatusFuncionamento(String hora){
 		boolean verificar = true;
 		System.out.println("Qual horario voce deseja ir ao bicicletario?: ");

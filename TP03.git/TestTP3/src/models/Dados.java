@@ -1,7 +1,11 @@
 package models;
 
 import java.util.ArrayList;
-
+/**
+ * Cria todos os ArrayList
+ * @author Maria Abritta e Thyago Moura 
+ * @version 1.0 (Abril 2022)
+ */
 public class Dados {
     public static final ArrayList<Bicicleta> bicicletas = new ArrayList<>();
     public static final ArrayList<Bicicletario> bicicletarios = new ArrayList<>();

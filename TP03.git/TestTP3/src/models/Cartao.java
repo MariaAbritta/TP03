@@ -1,5 +1,9 @@
 package models;
-
+/**
+ * Recebe os dados do cartão, além de editar esses dados.
+ * @author Maria Abritta e Thyago Moura 
+ * @version 1.0 (Abril 2022)
+ */
 public class Cartao {
     private String numero;
     private String cvv;

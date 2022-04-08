@@ -11,7 +11,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import models.Bicicletario;
-
+/**
+ * Equipara se os dados fornecidos estão nos dados cadastrados de loging
+ * @author Maria Abritta e Thyago Moura 
+ * @version 1.0 (Abril 2022)
+ */
 public class TelaBuscarBicicletario {
 
 	private JFrame frame;
@@ -49,6 +53,9 @@ public class TelaBuscarBicicletario {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
+		/**
+		 * Exibe as informações do parque Sarah e quantas bicicletas disponíveis.
+		 */
 		JButton sarah = new JButton("Sarah Kubitschek");
 		sarah.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -65,6 +72,9 @@ public class TelaBuscarBicicletario {
 		sarah.setBounds(151, 86, 147, 34);
 		frame.getContentPane().add(sarah);
 		
+		/**
+		 * Exibe as informações do parque Ecológico e quantas bicicletas disponíveis.
+		 */
 		JButton eco = new JButton("Parque Ecologico");
 		eco.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

@@ -1,7 +1,11 @@
 package models;
 
 import java.util.ArrayList;
-
+/**
+ * Recebe os dados gerais do usuário, além de editar esses dados.
+ * @author Maria Abritta e Thyago Moura 
+ * @version 1.0 (Abril 2022)
+ */
 public class Usuario {
 	private String nome;
 	private String email;
@@ -73,6 +77,10 @@ public class Usuario {
 		return cartoes;
 	}
 
+	/**
+	 * Atualiza os dados existentes para os dados editados.
+	 * @param nome, email, rg, cpf, senha, telefone
+	 */
 	public void editarDados(String nome, String email, String rg, String cpf, String senha, String telefone) {
 		this.setNome(nome);
 		this.setEmail(email);

@@ -13,7 +13,11 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import models.Bicicletario;
 import models.Dados;
-
+/**
+ * Equipara se os dados fornecidos estão nos dados cadastrados de loging
+ * @author Maria Abritta e Thyago Moura 
+ * @version 1.0 (Abril 2022)
+ */
 public class TelaBicicletario {
 
 	private JFrame frame;
@@ -63,10 +67,12 @@ public class TelaBicicletario {
 		lblBicicletarios.setBounds(89, 0, 246, 75);
 		frame.getContentPane().add(lblBicicletarios);
 
+		/**
+		 * Exibe todas os bicicletários que temos.
+		 */
 		JButton listar = new JButton("Listar bicicletarios");
 		listar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				// Printa todas as infos da Pessoa
 				JOptionPane.showMessageDialog(listar, bicicletario.getLocalidade());
 				frame.dispose();
 				TelaMenu.main(null);
@@ -77,6 +83,9 @@ public class TelaBicicletario {
 		listar.setBounds(134, 100, 163, 33);
 		frame.getContentPane().add(listar);
 
+		/**
+		 * Redireciona para a tela dos bicicletários.
+		 */
 		JButton buscar = new JButton("Buscar bicicletarios");
 		buscar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -91,6 +100,9 @@ public class TelaBicicletario {
 		buscar.setBounds(134, 144, 163, 33);
 		frame.getContentPane().add(buscar);
 		
+		/**
+		 * Redireciona para a funcionalidade dos bicicletários.
+		 */
 		JButton funcio = new JButton("Funcionalidade");
 		funcio.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

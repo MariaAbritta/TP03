@@ -15,7 +15,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.Color;
 import javax.swing.JButton;
-
+/**
+ * Equipara se os dados fornecidos estão nos dados cadastrados de loging
+ * @author Maria Abritta e Thyago Moura 
+ * @version 1.0 (Abril 2022)
+ */
 public class TelaAlugarBikes {
 
 	private JFrame frame;
@@ -66,6 +70,9 @@ public class TelaAlugarBikes {
 		tiruloUm_1.setBounds(116, 0, 246, 75);
 		frame.getContentPane().add(tiruloUm_1);
 		
+		/**
+		 * Lista que escolheu alugar uma bike no parque Sarah e encaminha para o pagamento
+		 */
 		JButton sarah = new JButton("Sarah Kubitschek");
 		sarah.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -81,6 +88,9 @@ public class TelaAlugarBikes {
 		sarah.setBounds(147, 86, 147, 34);
 		frame.getContentPane().add(sarah);
 		
+		/**
+		 * Lista que escolheu alugar uma bike no parque Ecológico e encaminha para o pagamento
+		 */
 		JButton eco = new JButton("Parque Ecologico");
 		eco.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
