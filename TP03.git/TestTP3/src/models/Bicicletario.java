@@ -91,20 +91,13 @@ public class Bicicletario {
 	// Metodos
 	
 	/**
-	 * Apenas lista a localidade dos bicicletários.
-	 */
-	public void listarBicicletario() {
-		System.out.println("Localidade: \n" + getLocalidade());
-	}
-	
-	/**
 	 * Faz a busca do horário que o usuário quer utilizar um dos nossos bicicletários.
 	 * @param hora
 	 * @return booleano verdadeiro ou falso.
 	 */
 	public boolean StatusFuncionamento(String hora){
 		boolean verificar = true;
-		System.out.println("Qual horario voce deseja ir ao bicicletario?: ");
+
 		switch(hora) {
 				case "6":
 				case "7":
@@ -124,7 +117,7 @@ public class Bicicletario {
 					verificar = false;
 					break;
 				default: 
-					System.out.println("Hora inválida.");
+					verificar = false;
 					break;
 			}
 		return verificar;

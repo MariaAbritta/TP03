@@ -89,11 +89,22 @@ public class TelaPagamento {
 		listar1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// Printa todas as infos da Pessoa
-				JOptionPane.showMessageDialog(listar1,
-						"Forma de pagamento: " + TelaCadastroCartao.textForma.getText() +
-								"\nNumero do cartao : " + TelaCadastroCartao.txtNumCartao.getText() +
-								"\nNome no cartao : " + TelaCadastroCartao.txtNome.getText() +
-								"\nCVV: " + TelaCadastroCartao.textCVV.getText());
+				if(
+						TelaCadastroCartao.textForma != null &&
+						TelaCadastroCartao.txtNumCartao != null &&
+						TelaCadastroCartao.txtNome != null &&
+						TelaCadastroCartao.textCVV != null
+						) {
+					JOptionPane.showMessageDialog(listar1,
+							"Forma de pagamento: " + TelaCadastroCartao.textForma.getText() +
+									"\nNumero do cartao : " + TelaCadastroCartao.txtNumCartao.getText() +
+									"\nNome no cartao : " + TelaCadastroCartao.txtNome.getText() +
+									"\nCVV: " + TelaCadastroCartao.textCVV.getText());
+				}
+				else {
+					JOptionPane.showMessageDialog(listar1,"Nenhum cartao cadastrado!");
+				}
+				
 				frame.dispose();
 				TelaMenu.main(null);
 			}

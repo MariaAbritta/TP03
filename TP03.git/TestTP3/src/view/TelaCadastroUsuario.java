@@ -179,8 +179,6 @@ public class TelaCadastroUsuario {
 					Dados.getUsuarios().add(new Usuario(txtNome.getText(), txtEmail.getText(), txtRG.getText(),
 							txtCPF.getText(), senha.getText(), txtTel.getText()));
 
-					System.out.println(Dados.getUsuarios().get(Dados.getUsuarios().size() - 1).getNome());
-
 					// outros
 					frame.dispose();
 					TelaLoging.main(null);
